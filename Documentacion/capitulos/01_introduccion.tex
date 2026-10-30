@@ -1,0 +1,46 @@
+% =====================================================================
+%  capitulos/01_introduccion.tex  --  SOLO CONTENIDO
+% =====================================================================
+%  Este fichero contiene únicamente texto. Lo que NO hay (a propósito):
+%    - \documentclass, \usepackage ni \begin{document}: eso es de main.tex
+%    - colores, márgenes ni formatos: eso es diseño y vive en el .sty
+%  PISTAS PARA EDITAR
+%    - Una línea en blanco separa párrafos.
+%    - ~ es un espacio que NO permite salto de línea ("capítulo~2").
+%    - \emph{...} = cursiva; \textbf{...} = negrita.
+% =====================================================================
+% \chapter crea un capítulo numerado y lo añade al índice.
+\chapter{Introducción}
+
+\section{Motivación}
+La programación paralela es hoy una herramienta cotidiana, pero escribir
+código paralelo eficiente y portable sigue siendo difícil. Una línea de
+trabajo de la Universidad de Valladolid propone describir los programas
+con especificaciones de alto nivel y dejar que un compilador modular
+genere el código final~\cite{gonzalez2011trasgo}.
+% \cite{clave} inserta una cita. La clave debe existir en bib/refs.bib; si
+% no, saldrá [?]. Para varias a la vez: \cite{clave1,clave2}
+
+% Entorno "aviso" definido en mistilo.sty (sustituye al \fcolorbox).
+\begin{aviso}
+  Esta memoria es un ejemplo para el taller: las referencias son reales;
+  el resto, incluidos los datos, es ficticio.
+\end{aviso}
+
+\section{Objetivos}
+El objetivo general es diseñar y evaluar un prototipo de consulta paralela.
+Los objetivos específicos son:
+\begin{enumerate}
+  \item estudiar el estado del arte en paralelismo y datos enlazados;
+  \item diseñar una arquitectura modular;
+  \item implementar el prototipo en Python;
+  \item medir su aceleración con distinto número de procesos.
+\end{enumerate}
+
+\section{Estructura de la memoria}
+% \ref{etiqueta} se sustituye por el número de lo marcado con \label.
+% Si se reordenan los capítulos, los números se actualizan solos.
+El capítulo~\ref{cap:arte} revisa el estado del arte; el
+capítulo~\ref{cap:diseno} presenta el diseño; el capítulo~\ref{cap:impl}
+detalla la implementación; el capítulo~\ref{cap:result} muestra los
+resultados y el capítulo~\ref{cap:conc} expone las conclusiones.

@@ -1,0 +1,189 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{gonzalez2011trasgo}{article}{}
+      \name{author}{2}{}{%
+        {{hash=60b2c652d459f2b9d4dccb65b72ebf80}{%
+           family={González-Escribano},
+           familyi={G\bibinithyphendelim E\bibinitperiod},
+           given={Arturo},
+           giveni={A\bibinitperiod}}}%
+        {{hash=46e2f3283b2ee016aebba63980327e97}{%
+           family={Llanos},
+           familyi={L\bibinitperiod},
+           given={Diego\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{d2fb169347b0bc31f0147c2c8289518a}
+      \strng{fullhash}{d2fb169347b0bc31f0147c2c8289518a}
+      \strng{bibnamehash}{d2fb169347b0bc31f0147c2c8289518a}
+      \strng{authorbibnamehash}{d2fb169347b0bc31f0147c2c8289518a}
+      \strng{authornamehash}{d2fb169347b0bc31f0147c2c8289518a}
+      \strng{authorfullhash}{d2fb169347b0bc31f0147c2c8289518a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Supercomputing}
+      \field{number}{2}
+      \field{title}{Trasgo: a nested-parallel programming system}
+      \field{volume}{58}
+      \field{year}{2011}
+      \field{pages}{226\bibrangedash 234}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1007/s11227-009-0367-5
+      \endverb
+    \endentry
+    \entry{trasgoweb}{online}{}
+      \name{author}{1}{}{%
+        {{hash=03fb56aee4feef8841cc9ac3268bdd69}{%
+           family={{Grupo de investigación Trasgo, Universidad de Valladolid}},
+           familyi={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{03fb56aee4feef8841cc9ac3268bdd69}
+      \strng{fullhash}{03fb56aee4feef8841cc9ac3268bdd69}
+      \strng{bibnamehash}{03fb56aee4feef8841cc9ac3268bdd69}
+      \strng{authorbibnamehash}{03fb56aee4feef8841cc9ac3268bdd69}
+      \strng{authornamehash}{03fb56aee4feef8841cc9ac3268bdd69}
+      \strng{authorfullhash}{03fb56aee4feef8841cc9ac3268bdd69}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Sitio web del grupo Trasgo}
+      \field{urlday}{26}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://trasgo.infor.uva.es/
+      \endverb
+      \verb{url}
+      \verb https://trasgo.infor.uva.es/
+      \endverb
+    \endentry
+    \entry{fernandez2013hdt}{article}{}
+      \name{author}{5}{}{%
+        {{hash=af36897217a5a1639c394e8f944d418d}{%
+           family={Fernández},
+           familyi={F\bibinitperiod},
+           given={Javier\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=72d63698e5940929001e08bf6faaea40}{%
+           family={Martínez-Prieto},
+           familyi={M\bibinithyphendelim P\bibinitperiod},
+           given={Miguel\bibnamedelima A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=8b3a3f8c77ee42f87995f920fdde47a5}{%
+           family={Gutiérrez},
+           familyi={G\bibinitperiod},
+           given={Claudio},
+           giveni={C\bibinitperiod}}}%
+        {{hash=a2be0ec850b04b1f5e9fe3aca6bf5226}{%
+           family={Polleres},
+           familyi={P\bibinitperiod},
+           given={Axel},
+           giveni={A\bibinitperiod}}}%
+        {{hash=83afb1d270192c4cd9d6cc970a9f6f06}{%
+           family={Arias},
+           familyi={A\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{4c4d5df8fc4023468af9bbcf99331a5e}
+      \strng{fullhash}{29a0e6747747feb684522232f12ac525}
+      \strng{bibnamehash}{29a0e6747747feb684522232f12ac525}
+      \strng{authorbibnamehash}{29a0e6747747feb684522232f12ac525}
+      \strng{authornamehash}{4c4d5df8fc4023468af9bbcf99331a5e}
+      \strng{authorfullhash}{29a0e6747747feb684522232f12ac525}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Web Semantics}
+      \field{title}{Binary {RDF} representation for publication and exchange ({HDT})}
+      \field{volume}{19}
+      \field{year}{2013}
+      \field{pages}{22\bibrangedash 41}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1016/j.websem.2013.01.002
+      \endverb
+    \endentry
+    \entry{parnas1972}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2c85bcbe37e2c044c00248fb912f095d}{%
+           family={Parnas},
+           familyi={P\bibinitperiod},
+           given={D.\bibnamedelimi L.},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{2c85bcbe37e2c044c00248fb912f095d}
+      \strng{fullhash}{2c85bcbe37e2c044c00248fb912f095d}
+      \strng{bibnamehash}{2c85bcbe37e2c044c00248fb912f095d}
+      \strng{authorbibnamehash}{2c85bcbe37e2c044c00248fb912f095d}
+      \strng{authornamehash}{2c85bcbe37e2c044c00248fb912f095d}
+      \strng{authorfullhash}{2c85bcbe37e2c044c00248fb912f095d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Communications of the {ACM}}
+      \field{number}{12}
+      \field{title}{On the criteria to be used in decomposing systems into modules}
+      \field{volume}{15}
+      \field{year}{1972}
+      \field{pages}{1053\bibrangedash 1058}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1145/361598.361623
+      \endverb
+    \endentry
+    \entry{lamport1994latex}{book}{}
+      \name{author}{1}{}{%
+        {{hash=5d77435450d10a850a5b58577b9a456b}{%
+           family={Lamport},
+           familyi={L\bibinitperiod},
+           given={Leslie},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{fullhash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{bibnamehash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{authorbibnamehash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{authornamehash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{authorfullhash}{5d77435450d10a850a5b58577b9a456b}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{{LaTeX}: A Document Preparation System}
+      \field{year}{1994}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

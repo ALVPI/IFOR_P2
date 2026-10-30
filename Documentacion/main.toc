@@ -1,0 +1,30 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{Resumen}{\es@scroman {i}}{chapter*.1}%
+\contentsline {chapter}{Abstract}{\es@scroman {ii}}{chapter*.2}%
+\babel@toc {english}{}\relax 
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{Agradecimientos}{\es@scroman {iii}}{chapter*.3}%
+\contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motivación}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Objetivos}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Estructura de la memoria}{1}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Estado del arte}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Programación paralela}{2}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Datos enlazados y \textsc {hdt}}{2}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Modularidad del software}{2}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Comparación de enfoques}{2}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Diseño}{3}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Requisitos}{3}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Arquitectura}{3}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Modelo de rendimiento}{3}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Implementación}{4}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Particionado de los datos}{4}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Ejecución paralela}{4}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Uso desde la terminal}{4}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Resultados}{5}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Conclusiones}{6}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Conclusiones}{6}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Trabajo futuro}{6}{section.6.2}%
+\contentsline {chapter}{\numberline {A}Instalación}{7}{appendix.Alph1}%
+\contentsline {chapter}{\numberline {B}Conjuntos de datos}{8}{appendix.Alph2}%
+\contentsline {chapter}{Bibliografía}{9}{appendix*.14}%

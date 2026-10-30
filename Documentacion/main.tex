@@ -1,0 +1,63 @@
+
+\documentclass[11pt,a4paper]{report}
+
+% ---- Idioma y codificación ----
+% babel: el ÚLTIMO idioma de la lista es el principal (spanish). El inglés
+% se carga porque el Abstract usa \begin{otherlanguage}{english}.
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english,spanish]{babel}
+
+\usepackage[backend=biber,style=ieee]{biblatex}
+\addbibresource{bib/refs.bib}
+
+\usepackage{styles/mistilo}
+
+% ---- Datos del documento ----
+% Cada TFG nuevo solo cambia estas líneas.
+%   \titulodoc[título corto para la cabecera]{título completo}
+\titulodoc[Entraga de explotación de vulenrabilidad IFOR]
+\autordoc{Pablo Pastor Aguado}                                  % <- tu nombre
+\autordoc{Santiago González Rodríguez}                                  % <- tu nombre
+\autordoc{Hugo Adán de la Fuente}                                  % <- tu nombre
+\autordoc{Álvaro López Primo}                                  % <- tu nombre
+\titulacion{Ingeniería informática}                         % <- tu grado
+\mencion{Tecnologías de la información y la comunicación}   % <- tu mención
+% \fechadoc{Octubre de 2026}   % descomenta para fijar la fecha
+
+% ---- Compilar solo un capítulo mientras trabajas ----
+% En una memoria larga, compilar todo tarda. Descomenta para compilar
+% únicamente el capítulo 4; los demás conservan su numeración (\include).
+% Vuelve a comentarla al terminar o faltarán capítulos en el PDF.
+% \includeonly{capitulos/04_implementacion}
+
+\begin{document}
+
+\makeportada                         % portada definida en mistilo.sty
+
+% ---- Páginas previas: numeración romana (i, ii, iii...) ----
+\pagenumbering{roman}
+% \input inserta el fichero tal cual (sin salto de página extra).
+\input{frontmatter/resumen}
+\input{frontmatter/abstract}
+\input{frontmatter/agradecimientos}
+
+\renewcommand{\contentsname}{Índice}
+\tableofcontents                     % índice general automático
+\listoffigures                       % índice de figuras (usa \caption)
+\listoftables                        % índice de tablas
+
+% ---- Cuerpo: numeración normal (1, 2, 3...) ----
+\cleardoublepage
+\pagenumbering{arabic}
+
+% \include empieza en página nueva y permite \includeonly.
+% PARA AÑADIR UN CAPÍTULO NUEVO:
+%   1) crea capitulos/07_xxx.tex que empiece por \chapter{...}
+%   2) añade aquí:  \include{capitulos/07_xxx}
+
+% ---- Apéndices ----
+% \appendix hace que los capítulos siguientes se numeren A, B, C...
+\appendix
+
+\end{document}

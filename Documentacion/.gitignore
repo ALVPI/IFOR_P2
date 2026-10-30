@@ -1,0 +1,191 @@
+# =============================================================================
+# .gitignore - Documentación LaTeX + scripts de bases de datos
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Sistema operativo
+# -----------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+
+# -----------------------------------------------------------------------------
+# Editores / IDEs
+# -----------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# -----------------------------------------------------------------------------
+# Secretos y credenciales (¡nunca versionar!)
+# -----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+credentials*
+secrets*
+.pgpass
+.my.cnf
+.mylogin.cnf
+
+# -----------------------------------------------------------------------------
+# Bases de datos: volcados, backups y datos locales
+# -----------------------------------------------------------------------------
+scripts/bash/*.sql.gz
+scripts/bash/*.sql
+*.dump
+*.sql.bz2
+*.sql.zip
+*.sql.xz
+*.sqlite
+*.sqlite3
+*.db
+backups/
+
+# Logs de ejecución de scripts
+*.log
+
+# -----------------------------------------------------------------------------
+# PDFs generados (evita conflictos de merge)
+# Se ignoran todos, pero se permiten los PDFs usados como figuras/recursos
+# -----------------------------------------------------------------------------
+*.pdf
+!figuras/**/*.pdf
+!images/**/*.pdf
+!assets/**/*.pdf
+
+# -----------------------------------------------------------------------------
+# LaTeX: ficheros auxiliares del núcleo
+# -----------------------------------------------------------------------------
+*.aux
+*.lof
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+
+# Documentos intermedios
+*.dvi
+*.xdv
+*-converted-to.*
+
+# Bibliografía (bibtex / biblatex / biber)
+*.bbl
+*.bbl-SAVE-ERROR
+*.bcf
+*.bcf-SAVE-ERROR
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+# Herramientas de compilación
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+*.rubbercache
+rubber.cache
+latex.out/
+build/
+out/
+
+# -----------------------------------------------------------------------------
+# LaTeX: paquetes comunes (descomenta/elimina según tu uso)
+# -----------------------------------------------------------------------------
+# listings
+*.lol
+
+# hyperref
+*.brf
+
+# glossaries
+*.acn
+*.acr
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.ist
+*.slg
+*.slo
+*.sls
+
+# makeidx
+*.idx
+*.ilg
+*.ind
+
+# nomencl
+*.nlg
+*.nlo
+*.nls
+
+# minted
+_minted*
+*.pyg
+
+# beamer
+*.nav
+*.snm
+*.vrb
+
+# todonotes / fixme / easy-todo
+*.tdo
+*.lox
+*.lod
+
+# TikZ / PGF
+*.dpth
+*.auxlock
+
+# minitoc / titletoc
+*.maf
+*.mlf
+*.mlt
+*.mtc[0-9]*
+*.slf[0-9]*
+*.slt[0-9]*
+*.stc[0-9]*
+*.ptc
+
+# thmtools / amsthm / algorithms
+*.loe
+*.thm
+*.alg
+*.loa
+
+# svg (Inkscape)
+svg-inkscape/
+
+# pythontex / sagetex
+*.pytxcode
+pythontex-files-*/
+*.sagetex.sage
+*.sagetex.py
+*.sagetex.scmd
+
+# -----------------------------------------------------------------------------
+# Editores LaTeX específicos
+# -----------------------------------------------------------------------------
+*.bak
+*.sav
+*.bak[0-9]*
+.texpadtmp
+*.lyx~
+*.backup
+*.tps
+TSWLatexianTemp*
