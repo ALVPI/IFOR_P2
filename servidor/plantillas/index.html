@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Correo IFOR — bandeja</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 52rem; margin: 2rem auto;
+         padding: 0 1rem; color: #222; }
+  nav { margin-bottom: 1.2rem; }
+  nav a { margin-right: .6rem; }
+  a { color: #0645ad; }
+  table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+  th, td { border: 1px solid #ccc; padding: .45rem .6rem; text-align: left; }
+  th { background: #f0f4f8; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/">Inicio</a>
+  <a href="/redactar?u=$usuario">Redactar mensaje</a>
+</nav>
+<h1>Bandeja de <b>$usuario@$dominio</b></h1>
+$tabla
+</body>
+</html>

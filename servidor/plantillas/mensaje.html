@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Correo IFOR — mensaje</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 52rem; margin: 2rem auto;
+         padding: 0 1rem; color: #222; }
+  nav { margin-bottom: 1.2rem; }
+  nav a { margin-right: .6rem; }
+  a { color: #0645ad; }
+  pre { background: #f7f7f7; border: 1px solid #ddd; padding: 1rem;
+        white-space: pre-wrap; word-break: break-word; }
+  h1 { font-size: 1.4rem; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/?u=$usuario">Volver a la bandeja</a>
+  <a href="/redactar?u=$usuario">Redactar mensaje</a>
+</nav>
+<h1>$asunto</h1>
+<p><b>De:</b> $de<br>
+   <b>Para:</b> $para<br>
+   <b>Fecha:</b> $fecha</p>
+<h2>Adjuntos</h2>
+$adjuntos
+<h2>Cuerpo del mensaje</h2>
+<pre>$cuerpo</pre>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Correo IFOR — redactar</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 52rem; margin: 2rem auto;
+         padding: 0 1rem; color: #222; }
+  nav { margin-bottom: 1.2rem; }
+  nav a { margin-right: .6rem; }
+  a { color: #0645ad; }
+  form { display: grid; gap: .8rem; max-width: 40rem; }
+  label { display: grid; gap: .25rem; font-weight: 600; }
+  input, textarea { padding: .4rem; font: inherit; }
+  button { justify-self: start; padding: .5rem 1.2rem; font: inherit;
+           cursor: pointer; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/?u=$usuario">Volver a la bandeja</a>
+</nav>
+<h1>Redactar mensaje</h1>
+<p>Enviando como <b>$usuario@$dominio</b> (solo se admite destinatarios de
+este dominio).</p>
+<form action="/enviar" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="de" value="$usuario">
+  <label>Para
+    <input type="text" name="para" required
+           placeholder="ana@$dominio">
+  </label>
+  <label>Asunto
+    <input type="text" name="asunto" placeholder="Opcional">
+  </label>
+  <label>Cuerpo
+    <textarea name="cuerpo" rows="8"></textarea>
+  </label>
+  <label>Adjunto (p. ej. Confidencial.pdf)
+    <input type="file" name="adjunto">
+  </label>
+  <button type="submit">Enviar</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,5 @@
+# Datos runtime del servidor de correo: NO se versionan.
+# (Los buzones son evidencia de la practica: cada grupo genera los suyos.)
+__pycache__/
+buzones/
+usuarios.json
