@@ -3,3 +3,4 @@
 __pycache__/
 buzones/
 usuarios.json
+logs/

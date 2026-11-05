@@ -27,6 +27,7 @@ from typing import Dict, List, Optional
 
 from config import Config
 from correo_api import extraer_adjuntos
+from log_envios import preparar_directorio, registrar_envio
 
 log = logging.getLogger("correo.buzon")
 
@@ -47,10 +48,14 @@ class Buzones:
         self.config = config
         self.ruta_base = Path(config.ruta_base)
         self.ruta_usuarios = Path(config.ruta_usuarios)
+        self.ruta_logs = Path(config.ruta_logs)
         self._lock = threading.Lock()
         self._usuarios: List[str] = []
         self._mtime_usuarios = None
         self._sincronizar()
+        # Directorio del log de envios: al arrancar (y registrar_envio lo
+        # recrea tambien al escribir, por si se borra con el servidor vivo).
+        preparar_directorio(config)
 
     # ------------------------------------------------------------------ #
     # Usuarios
@@ -166,6 +171,15 @@ class Buzones:
             except Exception:  # noqa: BLE001 -- un fallo aqui no pierde el correo
                 log.exception("no pude extraer adjuntos de %s", cola_id)
         log.info("entregado %s a %s", cola_id, ", ".join(destinos))
+
+        # Auditoria de envios (SMTP y webmail convergen aqui): UNA linea
+        # por mensaje con remitente, destinos, asunto y adjuntos.  La
+        # escritura ya es a prueba de fallos (nunca lanza), pero el try
+        # deja clara la intencion: el envio no depende del log.
+        try:
+            registrar_envio(self.config, destinos, data)
+        except Exception:  # noqa: BLE001
+            log.exception("no pude registrar en el log de envios: %s", cola_id)
         return cola_id
 
     # ------------------------------------------------------------------ #

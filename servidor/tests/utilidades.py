@@ -127,6 +127,7 @@ def arrancar_entorno(usuarios=("pepe", "ana"), **kwargs) -> Entorno:
         smtp_puerto=0,
         ruta_base=Path(ruta_tmp) / "buzones",
         ruta_usuarios=Path(ruta_tmp) / "usuarios.json",
+        ruta_logs=Path(ruta_tmp) / "logs",
         **kwargs,
     )
     buzones = Buzones(config)

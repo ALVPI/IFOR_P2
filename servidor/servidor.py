@@ -22,13 +22,18 @@ from srv_tcp import ServidorTCP
 log = logging.getLogger("correo")
 
 
-def _crear_servidor_smtp(config, puerto=None, host=None):
-    """Monta y devuelve el ServidorTCP del SMTP (sin arrancarlo todavia)."""
+def _crear_servidor_smtp(config, buzones=None, puerto=None, host=None):
+    """Monta y devuelve el ServidorTCP del SMTP (sin arrancarlo todavia).
+
+    Si se pasa ``buzones`` (arranque combinado SMTP+webmail) se reutiliza
+    esa instancia; si no, se crea una nueva a partir de la configuracion.
+    """
     if puerto:
         config.smtp_puerto = puerto
     if host:
         config.smtp_host = host
-    buzones = Buzones(config)   # usuarios.json + buzones/ (validacion RCPT)
+    if buzones is None:
+        buzones = Buzones(config)   # usuarios.json + buzones/ (validacion RCPT)
     return ServidorTCP(
         host=config.smtp_host,
         puerto=config.smtp_puerto,

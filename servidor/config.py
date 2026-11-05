@@ -27,6 +27,7 @@ class Config:
     dominio: str = "empresa.local"  # dominio LOCAL: lo unico que se acepta entregar
     ruta_base: Path = DIR_BASE / "buzones"
     ruta_usuarios: Path = DIR_BASE / "usuarios.json"
+    ruta_logs: Path = DIR_BASE / "logs"    # log de envios (auditoria)
     max_conexiones: int = 20       # conexiones SMTP simultaneas permitidas
     max_tamano_mb: int = 25        # limite de tamano del mensaje en DATA
     timeout_seg: int = 120         # inactividad maxima por conexion
@@ -62,6 +63,10 @@ def cargar_config(ruta: Optional[Path] = None) -> Config:
         usu = Path(lector.get("rutas", "usuarios", fallback=""))
         if str(usu):
             cfg.ruta_usuarios = usu if usu.is_absolute() else DIR_BASE / usu
+    if lector.has_section("log"):
+        dirlog = Path(lector.get("log", "directorio", fallback=""))
+        if str(dirlog):
+            cfg.ruta_logs = dirlog if dirlog.is_absolute() else DIR_BASE / dirlog
     if lector.has_section("limites"):
         cfg.max_conexiones = lector.getint(
             "limites", "max_conexiones", fallback=cfg.max_conexiones

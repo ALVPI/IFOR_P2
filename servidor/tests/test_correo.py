@@ -195,7 +195,9 @@ class TestCLIUsuario(unittest.TestCase):
             "[correo]\ndominio = prueba.local\n\n"
             "[rutas]\n"
             f"base = {self.tmp / 'buzones'}\n"
-            f"usuarios = {self.usuarios}\n",
+            f"usuarios = {self.usuarios}\n\n"
+            "[log]\n"
+            f"directorio = {self.tmp / 'logs'}\n",
             encoding="utf-8",
         )
 
