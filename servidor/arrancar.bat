@@ -12,6 +12,7 @@ if %errorlevel%==0 (
 ) else (
     python servidor.py todo %*
 )
-
+timeout /t 2 >nul
+start "" "http://localhost:8080/"
 echo.
 pause
