@@ -210,7 +210,7 @@
 % rellena.
 \newcommand{\@tituloDoc}{Título del documento}
 \newcommand{\@tituloCorto}{}
-\newcommand{\@autorDoc}{Nombre Apellido}
+\def\@autorDoc{}
 \newcommand{\@titulacion}{}
 \newcommand{\@tutorDoc}{}
 \newcommand{\@mencion}{}
@@ -219,7 +219,12 @@
 % cabecera:  \titulodoc[Corto]{Título largo}. Si se omite, se usa el largo.
 \newcommand{\titulodoc}[2][]{\renewcommand{\@tituloDoc}{#2}%
   \renewcommand{\@tituloCorto}{\if\relax\detokenize{#1}\relax #2\else #1\fi}}
-\newcommand{\autordoc}[1]{\renewcommand{\@autorDoc}{#1}}
+\newcommand{\autordoc}[1]{%
+	\ifx\@autorDoc\@empty
+	\renewcommand{\@autorDoc}{#1}%
+	\else
+	\g@addto@macro\@autorDoc{\\[0.2cm]#1}%
+	\fi}
 \newcommand{\titulacion}[1]{\renewcommand{\@titulacion}{#1}}
 \newcommand{\tutordoc}[1]{\renewcommand{\@tutorDoc}{#1}}
 \newcommand{\mencion}[1]{\renewcommand{\@mencion}{#1}}
@@ -248,5 +253,6 @@
     {\large\color{suave}\@fechaDoc}
   \end{titlepage}%
 }
+
 
 \endinput   % fin del paquete

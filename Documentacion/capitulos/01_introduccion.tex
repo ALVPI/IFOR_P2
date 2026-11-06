@@ -18,7 +18,8 @@
 \chapter{Servidor de correo para el Escenario 1 (fuga por correo)}
 \label{cap:servidor}
 
-El objetivo de este capítulo es explicar la creación del sistema de correo preparado para el primero de los escenarios detallados en el enunciado. 
+El objetivo de este capítulo es explicar la creación del sistema de correo preparado para el primero de los escenarios detallados en el enunciado; si bien no entraremos en detalles muy técnicos, en caso de querer profundizar en el código fuente de la aplicación así como la información técnica y una guía de uso e instalación, se puede revisar en el \href{https://github.com/ALVPI/IFOR_P2/tree/main/servidor}{repositorio del grupo H} para esta práctica.
+
 
 Para poder realizar este trabajo vamos a empler el protocolo SMPT según se especifica en el \href{https://www.rfc-editor.org/info/rfc5321/}{RFC 5321} adaptándolo para nuestro entorno el cual van a ser dos VMs (máquinas virtuales) con el sistema operativo Windows 11.
 \section{Funcionalidades}
@@ -66,61 +67,10 @@ Para verificar que el sistema funcionad e manera correcta.\\
 \label{tab:decisiones-servidor}
 \end{table}
 
-% ---------------------------------------------------------------------
-\section{Arquitectura y módulos}
-
-Teniendo ya las bases claras y la limitaciones sobre nuestro escenario, vamos a explicar el contenido del directorio donde se va a encontrar el servidor de correo electrónica que hemos desarrollado:
-
-\begin{lstlisting}[style=terminal,breaklines=true]
-servidor/
-|-- servidor.py     CLI: smtp | todo | usuario alta|baja|listar
-|-- config.py       lectura de config.ini (puertos, dominio, límites)
-|-- srv\_tcp.py      aceptación TCP, hilo por conexión, límites, timeouts
-|-- smtp\_sesion.py  la máquina de estados SMTP (el protocolo, desde cero)
-|-- correo\_api.py   direcciones, construcción MIME, extracción de adjuntos
-|-- buzon.py        buzones .eml + adjuntos + usuarios.json (+ lock)
-|-- log\_envios.py   auditoría: una línea por envío en logs/envios.log
-|-- webmail.py      interfaz web con http.server (solo stdlib)
-|-- plantillas/     HTML del webmail (string.Template)
-|-- config.ini      configuración editable
-|-- arrancar.bat    doble clic en la VM Windows
-|-- crear\_usuario.bat
-`-- tests/          unittest (84 pruebas)
-\end{lstlisting}
-
-\subsection{Flujo de una entrega}
-Teniendo lo anterior claro, ahora nos centraremos en explicar de manera teórica el camino que va a seguir cada uno de los correos que se envien empleando nuestro servidor.
-\begin{enumerate}
-  \item El cliente (telnet, cliente SMTP o webmail) se conecta al puerto 25.
-  \item \cod{srv\_tcp.ServidorTCP} acepta la conexión en un \textbf{hilo por
-        cliente}, aplica el límite de conexiones simultáneas y el timeout de
-        inactividad.
-  \item \cod{smtp\_sesion.SesionSMTP} ejecuta la \textbf{máquina de estados}
-        SMTP: \cod{inicio -> saludado -> mail -> rcpt -> dato -> saludado}.
-  \item Al recibir \cod{DATA}, se valida el tamaño; si es válido se prepende
-        una cabecera \cod{Received} (origen, HELO, fecha) y se entrega vía
-        \cod{buzon.Buzones.entregar}.
-  \item \cod{entregar} guarda el \cod{.eml} en cada buzón destino, extrae los
-        adjuntos a disco y registra una línea en \cod{logs/envios.log}.
-  \item El webmail (\cod{webmail.py}) usa \textbf{la misma ruta de entrega}
-        (\cod{entregar}), de modo que SMTP y webmail convergen en un único
-        punto de entrega.
-\end{enumerate}
 
 % ---------------------------------------------------------------------
-
-% ---------------------------------------------------------------------
-\section{Almacenamiento y evidencias (cadena de custodia)}
-
-El almacenamiento es \textbf{en ficheros}, fácil de inspeccionar y de archivar
-como evidencia:
-
-\begin{lstlisting}[style=terminal,breaklines=true]
-buzones/
-  ana/
-    mensajes/20261102-153012-ab12cd34.eml     # mensaje completo (headers + cuerpo)
-    adjuntos/20261102-.../Confidencial.pdf    # adjunto extraído
-\end{lstlisting}
+\section{Almacenamiento  de Logs y evidencias (cadena de custodia)}
+Una vez hemos expuesto las decisiones de diseño de nuestro servidor vamos a detaller como funciona el registro de correos, ya que es la parte más importante del sistema para poder sacar conclusiones en un proceso de peritaje informático.\\
 
 \begin{itemize}
   \item Cada mensaje se guarda como \textbf{\cod{.eml}} (mensaje MIME completo
@@ -129,54 +79,35 @@ buzones/
   \item Los \textbf{adjuntos se extraen} a una carpeta por mensaje, con
         nombres saneados, de modo que un \cod{.pdf} se abre sin parsear el
         \cod{.eml}.
-  \item El identificador de cola (\cod{cola_id}) tiene resolución de segundo +
-        UUID corto: \cod{20261102153012-ab12cd34}.
-  \item \cod{usuarios.json} guarda la lista de buzones
-        (\cod{{"usuarios": [...]}}).
-  \item \cod{buzones/}, \cod{usuarios.json} y \cod{logs/} son \textbf{datos
-        runtime} (\cod{.gitignore}): no se versionan, son propios de cada VM.
+  \item El identificador de cola (\cod{cola\_id}) tiene resolución de segundo +
+        UUID (\textit{Universally Unique Identifier}), el identificador único de cada correo.
+  \item \cod{usuarios.json} guarda la lista de buzones (el apartado donde se almacenan los coreos de cada usuario.) Siguiendo el siguiente formato(\cod{{"usuarios": [...]}}).
 \end{itemize}
 
-Esto encaja con el enunciado: la evidencia se recopila \textbf{sin
-modificarla} y queda lista para la cadena de custodia.
+Con esto conseguimos que la evidencia se recopile \textbf{sin ser modificada} y queda lista para la cadena de custodia.
 
-% ---------------------------------------------------------------------
-
-\begin{aviso}[Decisiones de laboratorio]
-No hay autenticación (decisión acordada). No exponer el puerto 8080 fuera de
-la red NAT de VirtualBox.
-\end{aviso}
-
-% ---------------------------------------------------------------------
-\section{Log de envíos (auditoría)}
-
-Cada mensaje entregado, ya sea por \textbf{SMTP o por el webmail}, añade
-\textbf{una única línea} a \cod{logs/envios.log}:
-
+\subsection{Ejemplo de registro (\textit{log}) de un envío de correo}
 \begin{lstlisting}[style=terminal,breaklines=true]
-2026-11-05T10:00:00 | de: pepe@empresa.local | para: ana@empresa.local, luis@empresa.local | asunto: Examen final | adjuntos: Confidencial.pdf (123 KB), notas.txt (4 KB)
+	2026-11-05T10:00:00 | de: pepe@empresa.local | para: ana@empresa.local, luis@empresa.local | asunto: Examen final | adjuntos: Confidencial.pdf (123 KB), notas.txt (4 KB)
 \end{lstlisting}
 
+Como podemos ver cada mensaje entregado, ya sea por \textbf{SMTP o por el webmail}, añade \textbf{una única línea} a \cod{logs/envios.log} (en lenguaje mundano, se guarda en la carpeta logs en el fichero envios.). 
+Entendamos ahora un poco qué información nos proporciona este registro:
 \begin{itemize}
-  \item Timestamp ISO 8601 en hora local (segundos).
-  \item \cod{para}: destinatarios en el orden aceptado (RCPT TO / lista del
-        formulario).
-  \item \cod{adjuntos}: nombres saneados con tamaño redondeado a KB (mínimo
-        1 KB); si no hay, \cod{adjuntos: ninguno}.
-  \item \textbf{Escaping}: si el asunto o un nombre contiene \cod{ | } (o
-        cualquier \cod{|}), se sustituye por \textbrokenbar{} (U+00A6), de
-        modo que cada envío es \textbf{exactamente una línea} jamás rota.
-  \item El fichero \textbf{crece por anexión} (nunca se reescribe); la
-        escritura va protegida con lock y \cod{try/except}: un fallo del log
-        (disco lleno, permisos\ldots) queda en el logger
-        \cod{correo.log_envios} pero \textbf{nunca tumba} el envío ni la
-        sesión.
+	\item Timestamp \href{https://www.iso.org/standard/40130.html}{ISO 8601} en hora local (segundos).
+	\item \cod{para}: destinatarios en el orden aceptado (RCPT TO / lista del
+	formulario).
+	\item \cod{adjuntos}: nombres saneados con tamaño redondeado a KB (mínimo
+	1 KB); si no hay, \cod{adjuntos: ninguno}.
+	\item \textbf{Escaping}: si el asunto o un nombre contiene \cod{ | } (o
+	cualquier \cod{|}), se sustituye por \textbrokenbar{} (U+00A6), de
+	modo que cada envío es \textbf{exactamente una línea} jamás rota.
+	\item El fichero \textbf{crece por anexión} (nunca se reescribe); la
+	escritura va protegida con lock y \cod{try/except}: un fallo del log
+	(disco lleno, permisos\ldots) queda en el logger
+	\cod{correo.log_envios} pero \textbf{nunca tumba} el envío ni la
+	sesión.
 \end{itemize}
-
-El directorio del log es configurable en \cod{config.ini}
-(\cod{[log] directorio}), por defecto \cod{logs/} relativo a
-\cod{servidor/}.
-
 
 % ---------------------------------------------------------------------
 \section{Cómo se adapta al Escenario 1 (paso a paso)}
@@ -210,32 +141,4 @@ conservar la evidencia analizable.
 
 
 % ---------------------------------------------------------------------
-\section{Comandos clave}
 
-\begin{lstlisting}[style=terminal,breaklines=true]
-# Arrancar en la VM (Windows) -- SMTP + webmail en foreground
-py -3 servidor.py todo
-
-# Gestión de usuarios
-py -3 servidor.py usuario alta pepe
-py -3 servidor.py usuario listar
-
-# Pruebas (en cualquier SO, sin instalar nada)
-cd servidor
-python3 -m unittest discover -v
-\end{lstlisting}
-
-Más detalles técnicos: \cod{servidor/README.md}. Diseño e iteraciones:
-\cod{PLAN.md}. Guía sencilla: \cod{GUIA\_USO.md}. =====================================================================
-%  capitulos/01_introduccion.tex  --  SOLO CONTENIDO
-% =====================================================================
-%  Este fichero contiene únicamente texto. Lo que NO hay (a propósito):
-%    - \documentclass, \usepackage ni \begin{document}: eso es de main.tex
-%    - colores, márgenes ni formatos: eso es diseño y vive en el .sty
-%  PISTAS PARA EDITAR
-%    - Una línea en blanco separa párrafos.
-%    - ~ es un espacio que NO permite salto de línea ("capítulo~2").
-%    - \emph{...} = cursiva; \textbf{...} = negrita.
-% =====================================================================
-% \chapter crea un capítulo numerado y lo añade al índice.
-\chapter{Introducción}

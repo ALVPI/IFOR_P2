@@ -39,13 +39,11 @@
 \pagenumbering{roman}
 % \input inserta el fichero tal cual (sin salto de página extra).
 \input{frontmatter/resumen}
-\input{frontmatter/abstract}
-\input{frontmatter/agradecimientos}
+
 
 \renewcommand{\contentsname}{Índice}
 \tableofcontents                     % índice general automático
 \listoffigures                       % índice de figuras (usa \caption)
-\listoftables                        % índice de tablas
 
 % ---- Cuerpo: numeración normal (1, 2, 3...) ----
 \cleardoublepage
@@ -59,5 +57,7 @@
 % ---- Apéndices ----
 % \appendix hace que los capítulos siguientes se numeren A, B, C...
 \appendix
+
+\input{capitulos/01_introduccion}
 
 \end{document}
