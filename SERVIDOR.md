@@ -185,6 +185,12 @@ queda lista para la cadena de custodia.
 - `/redactar?u` — formulario de envío con campo de adjunto.
 - `/enviar` (POST) — entrega por la **misma ruta interna** que el SMTP
   (`buzon.entregar`), validando destinos igual (anti-relay).
+- `/fuente?u&id` — muestra el `.eml` completo (cabeceras + cuerpo) como
+  texto plano: permite inspeccionar `Received`, `Message-ID`, MIME, etc.
+  sin parsear el mensaje (útil para la auditoría forense).
+- Toda entrega por webmail añade ahora una cabecera `Received` con la IP
+  del cliente HTTP, igual que el SMTP, de modo que el `.eml` queda
+  completo y auditable sea cual sea la vía de entrada.
 
 Decisiones de laboratorio: **no hay autenticación** (decisión acordada); no
 exponer el puerto 8080 fuera de la red NAT de VirtualBox.
@@ -197,7 +203,7 @@ Cada mensaje entregado — por **SMTP o por el webmail** — añade **una única
 línea** a `logs/envios.log`:
 
 ```
-2026-11-05T10:00:00 | de: pepe@empresa.local | para: ana@empresa.local, luis@empresa.local | asunto: Examen final | adjuntos: Confidencial.pdf (123 KB), notas.txt (4 KB)
+2026-11-05T10:00:00 | de: pepe@empresa.local | para: ana@empresa.local, luis@empresa.local | asunto: Examen final | origen: 192.168.255.5 | adjuntos: Confidencial.pdf (123 KB), notas.txt (4 KB)
 ```
 
 - Timestamp ISO 8601 en hora local (segundos).

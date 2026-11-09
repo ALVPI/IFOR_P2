@@ -140,7 +140,8 @@ class Buzones:
     # Entrega
     # ------------------------------------------------------------------ #
 
-    def entregar(self, destinos: List[str], data: bytes) -> str:
+    def entregar(self, destinos: List[str], data: bytes,
+                 origen: Optional[str] = None) -> str:
         """Guarda ``data`` en el buzón de cada destino local.
 
         Devuelve el identificador de cola ( tambien usado como nombre de
@@ -177,7 +178,7 @@ class Buzones:
         # escritura ya es a prueba de fallos (nunca lanza), pero el try
         # deja clara la intencion: el envio no depende del log.
         try:
-            registrar_envio(self.config, destinos, data)
+            registrar_envio(self.config, destinos, data, origen=origen)
         except Exception:  # noqa: BLE001
             log.exception("no pude registrar en el log de envios: %s", cola_id)
         return cola_id

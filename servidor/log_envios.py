@@ -50,7 +50,7 @@ from email import policy
 from email.message import EmailMessage
 from email.parser import BytesParser
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List, Optional, Tuple
 
 from config import Config
 from correo_api import nombre_seguro
@@ -148,7 +148,7 @@ def _carpeta_del_mensaje(config: Config, data: bytes) -> Path:
 
 def _copiar_adjuntos(config: Config, destinos: List[str], remitente: str,
                      asunto: str, adjuntos: List[Tuple[str, bytes]],
-                     data: bytes) -> Path:
+                     data: bytes, origen: Optional[str] = None) -> Path:
     """Guarda los adjuntos tal cual se enviaron, mas su ficha ``envio.txt``.
 
     Devuelve la carpeta creada.  Lanza si no se puede escribir: quien
@@ -173,13 +173,15 @@ def _copiar_adjuntos(config: Config, destinos: List[str], remitente: str,
         f"de: {remitente}\n"
         f"para: {', '.join(f'{d}@{config.dominio}' for d in destinos)}\n"
         f"asunto: {asunto_ficha}\n"
+        f"origen: {origen if origen else 'desconocido'}\n"
         f"adjuntos: {', '.join(nombre for nombre, _ in adjuntos)}\n",
         encoding="utf-8",
     )
     return carpeta
 
 
-def registrar_envio(config: Config, destinos: List[str], data: bytes) -> None:
+def registrar_envio(config: Config, destinos: List[str], data: bytes,
+                     origen: Optional[str] = None) -> None:
     """Anade UNA linea por mensaje al log de envios.  NUNCA lanza excepciones.
 
     Llamada desde :meth:`buzon.Buzones.entregar`, punto de entrega comun
@@ -203,12 +205,13 @@ def registrar_envio(config: Config, destinos: List[str], data: bytes) -> None:
             )
             if adjuntos else "ninguno"
         )
+        origen_txt = _sin_separador(origen) if origen else "desconocido"
         timestamp = datetime.now().isoformat(timespec="seconds")
         linea = (
             f"{timestamp}{SEPARADOR}de: {_sin_separador(remitente)}"
             f"{SEPARADOR}para: {para}{SEPARADOR}asunto: "
-            f"{_sin_separador(asunto)}{SEPARADOR}adjuntos: "
-            f"{_sin_separador(texto_adjuntos)}\n"
+            f"{_sin_separador(asunto)}{SEPARADOR}origen: {origen_txt}"
+            f"{SEPARADOR}adjuntos: {_sin_separador(texto_adjuntos)}\n"
         )
 
         with _lock:
@@ -221,7 +224,7 @@ def registrar_envio(config: Config, destinos: List[str], data: bytes) -> None:
             if adjuntos and getattr(config, "copia_adjuntos", None) is not None:
                 try:
                     _copiar_adjuntos(config, destinos, remitente, asunto,
-                                     adjuntos, data)
+                                     adjuntos, data, origen=origen)
                 except Exception:  # noqa: BLE001
                     log.exception("no pude guardar la copia de adjuntos en %s",
                                   getattr(config, "copia_adjuntos", "?"))

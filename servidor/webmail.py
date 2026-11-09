@@ -33,6 +33,7 @@ import logging
 import threading
 from email import policy
 from email.parser import BytesParser
+from email.utils import formatdate
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from string import Template
@@ -153,6 +154,8 @@ class ManejadorWeb(BaseHTTPRequestHandler):
             self._vista_adjunto(consulta)
         elif url.path == "/redactar":
             self._vista_redactar(consulta)
+        elif url.path == "/fuente":
+            self._vista_fuente(consulta)
         else:
             self._pagina("No encontrado", "<p>Esa ruta no existe.</p>", 404)
 
@@ -247,6 +250,7 @@ class ManejadorWeb(BaseHTTPRequestHandler):
         plantilla = self.server.plantillas["mensaje.html"]
         self._responder(200, plantilla.substitute(
             usuario=_esc(usuario),
+            msg_id=_esc(msg_id),
             asunto=_esc(asunto),
             de=_esc(str(msg.get("From", ""))),
             para=_esc(str(msg.get("To", ""))),
@@ -254,6 +258,31 @@ class ManejadorWeb(BaseHTTPRequestHandler):
             adjuntos=html_adj,
             cuerpo=_esc(cuerpo),
         ).encode("utf-8"))
+
+    def _vista_fuente(self, consulta: Dict[str, str]) -> None:
+        """Muestra el .eml completo (cabeceras + cuerpo) como texto plano.
+
+        Util para la auditoria forense: permite inspeccionar las cabeceras
+        Received, Message-ID, MIME, etc. sin parsear el mensaje.
+        """
+        usuario = self._usuario(consulta)
+        if usuario is None:
+            self._pagina("No autorizado", "<p>Buzón no valido.</p>", 403)
+            return
+        msg_id = consulta.get("id", "")
+        data = self.server.buzones.leer_mensaje(usuario, msg_id)
+        if data is None:
+            self._pagina("Mensaje no encontrado",
+                         "<p>Ese mensaje no existe en tu buzón.</p>", 404)
+            return
+        self._responder(
+            200, data,
+            tipo="text/plain; charset=utf-8",
+            cabeceras={
+                "Content-Disposition":
+                    f'inline; filename="{msg_id}.eml"',
+            },
+        )
 
     def _vista_adjunto(self, consulta: Dict[str, str]) -> None:
         usuario = self._usuario(consulta)
@@ -428,7 +457,14 @@ class ManejadorWeb(BaseHTTPRequestHandler):
         try:
             data = construir_mensaje(dir_de, dir_para, asunto, cuerpo_txt,
                                      adjuntos)
-            cola_id = buzones.entregar(locales, data)
+            ip_cliente = self.client_address[0] if self.client_address else "desconocido"
+            cabecera = (
+                "Received: from webmail (" + ip_cliente + ")\r\n"
+                "\tby " + config.dominio + " (servidor IFOR) with HTTP;\r\n"
+                "\t" + formatdate(localtime=True) + "\r\n"
+            ).encode("utf-8")
+            cola_id = buzones.entregar(locales, cabecera + data,
+                                       origen=ip_cliente)
         except Exception:  # noqa: BLE001 -- disco u otro fallo interno
             log.exception("error entregando mensaje del webmail")
             self._pagina("Error interno",

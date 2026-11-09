@@ -289,7 +289,8 @@ class SesionSMTP:
         ).encode("utf-8")
 
         try:
-            cola_id = self.buzones.entregar(self.rcpt_a, cabecera + datos)
+            cola_id = self.buzones.entregar(
+                self.rcpt_a, cabecera + datos, origen=self.addr[0])
         except Exception as exc:  # noqa: BLE001 -- fallo de disco u otro
             log.exception("error entregando mensaje de %s", self.addr)
             self._responder(f"451 4.3.0 Error interno: {exc}")

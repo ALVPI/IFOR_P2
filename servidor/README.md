@@ -124,7 +124,7 @@ el punto de entrega común, `buzon.entregar`) — añade **una única línea de
 texto plano** a `logs/envios.log`, dentro del directorio `servidor/`:
 
 ```text
-2026-11-05T10:00:00 | de: pepe@empresa.local | para: ana@empresa.local, luis@empresa.local | asunto: Examen final | adjuntos: Confidencial.pdf (123 KB), notas.txt (4 KB)
+2026-11-05T10:00:00 | de: pepe@empresa.local | para: ana@empresa.local, luis@empresa.local | asunto: Examen final | origen: 192.168.255.5 | adjuntos: Confidencial.pdf (123 KB), notas.txt (4 KB)
 ```
 
 - **Timestamp** ISO 8601 en hora local (segundos de precisión).
