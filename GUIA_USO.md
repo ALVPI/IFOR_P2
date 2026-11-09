@@ -171,13 +171,15 @@ Casi siempre es una de estas tres cosas:
 
 ## 7. Qué guardar como evidencia
 
-Cuando llegue un correo, el servidor deja **tres** cosas en la VM del
+Cuando llegue un correo, el servidor deja **cuatro** cosas en la VM del
 servidor, dentro de la carpeta `servidor/`:
 
 ```text
 buzones/ana/mensajes/20261102-... .eml     ← el correo entero (con quién, cuándo)
-buzones/ana/adjuntos/20261102-.../Confidencial.pdf   ← el archivo adjunto
+buzones/ana/adjuntos/20261102-.../Confidencial.pdf   ← el adjunto en la bandeja
 logs/envios.log                            ← quién envió qué y con qué adjuntos
+adjuntos_enviados/2026-11-09_.../          ← copia física de lo enviado
+    envio.txt  +  Confidencial.pdf
 ```
 
 `logs/envios.log` es el **registro de envíos**: una línea por correo
@@ -188,12 +190,17 @@ lista de adjuntos con su tamaño, por ejemplo:
 2026-11-05T12:22:09 | de: pepe@empresa.local | para: ana@empresa.local | asunto: Informe confidencial ¦ revision final | adjuntos: Confidencial.pdf (1 KB)
 ```
 
-Solo se añade al final (nunca se borra ni se reescribe) y se puede cambiar
-de sitio en `config.ini`, sección `[log] directorio`.
+`adjuntos_enviados/` guarda además **el fichero tal cual se envió**, en
+una carpeta por mensaje con su `envio.txt` (fecha, de, para, asunto):
+sirve para enseñar el PDF enviado sin tener que abrir el `.eml`.
+
+Solo se añade al final (nunca se borra ni se reescribe) y ambas rutas se
+pueden cambiar en `config.ini`, sección `[log]` (`directorio` para el log
+y `copia_adjuntos` para las copias; vacío desactiva las copias).
 
 Eso es lo que se usa para la cadena de custodia. **No borres las carpetas
-`buzones/` ni `logs/`** y ten en cuenta que esos datos **no se suben a
-git** (son datos de cada VM).
+`buzones/`, `logs/` ni `adjuntos_enviados/`** y ten en cuenta que esos
+datos **no se suben a git** (son datos de cada VM).
 
 ---
 

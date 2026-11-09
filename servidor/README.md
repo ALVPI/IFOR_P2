@@ -153,6 +153,40 @@ directorio = logs
 
 `logs/` son datos runtime y están en `.gitignore` (no se versionan).
 
+### Copia física de los adjuntos
+
+Además de la línea de texto, cada mensaje **con adjuntos** guarda una
+**copia del fichero tal cual se envió** en `adjuntos_enviados/`, una
+carpeta por mensaje:
+
+```text
+adjuntos_enviados/
+  2026-11-09_19-54-02_a1b2c3d4/
+    envio.txt          ← ficha: fecha, de, para, asunto y adjuntos
+    Confidencial.pdf   ← byte a byte el que se envió
+    notas.txt
+```
+
+- **Una carpeta por mensaje**, nombrada `fecha_hash8` (sha1 del mensaje):
+  la fecha la hace legible y el hash sirve para cruzarla con el `.eml`
+  original. Dos mensajes idénticos en el mismo segundo no comparten
+  carpeta (se añade un sufijo).
+- **`envio.txt`** repite los datos de la línea del log para que la carpeta
+  se pueda auditar por sí sola.
+- Nombres duplicados dentro del mismo mensaje no se pisan
+  (`informe.pdf`, `informe_1.pdf`); los nombres van ya saneados con
+  `nombre_seguro`, así que no pueden salirse de la carpeta.
+- **Activación y ruta** en `config.ini`; valor vacío = desactivado:
+
+  ```ini
+  [log]
+  copia_adjuntos = adjuntos_enviados
+  ```
+
+- Igual que el log: si no se puede escribir (disco lleno, permisos) se
+  anota en el logger `correo.log_envios` y **el envío sigue funcionando**.
+- `adjuntos_enviados/` es dato runtime: está en `.gitignore`.
+
 ## Respuestas del servidor (lo que verás en las pruebas)
 
 | Código | Significado |
@@ -173,8 +207,9 @@ cd servidor
 python3 -m unittest discover -v        # o: py -3 -m unittest discover -v
 ```
 
-84 pruebas: protocolo, seguridad (anti-open-relay, límites), MIME/adjuntos,
-webmail (XSS, 413, ids seguros), log de envíos y arranque combinado `todo`.
+98 pruebas: protocolo, seguridad (anti-open-relay, límites), MIME/adjuntos,
+webmail (XSS, 413, ids seguros), log de envíos y copia de adjuntos,
+arranque combinado `todo`.
 Sin red externa ni
 privilegios: todo se monta en 127.0.0.1 con puertos efímeros y buzones
 temporales.
@@ -189,14 +224,15 @@ servidor/
 ├── smtp_sesion.py  la máquina de estados SMTP (el protocolo, desde cero)
 ├── correo_api.py   direcciones, construcción MIME, extracción de adjuntos
 ├── buzon.py        buzones .eml + adjuntos + usuarios.json (+ lock)
-├── log_envios.py   auditoría: una línea por envío en logs/envios.log
+├── log_envios.py   auditoría: línea por envío + copia de adjuntos
 ├── webmail.py      interfaz web con http.server (solo stdlib)
 ├── plantillas/     HTML del webmail (string.Template)
 ├── config.ini      configuración editable
 ├── logs/           log de envíos (runtime, no versionado)
+├── adjuntos_enviados/  copia física de adjuntos (runtime, no versionado)
 ├── arrancar.bat    doble clic en la VM Windows
 ├── crear_usuario.bat
-└── tests/          unittest (84 pruebas)
+└── tests/          unittest (98 pruebas)
 ```
 
 ## Ajustes (`config.ini`)
@@ -209,10 +245,11 @@ servidor/
            max_tamano_mb = 25
            timeout_seg = 120
 [log]      directorio = logs            # logs/envios.log (auditoría)
+           copia_adjuntos = adjuntos_enviados  # copia de adjuntos (vacío = off)
 ```
 
-Los buzones (`buzones/`), `usuarios.json` y `logs/` son **datos runtime**:
-están en `.gitignore` y no se versionan.
+Los buzones (`buzones/`), `usuarios.json`, `logs/` y `adjuntos_enviados/`
+son **datos runtime**: están en `.gitignore` y no se versionan.
 
 ## Solución de problemas
 

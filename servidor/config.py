@@ -28,6 +28,9 @@ class Config:
     ruta_base: Path = DIR_BASE / "buzones"
     ruta_usuarios: Path = DIR_BASE / "usuarios.json"
     ruta_logs: Path = DIR_BASE / "logs"    # log de envios (auditoria)
+    copia_adjuntos: Optional[Path] = (
+        DIR_BASE / "adjuntos_enviados"     # copia FISICA de los adjuntos
+    )                                      # enviados (None = desactivado)
     max_conexiones: int = 20       # conexiones SMTP simultaneas permitidas
     max_tamano_mb: int = 25        # limite de tamano del mensaje en DATA
     timeout_seg: int = 120         # inactividad maxima por conexion
@@ -67,6 +70,15 @@ def cargar_config(ruta: Optional[Path] = None) -> Config:
         dirlog = Path(lector.get("log", "directorio", fallback=""))
         if str(dirlog):
             cfg.ruta_logs = dirlog if dirlog.is_absolute() else DIR_BASE / dirlog
+        # Copia de adjuntos: valor vacio -> desactivado (None).
+        if lector.has_option("log", "copia_adjuntos"):
+            crudo = lector.get("log", "copia_adjuntos").strip()
+            if not crudo:
+                cfg.copia_adjuntos = None
+            else:
+                ruta_copia = Path(crudo)
+                cfg.copia_adjuntos = (ruta_copia if ruta_copia.is_absolute()
+                                      else DIR_BASE / ruta_copia)
     if lector.has_section("limites"):
         cfg.max_conexiones = lector.getint(
             "limites", "max_conexiones", fallback=cfg.max_conexiones

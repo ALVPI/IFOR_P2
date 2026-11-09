@@ -39,7 +39,7 @@ pdflatex -interaction=nonstopmode main
 - Verificación obligatoria tras cualquier cambio:
 
   ```sh
-  cd servidor && python3 -m unittest discover -v   # 84 pruebas
+  cd servidor && python3 -m unittest discover -v   # 98 pruebas
   ```
 
 - CLI: `python3 servidor.py todo` (SMTP + webmail) · `usuario alta|baja|listar` ·
