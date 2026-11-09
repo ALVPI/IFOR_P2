@@ -39,6 +39,11 @@ correo entre dos buzones del grupo y conservar las evidencias.
    Webmail en  http://0.0.0.0:8080/
    ```
 
+   A los ~3 segundos el navegador se abre solo con el webmail
+   (`http://localhost:8080/`; en el mismo equipo usa `localhost`, no
+   `0.0.0.0`). Para dejar de que se abra solo, borra la línea
+   `start ...` de `arrancar.bat`.
+
 4. Abre el firewall para las VMs (misma red NAT de VirtualBox que ya usáis
    para SMB), **como Administrador**:
 

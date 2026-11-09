@@ -57,9 +57,17 @@ Webmail en  http://0.0.0.0:8080/
 **Déjala abierta esa ventana** mientras uséis el correo (para pararlo:
 Ctrl+C).
 
+A los ~3 segundos el navegador se abre **solo** con el webmail
+(`http://localhost:8080/`). Si sale una página de "no se puede conectar",
+es que el servidor no ha arrancado (mira el aviso de abajo sobre el
+puerto 25) o el navegador ha ido demasiado pronto: ábrelo tú a mano con
+la misma dirección.
+
 > ⚠️ El puerto 25 pide **ejecutar la consola como Administrador**
 > (clic derecho → "Ejecutar como administrador"). Si no tienes permisos,
 > arranca con puerto alternativo: `py -3 servidor.py todo --puerto 2525`.
+> Ojo: en ese caso el SMTP está en el 2525, pero **el webmail sigue en el
+> 8080**, que es por donde se manda y se lee desde el navegador.
 
 ---
 
@@ -97,12 +105,56 @@ Ctrl+C).
 
 ## 6. Probar entre dos VMs (el caso real del Escenario 1)
 
-1. En la VM 1: arranca el servidor y crea los buzones `pepe` y `ana`.
-2. En la VM 2: abre el navegador → `http://IP-del-servidor:8080/` →
-   redacta como `pepe` y envía el PDF a `ana`.
-3. En la VM 1 (o en cualquier otra): bandeja de `ana` → descargar el PDF.
+El caso completo: pasar el **`Confidencial.pdf`** de `pepe` a `ana`
+entre dos máquinas. Llama **VM A** a la del servidor y **VM B** a la otra.
 
-Si la VM 2 no conecta, casi siempre es una de estas tres cosas:
+### Paso 1 — En la VM A (la del servidor)
+
+1. Crea los dos buzones (una línea por buzón, desde la carpeta
+   `servidor/`; también vale doble clic en `crear_usuario.bat`):
+
+   ```bat
+   py -3 servidor.py usuario alta pepe
+   py -3 servidor.py usuario alta ana
+   ```
+
+   > Si el servidor ya está arrancado también puedes crearlos: él los
+   > recoge solo, no hace falta reiniciar.
+
+2. Doble clic en **`arrancar.bat`** (como Administrador). A los ~3 s se
+   abre solo el navegador con el webmail. **Deja esa ventana abierta**.
+3. Apunta la IP de la VM A: consola → `ipconfig` → p. ej. `192.168.255.X`.
+
+### Paso 2 — En la VM B (la que envía)
+
+1. Abre el navegador y ve a la IP del paso 1:
+
+   ```text
+   http://192.168.255.X:8080/
+   ```
+
+2. Haz clic en **`pepe@empresa.local`** y pulsa **«Redactar mensaje»**.
+3. Rellena:
+   - **Para:** `ana@empresa.local`
+   - **Asunto:** `Confidencial Escenario 1`
+   - **Cuerpo:** un mensaje cualquiera.
+   - **Adjunto:** «Examinar…» → selecciona el **`Confidencial.pdf`**.
+4. Pulsa **«Enviar»**. Debe salir *«Mensaje entregado»*.
+
+### Paso 3 — Comprobarlo (en la VM A, o en la que quieras)
+
+1. En `http://IP-del-servidor:8080/` elige **`ana@empresa.local`** →
+   **«abrir»** el mensaje.
+2. Verás el PDF listado: haz clic y **se descarga**. Compáralo con el
+   original (mismo tamaño y mismo contenido).
+3. En la VM A, abre con el Bloc de notas
+   `servidor\logs\envios.log`: hay **una línea por correo enviado** con
+   fecha, quién lo envió, para quién, el asunto y el nombre del PDF
+   adjunto. Eso es la evidencia del envío.
+
+### Si la VM B no conecta
+
+Casi siempre es una de estas tres cosas:
 
 - **Firewall**: en la VM del servidor, consola como Administrador:
 
@@ -119,17 +171,29 @@ Si la VM 2 no conecta, casi siempre es una de estas tres cosas:
 
 ## 7. Qué guardar como evidencia
 
-Cuando llegue un correo, el servidor deja dos ficheros en la VM del
+Cuando llegue un correo, el servidor deja **tres** cosas en la VM del
 servidor, dentro de la carpeta `servidor/`:
 
 ```text
 buzones/ana/mensajes/20261102-... .eml     ← el correo entero (con quién, cuándo)
 buzones/ana/adjuntos/20261102-.../Confidencial.pdf   ← el archivo adjunto
+logs/envios.log                            ← quién envió qué y con qué adjuntos
 ```
 
-Eso es lo que se usa para la cadena de custodia. **No borres la carpeta
-`buzones/`** y ten en cuenta que esas carpetas **no se suben a git** (son
-datos de cada VM).
+`logs/envios.log` es el **registro de envíos**: una línea por correo
+(venga del navegador o del SMTP), con remitente, destinatario, asunto y
+lista de adjuntos con su tamaño, por ejemplo:
+
+```text
+2026-11-05T12:22:09 | de: pepe@empresa.local | para: ana@empresa.local | asunto: Informe confidencial ¦ revision final | adjuntos: Confidencial.pdf (1 KB)
+```
+
+Solo se añade al final (nunca se borra ni se reescribe) y se puede cambiar
+de sitio en `config.ini`, sección `[log] directorio`.
+
+Eso es lo que se usa para la cadena de custodia. **No borres las carpetas
+`buzones/` ni `logs/`** y ten en cuenta que esos datos **no se suben a
+git** (son datos de cada VM).
 
 ---
 
@@ -158,7 +222,9 @@ lo necesita, se puede añadir después.
 
 **¿Cómo miro quién ha enviado qué?**
 Cada `.eml` lleva una cabecera `Received` con la IP de origen, el momento
-y por dónde pasó. Ábrelo con cualquier editor de texto.
+y por dónde pasó. Ábrelo con cualquier editor de texto. Y en
+`servidor\logs\envios.log` tienes el resumen de todos los envíos en una
+sola línea cada uno (remitente, destinatario, asunto y adjuntos).
 
 **¿Y si borro un buzón?**
 `py -3 servidor.py usuario baja pepe` lo quita de la lista; los ficheros
