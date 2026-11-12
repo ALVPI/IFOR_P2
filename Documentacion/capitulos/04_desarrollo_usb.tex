@@ -1,1 +1,151 @@
-\chapter{Servidor de correo para el Escenario 3 extracción por usb} 
+%% =====================================================================
+% Capítulo: Escenario 3 -- fuga de información mediante dispositivo USB
+% Esqueleto: los apartados marcados con TODO se rellenan al ejecutar
+% cada paso en el laboratorio (hashes, fechas, capturas y resultados).
+%
+% Solo usa lo que define styles/mistilo.sty:
+%   - listados:  style=terminal
+%   - avisos:    entorno aviso
+%   - tablas:    booktabs + caption
+% =====================================================================
+
+% Código en línea (admite _, $, ^, {}, <, > ... sin escapar). Se vuelve a
+% declarar por si este capítulo se compila solo con \includeonly.
+\providecommand{\cod}[1]{\texttt{\detokenize{#1}}}
+
+\chapter{Escenario 3: fuga de información mediante dispositivo USB}
+\label{cap:usb}
+
+En este capítulo se documenta el tercero de los escenarios del enunciado: la
+fuga del fichero \cod{Confidencial.pdf} del \textit{Windows Server} 2008 hacia un
+dispositivo USB. En este caso el dispositivo está en nuestro poder, pero el
+fichero ha sido \textbf{borrado}, de modo que el trabajo consiste en adquirir
+una imagen forense del soporte sin modificarlo, recuperar el fichero y
+mantener la cadena de custodia.
+
+% ---------------------------------------------------------------------
+\section{Planteamiento y alcance}
+% TODO: resumir en 2-3 párrafos qué se pide y qué queda fuera.
+
+\begin{itemize}
+  \item \textbf{Origen:} \cod{Confidencial.pdf} en el \textit{Windows Server}
+        2008 configurado en la entrega anterior.
+  \item \textbf{Soporte a analizar:} un dispositivo USB que se nos entrega
+        con el fichero ya borrado.
+  \item \textbf{Entregable:} imagen forense del USB, recuperación del fichero,
+        cadena de custodia y conclusiones.
+  \item \textbf{Formato de la imagen:} el soporte USB se adquiere en formato
+        \textbf{RAW} (copia bit a bit, sin comprimir); el resto de imágenes
+        del trabajo sí pueden ir comprimidas.
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\section{Preparación del escenario}
+% TODO: describir cómo se simula la fuga. Todo con fecha y hora.
+
+\subsection{Entorno de trabajo}
+Para el desarrollo de este escenario se ha utilizado la máquina virtual
+\cod{IFOR-WS-2008}, con \textit{Windows Server} 2008, importada en VirtualBox a
+partir de la imagen OVA común del grupo. La máquina está conectada a la red
+NAT \cod{RedNatGSI} (192.168.255.0/24) y obtiene por DHCP la dirección
+192.168.255.10. Para permitir el acceso a dispositivos USB desde la máquina
+virtual se ha instalado el \textit{Extension Pack} de VirtualBox, versión
+7.2.18.
+
+El fichero original, \cod{Confidencial.pdf}, se encuentra en
+\cod{C:\Empresa\ConfidencialInfo}, tiene un tamaño de 103 bytes y fue creado el
+28/10/2026 a las 19:10:00 (última modificación a las 19:11:08). Su contenido es
+un texto breve en el que el gerente de la empresa indica que se trata de
+información confidencial. Antes de iniciar la simulación se calculó su huella
+SHA-256, que se utilizará como referencia en la verificación final:
+
+\begin{lstlisting}[style=terminal,breaklines=true]
+SHA-256 (Confidencial.pdf): f3ff86db9d526b85bab2afaf03722c321392f8b8dcae558d583704d713ef3fa7
+\end{lstlisting}
+
+\subsection{Dispositivo USB utilizado}
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}p{0.32\textwidth}p{0.64\textwidth}@{}}
+\toprule
+\textbf{Característica} & \textbf{Valor} \\
+\midrule
+Marca y modelo & General UDisk \\
+Capacidad & 3,75 GB \\
+Número de serie & \cod{2504021555480511776507} \\
+Sistema de ficheros & NTFS \\
+\bottomrule
+\end{tabular}
+\caption{Ficha del dispositivo USB.}
+\label{tab:usb-ficha}
+\end{table}
+
+Para la simulación se ha utilizado un pendrive vacío, que originalmente estaba
+formateado en FAT32 con tabla de particiones MBR (figura~\ref{fig:usb-inicial}).
+Desde la máquina virtual se le dio formato rápido en NTFS mediante
+\cod{format E: /FS:NTFS /Q} (figura~\ref{fig:usb-formato}), quedando una única
+unidad de 3,75 GB sin contenido (figura~\ref{fig:usb-final}).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\textwidth]{Recursos/usb_estado_inicial.png}
+\caption{Estado inicial del dispositivo: unidad \cod{E:} extraíble en FAT32.}
+\label{fig:usb-inicial}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{Recursos/usb_formato_ntfs.png}
+\caption{Formato rápido de la unidad \cod{E:} en NTFS.}
+\label{fig:usb-formato}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\textwidth]{Recursos/usb_estado_final.png}
+\caption{Estado final del dispositivo: unidad \cod{E:} en NTFS.}
+\label{fig:usb-final}
+\end{figure}
+
+\subsection{Simulación de la fuga}
+La fuga se simuló desde la propia máquina virtual el jueves 12 de noviembre de
+2026 (hora de la máquina virtual), siguiendo estos pasos:
+
+\begin{enumerate}
+  \item A las 16:19:56 se copió \cod{Confidencial.pdf} desde
+        \cod{C:\Empresa\ConfidencialInfo} a la unidad \cod{E:} del dispositivo
+        USB (figura~\ref{fig:usb-copia}).
+  \item Se comprobó que la copia era idéntica al original: su huella SHA-256
+        coincide con la calculada previamente
+        (figura~\ref{fig:usb-hash-copia}).
+  \item A las 16:21:25 se borró el fichero del USB con \cod{Remove-Item}. Al
+        tratarse de un dispositivo extraíble, que no dispone de papelera de
+        reciclaje, el borrado es directo (figura~\ref{fig:usb-borrado}).
+  \item A las 16:22:43 se expulsó el dispositivo mediante la opción <<Quitar
+        hardware de forma segura>> y se desconectó de la máquina virtual.
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{Recursos/usb_copia.png}
+\caption{Copia de \cod{Confidencial.pdf} al USB (16:19:56).}
+\label{fig:usb-copia}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{Recursos/usb_hash_copia.png}
+\caption{Verificación de la huella SHA-256 de la copia en el USB.}
+\label{fig:usb-hash-copia}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{Recursos/usb_borrado.png}
+\caption{Borrado del fichero del USB (16:21:25).}
+\label{fig:usb-borrado}
+\end{figure}
+
