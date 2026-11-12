@@ -1,1 +1,118 @@
 \chapter{Servidor de correo para el Escenario 1 (fuga por correo)}
+
+
+\label{cap:montaje_escenario}
+
+En este capítulo se detalla la arquitectura de red desplegada en el entorno controlado de laboratorio para reproducir el incidente de seguridad, así como el procedimiento técnico seguido para simular tanto la sustracción del documento confidencial desde el servidor corporativo hacia el equipo cliente como su posterior ocultación y entrega mediante técnicas de esteganografía digital y buzones muertos (\textit{dead drops}).
+
+\section{Arquitectura de Red y Sistemas Implicados}
+
+Para llevar a cabo la simulación de forma aislada y controlada, se han desplegado dos máquinas virtuales interconectadas dentro del mismo segmento de red local (\texttt{192.168.255.0/24}), con puerta de enlace predeterminada en la dirección \texttt{192.168.255.1}:
+
+\begin{itemize}
+    \item \textbf{Servidor Corporativo (Windows Server - WS):} Actúa como repositorio central de información sensible. Cuenta con la dirección IPv4 \texttt{192.168.255.6}, tal y como se verifica en la configuración de su adaptador de red (Figura~\ref{fig:ip_ws}).
+    \item \textbf{Equipo Cliente / Atacante (Windows 11 - W11):} Representa la estación de trabajo desde la cual se realiza la extracción no autorizada y el posterior procesamiento del archivo. Tiene asignada la dirección IPv4 \texttt{192.168.255.5} (Figura~\ref{fig:ip_w11}).
+\end{itemize}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Recursos/ip_WS.png}
+    \caption{Configuración de red del servidor Windows Server (\texttt{192.168.255.6}).}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Recursos/ip_pc_ladron.png}
+    \caption{Configuración de red del equipo cliente Windows 11 (\texttt{192.168.255.5}).}
+\end{figure}
+
+\section{Extracción del Documento desde Windows Server hacia Windows 11}
+
+
+\subsection{Configuración del acceso a los recursos compartidos}
+
+Para habilitar y controlar el acceso a un directorio a través de la red local en Windows Server, el sistema aplica un modelo de seguridad basado en la combinación de permisos de red (SMB) y permisos locales del sistema de archivos (NTFS). El proceso de configuración consta de las siguientes fases:
+
+\begin{enumerate}
+    \item \textbf{Habilitación del recurso compartido:} Tras acceder a las \textit{Propiedades} del directorio local (\texttt{C:\textbackslash ConfidencialInfo}), dentro de la pestaña \textit{Compartir} y la opción \textit{Uso compartido avanzado}, se activa la casilla \textit{Compartir esta carpeta} y se define el identificador visible en la red (\texttt{ConfidencialInfo}).
+    
+    \item \textbf{Asignación de permisos de red (SMB):} Desde el panel de \textit{Permisos} del recurso compartido se determinan los usuarios o grupos autorizados a conectarse de forma remota, estableciendo el nivel de acceso:
+    \begin{itemize}
+        \item \textbf{Lectura:} Permite visualizar y copiar los archivos contenidos en el directorio, pero impide su modificación o eliminación en origen.
+        \item \textbf{Cambiar / Control total:} Autoriza la escritura, edición y borrado de ficheros dentro del recurso remoto.
+    \end{itemize}
+    
+    \item \textbf{Validación de permisos locales (NTFS):} Dado que el acceso efectivo a un recurso en Windows evalúa siempre la intersección más restrictiva entre los permisos de red y los permisos locales, se verifica en la pestaña \textit{Seguridad} que el usuario autenticado posea los privilegios NTFS correspondientes sobre la carpeta física.
+    
+    \item \textbf{Comprobación y auditoría mediante consola:} Finalmente, se verifica que el servicio ha publicado correctamente el directorio ejecutando el comando \texttt{net share}, comprobando que el nombre del recurso queda vinculado a su ruta física local y disponible para las peticiones entrantes en el segmento de red.
+\end{enumerate}
+
+El vector inicial del supuesto práctico parte de la exposición de un recurso compartido en red a través del protocolo SMB (\textit{Server Message Block}) en el servidor Windows Server. Mediante el comando \texttt{net share}, se constata la publicación del recurso denominado \texttt{ConfidencialInfo}, mapeado localmente al directorio \texttt{C:\textbackslash ConfidencialInfo} (Figura~\ref{fig:carpeta_compartida}).
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Recursos/carpeta_compartida_WS.png}
+    \caption{Listado de recursos compartidos en Windows Server mostrando la carpeta \texttt{ConfidencialInfo}.}
+\end{figure}
+
+Dentro de dicho directorio compartido se encuentra alojado el archivo objetivo: \texttt{Confidencial.pdf}. Con el fin de garantizar la integridad forense de la evidencia y demostrar que el documento exfiltrado es idéntico bit a bit al original almacenado en el servidor, se procedió a calcular su huella digital (\textit{hash}) criptográfica mediante el algoritmo SHA-256 en el servidor de origen utilizando la utilidad \texttt{certutil} (Figura~\ref{fig:hash_ws}).
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Recursos/confidencial_en_WS_hash.png}
+    \caption{Cálculo del hash SHA-256 del documento \texttt{Confidencial.pdf} en Windows Server.}
+\end{figure}
+
+\subsection{Uso del comando \texttt{explorer} para rutas de red UNC}
+
+En entornos Windows, el comando \texttt{explorer} permite invocar directamente la interfaz gráfica del Explorador de archivos desde la consola de comandos (CMD o PowerShell). En lugar de abrir manualmente una ventana y teclear la dirección en la barra de navegación, este comando permite lanzar de forma inmediata una sesión sobre una ruta de red UNC (\textit{Universal Naming Convention}).
+
+La sintaxis general empleada es la siguiente:
+
+\begin{verbatim}
+explorer \\<Direccion_IP_o_Host>\<Nombre_Del_Recurso>
+\end{verbatim}
+
+En el contexto del laboratorio desplegado, para acceder desde el equipo cliente Windows 11 al recurso expuesto por el servidor Windows Server (\texttt{192.168.255.6}), se ejecuta la siguiente instrucción:
+
+\begin{verbatim}
+explorer \\192.168.255.6\ConfidencialInfo
+\end{verbatim}
+
+El empleo de este método agiliza la exploración visual del directorio remoto desde la terminal y permite automatizar la apertura de recursos en \textit{scripts} sin necesidad de asignar previamente una letra de unidad lógica mediante \texttt{net use}.
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Recursos/confidencial_en_Windows11_hash.png}
+    \caption{Verificación de integridad mediante \texttt{Get-FileHash} en Windows 11 tras la extracción.}
+\end{figure}
+
+\section{Simulación del Traspaso en Windows 11 mediante Servicio de Correo Propio}
+
+Una vez que el documento \texttt{Confidencial.pdf} reside en el equipo cliente con Windows 11 (\texttt{C:\textbackslash Evidencias\textbackslash Confidencial.pdf}), el siguiente paso del escenario consiste en simular la exfiltración de la información hacia un destinatario externo dentro de un entorno controlado. Para evitar depender de infraestructuras en la nube o servicios de terceros, se ha desplegado un \textbf{servicio de correo electrónico propio}. El flujo operativo ejecutado para materializar esta transferencia se estructuró en las siguientes fases:
+
+\begin{enumerate}
+    \item \textbf{Despliegue de la infraestructura de mensajería local:} Se habilitó un servidor de correo interno encargado de gestionar el enrutamiento y almacenamiento de mensajes dentro de la red local, configurando dos cuentas de usuario diferenciadas (un buzón de origen asociado al empleado o equipo comprometido, y un buzón de destino que actúa como receptor de la información sustraída).
+    
+    \item \textbf{Preparación y envío desde el buzón de origen:} Desde el equipo con Windows 11 se accedió al cliente de correo vinculado al buzón emisor, redactando un mensaje dirigido a la cuenta receptora y adjuntando el fichero \texttt{Confidencial.pdf} previamente extraído del servidor.
+    
+    \item \textbf{Traspaso local y recepción en el buzón de destino:} El servidor de correo propio procesó la petición de envío de manera interna y depositó el mensaje directamente en la bandeja de entrada del segundo buzón. Finalmente, se verificó la recepción correcta del archivo adjunto en el buzón destino, completando la simulación del traspaso sin que el tráfico abandonase el entorno aislado del laboratorio.
+\end{enumerate}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Recursos/correo_registrado.png}
+    \caption{Verificación de integridad mediante \texttt{Get-FileHash} en Windows 11 tras la extracción.}
+\end{figure}
+
+\section{Fase Pericial}
+
+Una vez hemos montado todo el supuesto, el siguiente paso es suponer que el director de la empresa nos proporciona una imagen del disco del atacante interno, y, teniendo en cuenta que hemos montado el entorno completo para la simulación del robo en VirtualBox, podemos utilizar directamente el .vdi (el disco virtual de la maquina) como imagen para haseharla y comenzar la cadena de custodia. Hemos utilizado la misma herramienta nativa de Windows 11 para calcular el hash de la imagen del disco.
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Recursos/imagen_disco_correo.png}
+    \caption{Obtención del hash de la imagen del disco.}
+\end{figure}
