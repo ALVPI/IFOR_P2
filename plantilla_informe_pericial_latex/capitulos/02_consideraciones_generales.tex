@@ -1,4 +1,4 @@
-\section{Consideraciones Generales}
+\section{Consideraciones generales}
 
 \subsection{Sobre los servidores Windows y los registros de eventos.}
 En los sistemas operativos para servidores de la familia Microsoft Windows, y de forma específica en \textbf{Windows Server 2008 R2}, la trazabilidad de la actividad del sistema se gestiona mediante la arquitectura \textit{Windows Event Log}. Dichos registros se almacenan en formato binario estructurado basado en XML con extensión \texttt{.evtx}, ubicados por defecto en el directorio protegido del sistema \texttt{C:\textbackslash Windows\textbackslash System32\textbackslash winevt\textbackslash Logs\textbackslash}. De tal manera que el resgitro de las acciones realizadas sobre el servidor se almacenan en binario y necesitamos un programa concreto para traducirlo a un texto legible por el humano.

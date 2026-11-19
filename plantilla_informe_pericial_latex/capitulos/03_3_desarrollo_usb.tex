@@ -13,7 +13,7 @@
 % declarar por si este capítulo se compila solo con \includeonly.
 \providecommand{\cod}[1]{\texttt{\detokenize{#1}}}
 
-\chapter{Escenario 3: fuga de información mediante dispositivo USB}
+\subsection{Escenario 3: fuga de información mediante dispositivo USB}
 \label{cap:usb}
 
 En este capítulo se documenta el tercero de los escenarios del enunciado: la
@@ -24,7 +24,7 @@ una imagen forense del soporte sin modificarlo, recuperar el fichero y
 mantener la cadena de custodia.
 
 % ---------------------------------------------------------------------
-\section{Planteamiento y alcance}
+\subsection{Planteamiento y alcance}
 % TODO: resumir en 2-3 párrafos qué se pide y qué queda fuera.
 
 \begin{itemize}
@@ -40,10 +40,10 @@ mantener la cadena de custodia.
 \end{itemize}
 
 % ---------------------------------------------------------------------
-\section{Preparación del escenario}
+\subsection{Preparación del escenario}
 % TODO: describir cómo se simula la fuga. Todo con fecha y hora.
 
-\subsection{Entorno de trabajo}
+\subsubsection{Entorno de trabajo}
 Para el desarrollo de este escenario se ha utilizado la máquina virtual
 \cod{IFOR-WS-2008}, con \textit{Windows Server} 2008, importada en VirtualBox a
 partir de la imagen OVA común del grupo. Para permitir el acceso a dispositivos USB desde la máquina
@@ -61,7 +61,7 @@ SHA-256, que se utilizará como referencia en la verificación final:
 SHA-256 (Confidencial.pdf): f3ff86db9d526b85bab2afaf03722c321392f8b8dcae558d583704d713ef3fa7
 \end{lstlisting}
 
-\subsection{Dispositivo USB utilizado}
+\subsubsection{Dispositivo USB utilizado}
 
 \begin{table}[H]
 \centering
@@ -108,7 +108,7 @@ unidad de 3,75 GB sin contenido (figura~\ref{fig:usb-final}).
 \label{fig:usb-final}
 \end{figure}
 
-\subsection{Simulación de la fuga}
+\subsubsection{Simulación de la fuga}
 La fuga se simuló desde la propia máquina virtual el jueves 12 de noviembre de
 2026 (hora de la máquina virtual), siguiendo estos pasos:
 

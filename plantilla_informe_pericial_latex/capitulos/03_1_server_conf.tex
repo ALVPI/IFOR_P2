@@ -15,7 +15,7 @@
 % Código en línea (admite _, $, ^, {}, <, > ... sin escapar)
 \providecommand{\cod}[1]{\texttt{\detokenize{#1}}}
 
-\chapter{Configuración del servidor de correo electrónico para el escenario de fuga de información por correo}
+\subsection{Configuración del servidor de correo electrónico para el escenario de fuga de información por correo}
 \label{cap:servidor}
 
 El objetivo de este capítulo es explicar la creación del sistema de correo preparado para el primero de los escenarios detallados en el enunciado; si bien no entraremos en detalles muy técnicos, en caso de querer profundizar en el código fuente de la aplicación así como la información técnica y una guía de uso e instalación, se puede revisar en el \href{https://github.com/ALVPI/IFOR_P2/tree/main/servidor}{repositorio del grupo H} para esta práctica.
@@ -32,7 +32,7 @@ Nuestro sevidor de correo y por consecuencia su portal web tiene van a realizar 
         cabecera \cod{Received}, adjunto extraído, log de auditoría);
 \end{enumerate}
 % ---------------------------------------------------------------------
-\section{Decisiones técnicas y por qué}
+\subsection{Decisiones técnicas y por qué}
 Una vez tenemos claro cuál es el objetivo a cumplir, hemos tenido que tomar una serie de decisiones sobre el \textit{stack} tecnológico, es decir, protocolos, leguajes, librerias que vamos a emplear siguiendo lo especificado en el RFC correspondiente 
 \begin{table}[H]
 \centering
@@ -69,7 +69,7 @@ Para verificar que el sistema funcionad e manera correcta.\\
 
 
 % ---------------------------------------------------------------------
-\section{Almacenamiento  de Logs y evidencias (cadena de custodia)}
+\subsection{Almacenamiento  de Logs y evidencias (cadena de custodia)}
 Una vez hemos expuesto las decisiones de diseño de nuestro servidor vamos a detaller como funciona el registro de correos, ya que es la parte más importante del sistema para poder sacar conclusiones en un proceso de peritaje informático.\\
 
 \begin{itemize}
@@ -86,7 +86,7 @@ Una vez hemos expuesto las decisiones de diseño de nuestro servidor vamos a det
 
 Con esto conseguimos que la evidencia se recopile \textbf{sin ser modificada} y queda lista para la cadena de custodia.
 
-\subsection{Ejemplo de registro (\textit{log}) de un envío de correo}
+\subsubsection{Ejemplo de registro (\textit{log}) de un envío de correo}
 \begin{lstlisting}[style=terminal,breaklines=true]
 	2026-11-05T10:00:00 | de: pepe@empresa.local | para: ana@empresa.local, luis@empresa.local | asunto: Examen final | adjuntos: Confidencial.pdf (123 KB), notas.txt (4 KB)
 \end{lstlisting}
@@ -110,7 +110,7 @@ Entendamos ahora un poco qué información nos proporciona este registro:
 \end{itemize}
 
 % ---------------------------------------------------------------------
-\section{Por qué esto se adapta al escenario de la fuga por correo}
+\subsection{Por qué esto se adapta al escenario de la fuga por correo}
 
 \begin{enumerate}
   \item Arrancar \cod{todo} en la VM Win10/11 del servidor de correo.

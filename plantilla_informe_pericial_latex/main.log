@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.7)  19 NOV 2026 18:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.7)  19 NOV 2026 20:14
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -294,6 +294,14 @@ Package: xurl 2022/01/09 v 0.10 modify URL breaks
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 ))
+(/usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count279
+\float@exts=\toks28
+\float@box=\box56
+\@float@everytoks=\toks29
+\@floatcapt=\box57
+)
 (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
 
@@ -330,11 +338,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count279
+\c@section@level=\count280
 )
 \@linkdim=\dimen179
-\Hy@linkcounter=\count280
-\Hy@pagecounter=\count281
+\Hy@linkcounter=\count281
+\Hy@pagecounter=\count282
  (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -343,7 +351,7 @@ Now handling font encoding PD1 ...
 (/usr/local/texlive/2024/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count282
+\Hy@SavedSpaceFactor=\count283
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
@@ -357,7 +365,7 @@ Package hyperref Info: Plain pages OFF on input line 4194.
 Package hyperref Info: Backreferencing OFF on input line 4199.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4446.
-\c@Hy@tempcnt=\count283
+\c@Hy@tempcnt=\count284
 LaTeX Info: Redefining \url on input line 4784.
 \XeTeXLinkMargin=\dimen180
 
@@ -368,7 +376,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count284
+\Fld@menulength=\count285
 \Field@Width=\dimen181
 \Fld@charsize=\dimen182
 Package hyperref Info: Hyper figures OFF on input line 6063.
@@ -383,9 +391,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6093.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count285
-\c@Item=\count286
-\c@Hfootnote=\count287
+\Hy@abspage=\count286
+\c@Item=\count287
+\c@Hfootnote=\count288
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -397,8 +405,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count288
-\c@bookmark@seq@number=\count289
+\Fld@listcount=\count289
+\c@bookmark@seq@number=\count290
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
@@ -410,16 +418,44 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
 \Hy@SectionHShift=\skip65
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count291
+\lst@gtempboxa=\box58
+\lst@token=\toks30
+\lst@length=\count292
+\lst@currlwidth=\dimen183
+\lst@column=\count293
+\lst@pos=\count294
+\lst@lostspace=\dimen184
+\lst@width=\dimen185
+\lst@newlines=\count295
+\lst@lineno=\count296
+\lst@maxwidth=\dimen186
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/02/21 1.10 (Carsten Heinz)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
+\c@lstnumber=\count297
+\lst@skipnumbers=\count298
+\lst@framebox=\box59
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/02/21 1.10 listings configuration
 ))
+Package: listings 2024/02/21 1.10 (Carsten Heinz)
+)
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 25
 .
- (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmr.fd
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count290
-\l__pdf_internal_box=\box56
+\l__color_backend_stack_int=\count299
+\l__pdf_internal_box=\box60
 )
 (./main.aux
 LaTeX Info: Redefining \. on input line 11.
@@ -503,17 +539,17 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 
 (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count291
-\scratchdimen=\dimen183
-\scratchbox=\box57
-\nofMPsegments=\count292
-\nofMParguments=\count293
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count294
-\MPscratchDim=\dimen184
-\MPnumerator=\count295
-\makeMPintoPDFobject=\count296
-\everyMPtoPDFconversion=\toks29
+\scratchcounter=\count300
+\scratchdimen=\dimen187
+\scratchbox=\box61
+\nofMPsegments=\count301
+\nofMParguments=\count302
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count303
+\MPscratchDim=\dimen188
+\MPnumerator=\count304
+\makeMPintoPDFobject=\count305
+\everyMPtoPDFconversion=\toks32
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -530,49 +566,29 @@ Package hyperref Info: Link coloring OFF on input line 25.
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
+\c@lstlisting=\count306
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmr.fd)
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omllmm.fd)
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omslmsy.fd)
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omxlmex.fd)
-File: resources/logo_perito.png Graphic file (type png)
-<use resources/logo_perito.png>
-Package pdftex.def Info: resources/logo_perito.png  used on input line 30.
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 30.
 (pdftex.def)             Requested size: 141.45016pt x 41.25641pt.
-File: resources/logo_colegio.png Graphic file (type png)
-<use resources/logo_colegio.png>
-Package pdftex.def Info: resources/logo_colegio.png  used on input line 30.
+File: Recursos/logo_colegio.png Graphic file (type png)
+<use Recursos/logo_colegio.png>
+Package pdftex.def Info: Recursos/logo_colegio.png  used on input line 30.
 (pdftex.def)             Requested size: 141.45016pt x 41.25641pt.
  [1
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
-al/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./resources/logo_peri
-to.png> <./resources/logo_colegio.png>] (./main.toc
+al/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./Recursos/logo_perit
+o.png> <./Recursos/logo_colegio.png>] (./main.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-)
-\tf@toc=\write4
-\openout4 = `main.toc'.
-
-File: resources/logo_perito.png Graphic file (type png)
-<use resources/logo_perito.png>
-Package pdftex.def Info: resources/logo_perito.png  used on input line 37.
-(pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.37 \newpage
-              [1] (./capitulos/00_resumen_ejecutivo.tex)
-File: resources/logo_perito.png Graphic file (type png)
-<use resources/logo_perito.png>
-Package pdftex.def Info: resources/logo_perito.png  used on input line 51.
-(pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
- [2]
-(./capitulos/01_introduccion.tex
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
-0.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
+9.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -581,60 +597,280 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-File: resources/logo_perito.png Graphic file (type png)
-<use resources/logo_perito.png>
-Package pdftex.def Info: resources/logo_perito.png  used on input line 47.
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 44.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
- [3])
-File: resources/logo_perito.png Graphic file (type png)
-<use resources/logo_perito.png>
-Package pdftex.def Info: resources/logo_perito.png  used on input line 54.
-(pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
- [4]
-(./capitulos/02_consideraciones_generales.tex
-Overfull \hbox (2.03426pt too wide) in paragraph at lines 24--25
-[]\T1/lmr/m/n/10.95 (-20) Esta co-pia de se-gu-ri-dad se al-ma-ce-na en la car-
-pe-ta del dis-po-si-ti-vo con nom-bre \T1/lmtt/m/n/10.95 Whatsapp/Databases
- []
 
-File: resources/logo_perito.png Graphic file (type png)
-<use resources/logo_perito.png>
-Package pdftex.def Info: resources/logo_perito.png  used on input line 32.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.44 ...sline {section}{EVIDENCIAS}{23}{section.7}
+                                                  % [1])
+\tf@toc=\write4
+\openout4 = `main.toc'.
+
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 37.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
-[5])
-File: resources/logo_perito.png Graphic file (type png)
-<use resources/logo_perito.png>
-Package pdftex.def Info: resources/logo_perito.png  used on input line 57.
+ [2]
+(./capitulos/00_resumen_ejecutivo.tex)
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 51.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
- [6] (./capitulos/03_consideraciones_especificas.tex)
-File: resources/logo_perito.png Graphic file (type png)
-<use resources/logo_perito.png>
-Package pdftex.def Info: resources/logo_perito.png  used on input line 60.
+ [3] (./capitulos/01_introduccion.tex
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 47.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
- [7]
-(./capitulos/04_conclusiones.tex)
-File: resources/logo_perito.png Graphic file (type png)
-<use resources/logo_perito.png>
-Package pdftex.def Info: resources/logo_perito.png  used on input line 63.
+
+[4])
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 54.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
- [8] (./capitulos/05_metodologia.tex)
-File: resources/logo_perito.png Graphic file (type png)
-<use resources/logo_perito.png>
-Package pdftex.def Info: resources/logo_perito.png  used on input line 66.
+ [5] (./capitulos/02_consideraciones_generales.tex
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 17.
+(pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
+ [6]
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 28.
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 36.
+(pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
+ [7])
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 57.
+(pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
+ [8]
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 57.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
  [9]
-(./capitulos/06_bibliografia.tex)
-File: resources/logo_perito.png Graphic file (type png)
-<use resources/logo_perito.png>
-Package pdftex.def Info: resources/logo_perito.png  used on input line 69.
+(./capitulos/03_consideraciones_especificas.tex
+(./capitulos/03_1_server_conf.tex
+Overfull \hbox (34.49577pt too wide) in paragraph at lines 28--31
+[]\T1/lmr/m/n/10.95 (-20) permita en-viar \T1/lmtt/m/n/10.95 Confidencial.pdf \
+T1/lmr/m/n/10.95 (-20) co-mo ad-jun-to en-tre dos bu-zo-nes del gru-po \T1/lmtt
+/m/n/10.95 pepe@empresa.local
+ []
+
+
+Underfull \hbox (badness 1152) in paragraph at lines 46--48
+[]|\T1/lmr/m/n/10 (+20) En las VMs no hay in-ter-net ga-ran-ti-za-do; \T1/lmtt/
+m/n/10 socket\T1/lmr/m/n/10 (+20) , \T1/lmtt/m/n/10 email \T1/lmr/m/n/10 (+20) 
+y
+ []
+
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 51.
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--56
+[]|\T1/lmr/bx/n/10 (+20) Servidor en una VM
+ []
+
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 69.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
- [10] (./anexos/anexo_01_evidencias.tex)
-File: resources/logo_perito.png Graphic file (type png)
-<use resources/logo_perito.png>
-Package pdftex.def Info: resources/logo_perito.png  used on input line 83.
+[10{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
+
+ []
+
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 98.
+(pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
+[11]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+03.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Overfull \hbox (5.20494pt too wide) in paragraph at lines 105--110
+\T1/lmtt/m/n/10.95 try/except\T1/lmr/m/n/10.95 (-20) : un fa-llo del log (dis-c
+o lleno, per-mi-sos...) que-da en el log-ger \T1/lmtt/m/n/10.95 correo.log_envi
+os
+ []
+
+) (./capitulos/03_1_1_desarrollo_correo.tex
+
+LaTeX Warning: Reference `fig:ip_ws' on page 12 undefined on input line 13.
+
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 14.
+(pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
+[12{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+
+LaTeX Warning: Reference `fig:ip_w11' on page 13 undefined on input line 14.
+
+<Recursos/ip_WS.png, id=329, 532.99126pt x 79.04532pt>
+File: Recursos/ip_WS.png Graphic file (type png)
+<use Recursos/ip_WS.png>
+Package pdftex.def Info: Recursos/ip_WS.png  used on input line 19.
+(pdftex.def)             Requested size: 386.96027pt x 57.3902pt.
+<Recursos/ip_pc_ladron.png, id=330, 520.94624pt x 100.87688pt>
+File: Recursos/ip_pc_ladron.png Graphic file (type png)
+<use Recursos/ip_pc_ladron.png>
+Package pdftex.def Info: Recursos/ip_pc_ladron.png  used on input line 25.
+(pdftex.def)             Requested size: 386.96027pt x 74.93246pt.
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 48.
+(pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
+[13 <./Recursos/ip_WS.png> <./Recursos/ip_pc_ladron.png>]
+
+LaTeX Warning: Reference `fig:carpeta_compartida' on page 14 undefined on input
+ line 50.
+
+<Recursos/carpeta_compartida_WS.png, id=343, 529.98pt x 127.22531pt>
+File: Recursos/carpeta_compartida_WS.png Graphic file (type png)
+<use Recursos/carpeta_compartida_WS.png>
+Package pdftex.def Info: Recursos/carpeta_compartida_WS.png  used on input line
+ 54.
+(pdftex.def)             Requested size: 386.96027pt x 92.89311pt.
+
+Underfull \hbox (badness 1122) in paragraph at lines 55--55
+[]\T1/lmr/m/n/10.95 (+20) Figura 3: []Listado de re-cur-sos com-par-ti-dos en W
+in-dows Ser-ver mos-tran-do la car-pe-ta
+ []
+
+
+LaTeX Warning: Reference `fig:hash_ws' on page 14 undefined on input line 58.
+
+
+Overfull \hbox (0.66196pt too wide) in paragraph at lines 58--59
+[]\T1/lmr/m/n/10.95 (-20) Dentro de di-cho di-rec-to-rio com-par-ti-do se en-cu
+en-tra alo-ja-do el ar-chi-vo ob-je-ti-vo: \T1/lmtt/m/n/10.95 Confidencial.pdf\
+T1/lmr/m/n/10.95 (-20) .
+ []
+
+<Recursos/confidencial_en_WS_hash.png, id=344, 579.66562pt x 61.73062pt>
+File: Recursos/confidencial_en_WS_hash.png Graphic file (type png)
+<use Recursos/confidencial_en_WS_hash.png>
+Package pdftex.def Info: Recursos/confidencial_en_WS_hash.png  used on input li
+ne 62.
+(pdftex.def)             Requested size: 386.96027pt x 41.20857pt.
+<Recursos/confidencial_en_Windows11_hash.png, id=345, 600.74437pt x 94.85437pt>
+
+File: Recursos/confidencial_en_Windows11_hash.png Graphic file (type png)
+<use Recursos/confidencial_en_Windows11_hash.png>
+Package pdftex.def Info: Recursos/confidencial_en_Windows11_hash.png  used on i
+nput line 87.
+(pdftex.def)             Requested size: 386.96027pt x 61.10025pt.
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 91.
+(pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
+[14 <./Recursos/carpeta_compartida_WS.png> <./Recursos/confidencial_en_WS_hash.
+png>]
+<Recursos/correo_registrado.png, id=356, 612.78937pt x 319.94531pt>
+File: Recursos/correo_registrado.png Graphic file (type png)
+<use Recursos/correo_registrado.png>
+Package pdftex.def Info: Recursos/correo_registrado.png  used on input line 105
+.
+(pdftex.def)             Requested size: 386.96027pt x 202.03526pt.
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 112.
+(pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
+ [15 <./Recursos/confidencial_en_Windows11_hash.png> <./Recursos/correo_registr
+ado.png>]
+<Recursos/imagen_disco_correo.png, id=369, 879.285pt x 94.85437pt>
+File: Recursos/imagen_disco_correo.png Graphic file (type png)
+<use Recursos/imagen_disco_correo.png>
+Package pdftex.def Info: Recursos/imagen_disco_correo.png  used on input line 1
+16.
+(pdftex.def)             Requested size: 386.96027pt x 41.74327pt.
+) (./capitulos/03_2_desarrollo_dropbox.tex)
+(./capitulos/03_3_desarrollo_usb.tex
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 59.
+(pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
+ [16 <./Recursos/imagen_disco_correo.png>]
+<Recursos/usb_estado_inicial.png, id=380, 136.25906pt x 216.05719pt>
+File: Recursos/usb_estado_inicial.png Graphic file (type png)
+<use Recursos/usb_estado_inicial.png>
+Package pdftex.def Info: Recursos/usb_estado_inicial.png  used on input line 92
+.
+(pdftex.def)             Requested size: 136.57462pt x 216.57092pt.
+<Recursos/usb_formato_ntfs.png, id=381, 423.83344pt x 103.88812pt>
+File: Recursos/usb_formato_ntfs.png Graphic file (type png)
+<use Recursos/usb_formato_ntfs.png>
+Package pdftex.def Info: Recursos/usb_formato_ntfs.png  used on input line 99.
+(pdftex.def)             Requested size: 364.19667pt x 89.27386pt.
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 103.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
 
-[11] 
+[17 <./Recursos/usb_estado_inicial.png>]
+<Recursos/usb_estado_final.png, id=394, 135.50626pt x 170.13562pt>
+File: Recursos/usb_estado_final.png Graphic file (type png)
+<use Recursos/usb_estado_final.png>
+Package pdftex.def Info: Recursos/usb_estado_final.png  used on input line 106.
+
+(pdftex.def)             Requested size: 136.57462pt x 171.48254pt.
+<Recursos/usb_copia.png, id=398, 603.75563pt x 38.39343pt>
+File: Recursos/usb_copia.png Graphic file (type png)
+<use Recursos/usb_copia.png>
+Package pdftex.def Info: Recursos/usb_copia.png  used on input line 131.
+(pdftex.def)             Requested size: 364.19667pt x 23.15924pt.
+<Recursos/usb_hash_copia.png, id=399, 580.41844pt x 40.65187pt>
+File: Recursos/usb_hash_copia.png Graphic file (type png)
+<use Recursos/usb_hash_copia.png>
+Package pdftex.def Info: Recursos/usb_hash_copia.png  used on input line 138.
+(pdftex.def)             Requested size: 364.19667pt x 25.50783pt.
+<Recursos/usb_borrado.png, id=400, 430.60875pt x 39.89906pt>
+File: Recursos/usb_borrado.png Graphic file (type png)
+<use Recursos/usb_borrado.png>
+Package pdftex.def Info: Recursos/usb_borrado.png  used on input line 145.
+(pdftex.def)             Requested size: 364.19667pt x 33.7463pt.
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 149.
+(pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
+ [18 <./Recursos/usb_formato_ntfs.png> <./Recursos/usb_estado_final.png> <./Rec
+ursos/usb_copia.png> <./Recursos/usb_hash_copia.png>]))
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 60.
+(pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
+ [19 <./Recursos/usb_borrado.png>]
+(./capitulos/04_conclusiones.tex)
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 63.
+(pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
+ [20] (./capitulos/05_metodologia.tex)
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 66.
+(pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
+
+[21] (./capitulos/06_bibliografia.tex)
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 69.
+(pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
+ [22] (./anexos/anexo_01_evidencias.tex)
+File: Recursos/logo_perito.png Graphic file (type png)
+<use Recursos/logo_perito.png>
+Package pdftex.def Info: Recursos/logo_perito.png  used on input line 83.
+(pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
+
+[23] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux
 LaTeX Info: Redefining \. on input line 11.
@@ -644,28 +880,35 @@ LaTeX Info: Redefining \% on input line 11.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4B08D4E4EB93A33C0F95C2E37AD1A045;5756.
+(rerunfilecheck)             Checksum: 74B311B690724529717B9E04DA5029DE;11463.
  ) 
 Here is how much of TeX's memory you used:
- 14475 strings out of 474116
- 233556 string characters out of 5743683
- 1938187 words of memory out of 5000000
- 36433 multiletter control sequences out of 15000+600000
- 633445 words of font info for 140 fonts, out of 8000000 for 9000
+ 16564 strings out of 474116
+ 264961 string characters out of 5743683
+ 1976187 words of memory out of 5000000
+ 38330 multiletter control sequences out of 15000+600000
+ 643700 words of font info for 190 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,15n,93p,1133b,494s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 85i,16n,93p,1133b,1141s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/lo
 cal/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texliv
-e/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texm
-f-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts
-/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/publi
-c/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt1
-0.pfb>
-Output written on main.pdf (12 pages, 232698 bytes).
+e/2024/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2024/te
+xmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fo
+nts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/pu
+blic/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri
+10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></u
+sr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/t
+exlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/202
+4/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on main.pdf (24 pages, 554015 bytes).
 PDF statistics:
- 260 PDF objects out of 1000 (max. 8388607)
- 225 compressed objects within 3 object streams
- 42 named destinations out of 1000 (max. 500000)
- 43739 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 523 PDF objects out of 1000 (max. 8388607)
+ 439 compressed objects within 5 object streams
+ 109 named destinations out of 1000 (max. 500000)
+ 50084 words of extra memory for PDF output out of 51595 (max. 10000000)
 

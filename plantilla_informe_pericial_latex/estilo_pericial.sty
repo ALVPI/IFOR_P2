@@ -42,10 +42,11 @@ headheight=28pt
 \RequirePackage{array}
 \RequirePackage{enumitem}
 \RequirePackage{xurl}
+\RequirePackage{float}
 \RequirePackage[hidelinks]{hyperref}
 
 % Ruta por defecto para imágenes y logotipos
-\graphicspath{{resources/}}
+\graphicspath{{Recursos/}}
 
 % ==============================================================================
 % 4. PALETA DE COLORES CORPORATIVA
@@ -54,7 +55,9 @@ headheight=28pt
 \definecolor{GrisOscuro}{HTML}{333333}
 \definecolor{GrisSuave}{HTML}{F4F6F9}
 \definecolor{BordeTabla}{HTML}{CCCCCC}
-
+\colorlet{acento}{AzulPericial}
+% Si prefieres un azul más claro para el borde de la terminal, usa en su lugar:
+% \definecolor{acento}{HTML}{2E86AB}
 % ==============================================================================
 % 5. VALORES POR DEFECTO DE METADATOS (Se sobreescriben en main.tex)
 % ==============================================================================
@@ -169,5 +172,40 @@ headheight=28pt
 		\end{flushright}
 	\end{titlepage}
 }
+
+\RequirePackage{listings}
+\lstset{
+	inputencoding=utf8,
+	extendedchars=true,
+	% "literate" permite escribir tildes y la ñ dentro del código.
+	literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {ñ}{{\~n}}1
+}
+% Estilo "terminal": fondo gris claro, tipo máquina de escribir y marco.
+\lstdefinestyle{terminal}{
+	backgroundcolor=\color{gray!10},   % gray!10 = 10 % de gris, 90 % blanco
+	basicstyle=\ttfamily\small,
+	keywordstyle=\color{acento},       % palabras clave en el color de acento
+	commentstyle=\color{suave},
+	frame=single,
+	rulecolor=\color{acento!40},       % acento!40 = acento al 40 % (más claro)
+	columns=fullflexible,
+	morecomment=[l]{//}                % //... se trata como comentario
+}
+
+% Estilo "python": listados con números de línea y colores de la paleta.
+% Uso:  \begin{lstlisting}[style=python] ... \end{lstlisting}
+% Antes, las opciones se repetían en CADA listado (basicstyle, frame...).
+\lstdefinestyle{python}{
+	language=Python,
+	basicstyle=\ttfamily\small,
+	numbers=left, numberstyle=\tiny\color{suave},
+	keywordstyle=\color{acento}\bfseries,
+	commentstyle=\color{suave}\itshape,
+	stringstyle=\color{green!40!black},
+	frame=single, rulecolor=\color{acento!40},
+	backgroundcolor=\color{gray!5},
+	breaklines=true, columns=fullflexible
+}
+
 
 \endinput

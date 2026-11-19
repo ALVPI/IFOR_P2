@@ -1,11 +1,11 @@
-\chapter{Servidor de correo para el Escenario 1 (fuga por correo)}
+\subsection{Servidor de correo para el Escenario 1 (fuga por correo)}
 
 
 \label{cap:montaje_escenario}
 
 En este capítulo se detalla la arquitectura de red desplegada en el entorno controlado de laboratorio para reproducir el incidente de seguridad, así como el procedimiento técnico seguido para simular tanto la sustracción del documento confidencial desde el servidor corporativo hacia el equipo cliente como su posterior ocultación y entrega mediante técnicas de esteganografía digital y buzones muertos (\textit{dead drops}).
 
-\section{Arquitectura de Red y Sistemas Implicados}
+\subsection{Arquitectura de Red y Sistemas Implicados}
 
 Para llevar a cabo la simulación de forma aislada y controlada, se han desplegado dos máquinas virtuales interconectadas dentro del mismo segmento de red local (\texttt{192.168.255.0/24}), con puerta de enlace predeterminada en la dirección \texttt{192.168.255.1}:
 
@@ -26,10 +26,10 @@ Para llevar a cabo la simulación de forma aislada y controlada, se han desplega
     \caption{Configuración de red del equipo cliente Windows 11 (\texttt{192.168.255.5}).}
 \end{figure}
 
-\section{Extracción del Documento desde Windows Server hacia Windows 11}
+\subsection{Extracción del Documento desde Windows Server hacia Windows 11}
 
 
-\subsection{Configuración del acceso a los recursos compartidos}
+\subsubsection{Configuración del acceso a los recursos compartidos}
 
 Para habilitar y controlar el acceso a un directorio a través de la red local en Windows Server, el sistema aplica un modelo de seguridad basado en la combinación de permisos de red (SMB) y permisos locales del sistema de archivos (NTFS). El proceso de configuración consta de las siguientes fases:
 
@@ -63,7 +63,7 @@ Dentro de dicho directorio compartido se encuentra alojado el archivo objetivo: 
     \caption{Cálculo del hash SHA-256 del documento \texttt{Confidencial.pdf} en Windows Server.}
 \end{figure}
 
-\subsection{Uso del comando \texttt{explorer} para rutas de red UNC}
+\subsubsection{Uso del comando \texttt{explorer} para rutas de red UNC}
 
 En entornos Windows, el comando \texttt{explorer} permite invocar directamente la interfaz gráfica del Explorador de archivos desde la consola de comandos (CMD o PowerShell). En lugar de abrir manualmente una ventana y teclear la dirección en la barra de navegación, este comando permite lanzar de forma inmediata una sesión sobre una ruta de red UNC (\textit{Universal Naming Convention}).
 
@@ -88,7 +88,7 @@ El empleo de este método agiliza la exploración visual del directorio remoto d
     \caption{Verificación de integridad mediante \texttt{Get-FileHash} en Windows 11 tras la extracción.}
 \end{figure}
 
-\section{Simulación del Traspaso en Windows 11 mediante Servicio de Correo Propio}
+\subsection{Simulación del Traspaso en Windows 11 mediante Servicio de Correo Propio}
 
 Una vez que el documento \texttt{Confidencial.pdf} reside en el equipo cliente con Windows 11 (\texttt{C:\textbackslash Evidencias\textbackslash Confidencial.pdf}), el siguiente paso del escenario consiste en simular la exfiltración de la información hacia un destinatario externo dentro de un entorno controlado. Para evitar depender de infraestructuras en la nube o servicios de terceros, se ha desplegado un \textbf{servicio de correo electrónico propio}. El flujo operativo ejecutado para materializar esta transferencia se estructuró en las siguientes fases:
 
@@ -106,7 +106,7 @@ Una vez que el documento \texttt{Confidencial.pdf} reside en el equipo cliente c
     \caption{Verificación de integridad mediante \texttt{Get-FileHash} en Windows 11 tras la extracción.}
 \end{figure}
 
-\section{Fase Pericial}
+\subsection{Fase Pericial}
 
 Una vez hemos montado todo el supuesto, el siguiente paso es suponer que el director de la empresa nos proporciona una imagen del disco del atacante interno, y, teniendo en cuenta que hemos montado el entorno completo para la simulación del robo en VirtualBox, podemos utilizar directamente el .vdi (el disco virtual de la maquina) como imagen para haseharla y comenzar la cadena de custodia. Hemos utilizado la misma herramienta nativa de Windows 11 para calcular el hash de la imagen del disco.
 

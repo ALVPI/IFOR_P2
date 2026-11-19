@@ -1,0 +1,59 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{gonzalez2011trasgo}{article}{}
+      \name{author}{2}{}{%
+        {{hash=60b2c652d459f2b9d4dccb65b72ebf80}{%
+           family={González-Escribano},
+           familyi={G\bibinithyphendelim E\bibinitperiod},
+           given={Arturo},
+           giveni={A\bibinitperiod}}}%
+        {{hash=46e2f3283b2ee016aebba63980327e97}{%
+           family={Llanos},
+           familyi={L\bibinitperiod},
+           given={Diego\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{d2fb169347b0bc31f0147c2c8289518a}
+      \strng{fullhash}{d2fb169347b0bc31f0147c2c8289518a}
+      \strng{bibnamehash}{d2fb169347b0bc31f0147c2c8289518a}
+      \strng{authorbibnamehash}{d2fb169347b0bc31f0147c2c8289518a}
+      \strng{authornamehash}{d2fb169347b0bc31f0147c2c8289518a}
+      \strng{authorfullhash}{d2fb169347b0bc31f0147c2c8289518a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Supercomputing}
+      \field{number}{2}
+      \field{title}{Trasgo: a nested-parallel programming system}
+      \field{volume}{58}
+      \field{year}{2011}
+      \field{pages}{226\bibrangedash 234}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1007/s11227-009-0367-5
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
