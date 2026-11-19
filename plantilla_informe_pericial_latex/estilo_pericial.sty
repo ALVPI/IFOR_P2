@@ -1,0 +1,173 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{estilo_pericial}[2026/11/19 Hoja de estilos para Informe Tecnico Pericial]
+
+% ==============================================================================
+% 1. CODIFICACIÓN, IDIOMA Y TIPOGRAFÍA
+% ==============================================================================
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\IfFileExists{spanish.ldf}{%
+	\RequirePackage[spanish,es-tabla]{babel}%
+}{%
+	\renewcommand{\contentsname}{Tabla de Contenidos}%
+	\renewcommand{\tablename}{Tabla}%
+	\renewcommand{\figurename}{Figura}%
+	\renewcommand{\appendixname}{Anexo}%
+}
+\RequirePackage{lmodern}
+\RequirePackage{microtype}
+
+% ==============================================================================
+% 2. GEOMETRÍA Y MÁRGENES DE PÁGINA
+% ==============================================================================
+\RequirePackage[
+top=2.8cm,
+bottom=2.5cm,
+left=2.5cm,
+right=2.5cm,
+headheight=28pt
+]{geometry}
+
+% ==============================================================================
+% 3. PAQUETES VISUALES, TABLAS, LISTAS Y ENLACES
+% ==============================================================================
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\RequirePackage{fancyhdr}
+\RequirePackage{lastpage}
+\RequirePackage{parskip}
+\RequirePackage{titlesec}
+\RequirePackage{tabularx}
+\RequirePackage{booktabs}
+\RequirePackage{array}
+\RequirePackage{enumitem}
+\RequirePackage{xurl}
+\RequirePackage[hidelinks]{hyperref}
+
+% Ruta por defecto para imágenes y logotipos
+\graphicspath{{resources/}}
+
+% ==============================================================================
+% 4. PALETA DE COLORES CORPORATIVA
+% ==============================================================================
+\definecolor{AzulPericial}{HTML}{1B365D}
+\definecolor{GrisOscuro}{HTML}{333333}
+\definecolor{GrisSuave}{HTML}{F4F6F9}
+\definecolor{BordeTabla}{HTML}{CCCCCC}
+
+% ==============================================================================
+% 5. VALORES POR DEFECTO DE METADATOS (Se sobreescriben en main.tex)
+% ==============================================================================
+\providecommand{\TituloInforme}{Informe Técnico Pericial}
+\providecommand{\SubtituloDocumento}{DICTAMEN PERICIAL}
+\providecommand{\Cliente}{EMPRESA SL}
+\providecommand{\Referencia}{XXXXX-XXXX}
+\providecommand{\FechaInforme}{x de xxxxxx de 20XX}
+\providecommand{\CiudadFirma}{Valladolid}
+\providecommand{\FechaFirma}{x de xxxxxxxx de 20XX}
+
+% Datos del Grupo de Prácticas y Equipo Pericial (4 integrantes)
+\providecommand{\GrupoPracticas}{Grupo de Prácticas 8}
+
+\providecommand{\PeritoUno}{Pablo Pastor Aguado}
+\providecommand{\NumColegiadoUno}{XX}
+
+\providecommand{\PeritoDos}{Hugo Adán de la Fuente}
+\providecommand{\NumColegiadoDos}{XX}
+
+\providecommand{\PeritoTres}{Santiago González Rodríguez}
+\providecommand{\NumColegiadoTres}{XX}
+
+\providecommand{\PeritoCuatro}{Álvaro López Primo}
+\providecommand{\NumColegiadoCuatro}{XX}
+
+% Alias de compatibilidad para capítulos que invoquen \PeritoNombre o \NumColegiado
+\providecommand{\PeritoNombre}{\GrupoPracticas}
+\providecommand{\NumColegiado}{\NumColegiadoUno}
+
+\providecommand{\ColegioProfesional}{Ilustre Colegio Profesional de Ingenieros en Informática de Valladolid}
+\providecommand{\WebColegio}{http://www.cpiicyl.org/g}
+\providecommand{\UniversidadPerito}{Universidad de Valladolid}
+\providecommand{\NumFolios}{XX}
+
+% ==============================================================================
+% 6. ESTILO DE TÍTULOS DE SECCIÓN Y SUBSECCIÓN
+% ==============================================================================
+\titleformat{\section}
+{\Large\bfseries\color{AzulPericial}}
+{\thesection.}{0.6em}{}[\vspace{2pt}\titlerule]
+
+\titleformat{\subsection}
+{\large\bfseries\color{GrisOscuro}}
+{\thesubsection.}{0.5em}{}
+
+% ==============================================================================
+% 7. ENCABEZADOS Y PIES DE PÁGINA
+% ==============================================================================
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{GrisOscuro}{\textbf{\TituloInforme} --- Ref.: \Referencia}}
+\fancyhead[R]{\includegraphics[height=0.65cm]{logo_perito.png}}
+\fancyfoot[L]{\small\textcolor{GrisOscuro}{\GrupoPracticas\ --- Peritos Ingenieros en Informática}}
+\fancyfoot[R]{\small\textcolor{GrisOscuro}{Página \thepage\ de \pageref{LastPage}}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% ==============================================================================
+% 8. COMANDO DE PORTADA PERICIAL
+% ==============================================================================
+\newcommand{\GenerarPortadaPericial}{%
+	\begin{titlepage}
+		\thispagestyle{empty}
+		\begin{flushleft}
+			\begin{tabularx}{\textwidth}{@{} X r @{}}
+				\includegraphics[height=1.45cm]{logo_perito.png} &
+				\includegraphics[height=1.45cm]{logo_colegio.png} \\
+			\end{tabularx}
+		\end{flushleft}
+		
+		\vspace{1.0cm}
+		{\large\textbf{\textcolor{AzulPericial}{\GrupoPracticas}}} \\[0.35cm]
+		\renewcommand{\arraystretch}{1.2}
+		\begin{tabularx}{\textwidth}{@{} X X @{}}
+			\textbf{\textcolor{GrisOscuro}{\PeritoUno}} \newline
+			{\small\textcolor{GrisOscuro}{Ingeniero en Informática --- Col. n.\textsuperscript{o} \NumColegiadoUno}} &
+			\textbf{\textcolor{GrisOscuro}{\PeritoDos}} \newline
+			{\small\textcolor{GrisOscuro}{Ingeniero en Informática --- Col. n.\textsuperscript{o} \NumColegiadoDos}} \\[0.4cm]
+			\textbf{\textcolor{GrisOscuro}{\PeritoTres}} \newline
+			{\small\textcolor{GrisOscuro}{Ingeniero en Informática --- Col. n.\textsuperscript{o} \NumColegiadoTres}} &
+			\textbf{\textcolor{GrisOscuro}{\PeritoCuatro}} \newline
+			{\small\textcolor{GrisOscuro}{Ingeniero en Informática --- Col. n.\textsuperscript{o} \NumColegiadoCuatro}} \\
+		\end{tabularx}
+		
+		\vspace{1.8cm}
+		{\Huge\bfseries\textcolor{AzulPericial}{\TituloInforme}} \\[0.4cm]
+		{\Large\bfseries\textcolor{GrisOscuro}{\SubtituloDocumento}}
+		
+		\vspace{0.6cm}
+		\textcolor{AzulPericial}{\rule{\textwidth}{1.5pt}}
+		
+		\vspace{1.3cm}
+		\renewcommand{\arraystretch}{1.45}
+		\begin{tabularx}{\textwidth}{@{} >{\bfseries\color{AzulPericial}}p{3.4cm} X @{}}
+			\toprule
+			Título: & \TituloInforme \\
+			\midrule
+			Grupo: & \GrupoPracticas \\
+			\midrule
+			Para: & \Cliente \\
+			\midrule
+			Referencia: & \Referencia \\
+			\midrule
+			Fecha: & \FechaInforme \\
+			\bottomrule
+		\end{tabularx}
+		
+		\vfill
+		\begin{flushright}
+			\small\textcolor{GrisOscuro}{Documento confidencial emitido a efectos periciales.}
+		\end{flushright}
+	\end{titlepage}
+}
+
+\endinput
