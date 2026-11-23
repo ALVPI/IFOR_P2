@@ -1,25 +1,40 @@
 \section{CONCLUSIONES}
 
-En opinión de este perito\ldots\ldots\ldots\ldots
+En virtud de las operaciones de adquisición, preservación y análisis forense efectuadas sobre las evidencias digitales puestas a disposición de este equipo pericial, y con estricto sometimiento a las reglas de la sana crítica, el \textbf{Equipo Pericial \GrupoPracticas} formula las siguientes conclusiones técnicas:
 
-A juicio de este perito \ldots\ldots\ldots
+\begin{enumerate}[leftmargin=1.6em, itemsep=0.7em]
+	\item \textbf{Identidad e integridad criptográfica del fichero objeto de pericia.}
+	Se acredita técnicamente que el documento \texttt{Confidencial.pdf} (de 103 bytes de longitud, identificado en el servidor de origen \texttt{C:\textbackslash ConfidencialInfo} mediante la función resumen SHA-256 \texttt{f3ff86db9d526b85bab2afaf03722c321392f8b8dcae558d583704d713ef3fa7})[cite: 21, 30] es idéntico bit a bit a los ejemplares localizados y recuperados en los tres vectores analizados (equipo cliente Windows 11, servidor de correo electrónico y dispositivo de almacenamiento USB)[cite: 22, 25, 38, 39], sin que haya sufrido alteración en su contenido.
+	
+	\item \textbf{Exfiltración a través de recurso compartido de red (SMB) y correo electrónico.}
+	Queda constatado que el fichero \texttt{Confidencial.pdf} estaba publicado en red mediante el recurso compartido SMB \texttt{ConfidencialInfo} del servidor Windows Server (\texttt{192.168.255.6}) y fue copiado al equipo cliente Windows 11 (\texttt{192.168.255.5})[cite: 20, 21, 22]. Asimismo, se acredita que el día 10 de noviembre de 2026 a las 18:26:34 (+0100) se remitió un mensaje de correo electrónico desde el buzón \texttt{pepe@empresa.local} hacia \texttt{ana@empresa.local} adjuntando dicho documento, según consta en el fichero MIME (\texttt{.eml}) y en el registro anexado \texttt{logs/envios.log}[cite: 18, 19, 23]. Como limitación pericial, la ausencia de autenticación en el servicio de correo evaluado impide determinar la autoría personal del envío exclusivamente a partir de los registros SMTP[cite: 18].
+	
+	\item \textbf{Tratamiento mediante cliente Dropbox y posterior eliminación en el equipo cliente.}
+	Del examen de la imagen forense \texttt{W11.dd} (volumen NTFS \texttt{vol\_vol6}) se concluye que el fichero estuvo alojado en la ruta lógica \texttt{Users/Pepe/Dropbox/Confidencial.pdf} (entrada MFT \texttt{188015}, secuencia 5) y fue procesado por la aplicación de sincronización Dropbox, extremo acreditado por la presencia del flujo de datos alternativo residente \texttt{com.dropbox.attrs} (26 bytes)[cite: 24, 25, 26, 27, 28]. Posteriormente, el archivo fue eliminado enviándose a la Papelera de Reciclaje (\texttt{\$R42G9OJ.pdf}) bajo el identificador de seguridad de usuario (\texttt{SID}) \texttt{S-1-5-21-2563069166-3269371873-831124165-1001} (perfil \texttt{Pepe}), registrándose modificación de su entrada MFT el 19 de noviembre de 2026 a las 19:15:29 CET[cite: 25, 26, 28]. La confirmación fehaciente de su carga efectiva en los servidores remotos de la nube queda supeditada a la obtención de registros de auditoría del proveedor o al análisis de la base de datos local \texttt{filecache.dbx}[cite: 14, 29].
+	
+	\item \textbf{Extracción física a soporte USB, recuperación íntegra y alcance de la cadena de custodia.}
+	El análisis en solo lectura de la imagen forense RAW \texttt{usb\_evidencia.001} (SHA-256 \texttt{53FC0DA61D1A733F8D4F1BDAB0A404CC5306E040ABF46D5EEA8431F51FEAAC06}), correspondiente al dispositivo USB \texttt{General UDisk} (n.\textsuperscript{o} de serie \texttt{2504021555480511776507})[cite: 33, 34, 35], demuestra que el soporte fue formateado en NTFS el 12 de noviembre de 2026 a las 16:09:56 CET y que el archivo \texttt{Confidencial.pdf} fue copiado al mismo el 12 de noviembre de 2026 a las 16:19:56 CET[cite: 39]. Aunque el fichero fue posteriormente borrado de forma directa, su contenido se recuperó íntegramente desde el atributo \texttt{\$DATA} residente de la entrada MFT no asignada \texttt{35}[cite: 32, 36, 38]. Se hace constar como limitación técnica que el sistema de archivos NTFS del soporte extraíble no registra la marca temporal exacta del borrado ni la identidad del usuario ejecutor, quedando fijada la integridad criptográfica del soporte desde el momento de su adquisición forense el 20 de noviembre de 2026[cite: 32, 33, 39].
+\end{enumerate}
 
-A juicio de este perito \ldots\ldots
+\vspace{0.4cm}
+Lo que hacemos constar como peritos en el presente dictamen, salvo mejor opinión fundada en derecho o técnica a la que nos sometemos, poniendo a disposición de la autoridad judicial o de las partes que lo soliciten todos los medios, imágenes forenses y registros empleados para alcanzar las anteriores conclusiones.
 
-Una vez analizado \ldots\ldots\ldots
+Los integrantes del \textbf{Equipo Pericial \GrupoPracticas} manifiestan expresamente, de conformidad con lo dispuesto en el artículo 335.2 de la Ley de Enjuiciamiento Civil, que en la emisión de este dictamen han dicho la verdad y han actuado con la mayor objetividad posible, tomando en consideración tanto lo que pueda favorecer como lo que sea susceptible de causar perjuicio a cualquiera de las partes, conociendo las sanciones penales en las que podrían incurrir si incumplieren su deber como peritos[cite: 11, 40].
 
-Lo que hago constar como perito en este dictamen, salvo mejor opinión a la que me someto, para lo cual, pondré a disposición de quien lo solicite, todos los medios utilizados para llegar a las conclusiones a las que he llegado.
+Y para que así conste y surta los efectos oportunos ante quien proceda, firman el presente Dictamen Pericial extendido en \pageref{LastPage}\ folios, en \CiudadFirma, a \FechaFirma[cite: 40].
 
-Emito por tanto este dictamen extendido en \NumFolios\ folios, según mi leal saber y entender, prometiendo que en el momento de emitirlo, he dicho la verdad y he actuado con la mayor objetividad posible, tomando en consideración tanto lo que pueda favorecer como lo que sea susceptible de causar perjuicio a cualquiera de las partes.
+\vspace{0.5cm}
+\begin{center}
+	\textbf{\textcolor{AzulPericial}{POR EL EQUIPO PERICIAL \MakeUppercase{\GrupoPracticas}}}
+\end{center}
 
-\vspace{2.2cm}
-\begin{flushright}
-    \begin{minipage}{0.55\textwidth}
-        \centering
-        \rule{6cm}{0.4pt} \\[0.2cm]
-        \textbf{Nombre Apellidos y Firma del perito} \\
-        \PeritoNombre \\
-        Colegiado n.\textsuperscript{o} \NumColegiado \\[0.4cm]
-        En \CiudadFirma\ a \FechaFirma.
-    \end{minipage}
-\end{flushright}
+\vspace{1.1cm}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{@{} >{\centering\arraybackslash}X >{\centering\arraybackslash}X @{}}
+	\rule{6.2cm}{0.4pt} & \rule{6.2cm}{0.4pt} \\
+	\textbf{\PeritoUno} & \textbf{\PeritoDos} \\
+	{\small Col. n.\textsuperscript{o} \NumColegiadoUno} & {\small Col. n.\textsuperscript{o} \NumColegiadoDos} \\[1.5cm]
+	\rule{6.2cm}{0.4pt} & \rule{6.2cm}{0.4pt} \\
+	\textbf{\PeritoTres} & \textbf{\PeritoCuatro} \\
+	{\small Col. n.\textsuperscript{o} \NumColegiadoTres} & {\small Col. n.\textsuperscript{o} \NumColegiadoCuatro} \\
+\end{tabularx}

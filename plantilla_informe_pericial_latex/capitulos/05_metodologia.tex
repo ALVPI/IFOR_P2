@@ -1,11 +1,25 @@
 \section{Sobre la metodología empleada en la elaboración del presente informe pericial}
 
-Para la elaboración de este dictamen, la metodología empleada ha sido la siguiente:
+Para la elaboración del presente dictamen, el \textbf{Equipo Pericial \GrupoPracticas} ha aplicado una metodología sistemática, reproducible y ajustada a los estándares internacionales y nacionales de informática forense —en particular, las normas \textbf{UNE-EN ISO/IEC 27037} (directrices para la identificación, recogida, adquisición y preservación de evidencias digitales) y \textbf{UNE 71506} (metodología para el análisis forense de evidencias electrónicas)—, estructurada en las siguientes fases:
 
-\begin{itemize}[leftmargin=1.5em]
-    \item Revisión de la documentación entregada por \Cliente.
-    \item Revisión de documentos etc etc.
-    \item Revisión del software \ldots\ldots
-    \item Estudio y documentación sobre \ldots\ldots\ldots
-    \item Redacción del presente informe.
-\end{itemize}
+\begin{enumerate}[leftmargin=1.6em, itemsep=0.65em]
+	\item \textbf{Recepción, delimitación del alcance y estudio preliminar.}
+	Revisión de la documentación, antecedentes técnicos y requerimientos formulados por \Cliente, delimitando los sistemas implicados (servidor corporativo Windows Server, estación cliente Windows 11, infraestructura de correo electrónico y soporte de almacenamiento USB) y estableciendo las hipótesis técnicas a verificar.
+	
+	\item \textbf{Preservación de evidencias, bloqueo de escritura y cadena de custodia.}
+	Con carácter previo a cualquier operación de lectura sobre soportes físicos, se habilitaron medidas técnicas de protección contra escritura a nivel de sistema operativo (\texttt{WriteProtect = 1} en el Registro de Windows, verificando el estado \texttt{IsReadOnly = True}), documentando cada intervención en el registro de cadena de custodia para garantizar la inalterabilidad y trazabilidad de las fuentes de prueba.
+	
+	\item \textbf{Adquisición forense y verificación de integridad criptográfica.}
+	Obtención de copias forenses bit a bit en formato RAW (\texttt{.dd} / \texttt{.001}) mediante herramientas especializadas (\textit{Exterro FTK Imager}), así como aseguramiento de imágenes de discos virtuales (\texttt{.vdi}). Sobre cada evidencia original, copia de trabajo y fichero recuperado se calcularon funciones resumen criptográficas (\textbf{MD5}, \textbf{SHA-1} y \textbf{SHA-256} mediante \texttt{Get-FileHash}, \texttt{certutil} y \textit{FTK Imager}) con el fin de acreditar su integridad exacta. Todas las tareas de examen se ejecutaron exclusivamente sobre copias de trabajo, conservando las imágenes originales sin modificar.
+	
+	\item \textbf{Análisis técnico de artefactos, registros y sistemas de archivos.}
+	Examen forense diferenciado sobre cada vector de estudio:
+	\begin{itemize}[leftmargin=1.4em, itemsep=0.35em]
+		\item \textit{Comunicaciones y red:} Auditoría de recursos compartidos SMB (\texttt{net share}), análisis de mensajes en formato MIME (\texttt{.eml}), inspección de cabeceras de tránsito SMTP (\texttt{Received}) y revisión de registros de auditoría anexados (\texttt{logs/envios.log}).
+		\item \textit{Sistemas de archivos NTFS y almacenamiento en la nube:} Análisis de volúmenes mediante \textit{Autopsy} y \textit{The Sleuth Kit} (\texttt{istat}), examinando registros activos y no asignados de la Tabla Maestra de Archivos (\texttt{\$MFT}), atributos \texttt{\$STANDARD\_INFORMATION}, \texttt{\$FILE\_NAME} y \texttt{\$DATA} residentes, flujos de datos alternativos (\texttt{com.dropbox.attrs}) y artefactos de la Papelera de Reciclaje (\texttt{\$Recycle.Bin}).
+		\item \textit{Reconstrucción cronológica:} Normalización y correlación de las marcas temporales registradas por los distintos subsistemas para establecer la secuencia objetiva de eventos.
+	\end{itemize}
+	
+	\item \textbf{Valoración pericial y redacción del dictamen.}
+	Síntesis objetiva de los resultados obtenidos conforme al artículo 335.2 de la Ley de Enjuiciamiento Civil, diferenciando expresamente los hechos acreditados técnicamente de las limitaciones derivadas de la naturaleza de los registros o de los soportes analizados.
+\end{enumerate}
