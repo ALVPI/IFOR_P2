@@ -2,8 +2,7 @@
 \contentsline {section}{\numberline {0}Resumen ejecutivo}{3}{section.0}%
 \contentsline {section}{\numberline {1}Introducción}{4}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Sobre el Objeto del Peritaje}{4}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Sobre el Perito}{4}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Sobre los Peritos}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.2}Sobre los Peritos}{4}{subsection.1.2}%
 \contentsline {section}{\numberline {2}Consideraciones generales}{6}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Sobre los servidores Windows y los registros de eventos.}{6}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Sobre las cabeceras de un correo electrónico.}{6}{subsection.2.2}%
@@ -31,14 +30,38 @@
 \contentsline {subsection}{\numberline {4.8}Fase Pericial}{16}{subsection.4.8}%
 \contentsline {subsection}{\numberline {4.9}Sobre Dropbox}{16}{subsection.4.9}%
 \contentsline {subsection}{\numberline {4.10}Escenario 2: fuga mediante DropBox}{16}{subsection.4.10}%
-\contentsline {subsection}{\numberline {4.11}Sobre USB }{16}{subsection.4.11}%
-\contentsline {subsection}{\numberline {4.12}Escenario 3: fuga de información mediante dispositivo USB}{16}{subsection.4.12}%
-\contentsline {subsection}{\numberline {4.13}Planteamiento y alcance}{16}{subsection.4.13}%
-\contentsline {subsection}{\numberline {4.14}Preparación del escenario}{16}{subsection.4.14}%
-\contentsline {subsubsection}{\numberline {4.14.1}Entorno de trabajo}{16}{subsubsection.4.14.1}%
-\contentsline {subsubsection}{\numberline {4.14.2}Dispositivo USB utilizado}{17}{subsubsection.4.14.2}%
-\contentsline {subsubsection}{\numberline {4.14.3}Simulación de la fuga}{18}{subsubsection.4.14.3}%
-\contentsline {section}{\numberline {5}CONCLUSIONES}{20}{section.5}%
-\contentsline {section}{\numberline {6}Sobre la metodología empleada en la elaboración del presente informe pericial}{21}{section.6}%
-\contentsline {section}{\numberline {7}BIBLIOGRAFÍA Y REFERENCIAS A CONSULTAR}{22}{section.7}%
-\contentsline {section}{EVIDENCIAS}{23}{section.7}%
+\contentsline {subsubsection}{\numberline {4.10.1}Planteamiento y alcance}{16}{subsubsection.4.10.1}%
+\contentsline {subsection}{\numberline {4.11}Preparación y adquisición de la evidencia}{16}{subsection.4.11}%
+\contentsline {subsubsection}{\numberline {4.11.1}Imagen forense analizada}{16}{subsubsection.4.11.1}%
+\contentsline {subsection}{\numberline {4.12}Localización del fichero en Autopsy}{17}{subsection.4.12}%
+\contentsline {subsection}{\numberline {4.13}Examen de la entrada MFT mediante The Sleuth Kit}{18}{subsection.4.13}%
+\contentsline {subsubsection}{\numberline {4.13.1}Identificación del registro}{18}{subsubsection.4.13.1}%
+\contentsline {subsubsection}{\numberline {4.13.2}Atributo \texttt {\$STANDARD\_INFORMATION}}{19}{subsubsection.4.13.2}%
+\contentsline {subsubsection}{\numberline {4.13.3}Atributo \texttt {\$FILE\_NAME}}{19}{subsubsection.4.13.3}%
+\contentsline {subsubsection}{\numberline {4.13.4}Atributo \texttt {\$OBJECT\_ID}}{19}{subsubsection.4.13.4}%
+\contentsline {subsubsection}{\numberline {4.13.5}Atributos de datos}{20}{subsubsection.4.13.5}%
+\contentsline {subsection}{\numberline {4.14}Interpretación de los resultados y comprobaciones pendientes}{20}{subsection.4.14}%
+\contentsline {subsection}{\numberline {4.15}Conclusiones del análisis}{21}{subsection.4.15}%
+\contentsline {subsection}{\numberline {4.16}Evidencias}{21}{subsection.4.16}%
+\contentsline {subsection}{\numberline {4.17}Sobre USB }{21}{subsection.4.17}%
+\contentsline {subsection}{\numberline {4.18}Escenario 3: fuga de información mediante dispositivo USB}{21}{subsection.4.18}%
+\contentsline {subsection}{\numberline {4.19}Planteamiento y alcance}{21}{subsection.4.19}%
+\contentsline {subsection}{\numberline {4.20}Preparación del escenario}{22}{subsection.4.20}%
+\contentsline {subsubsection}{\numberline {4.20.1}Entorno de trabajo}{22}{subsubsection.4.20.1}%
+\contentsline {subsubsection}{\numberline {4.20.2}Dispositivo USB utilizado}{22}{subsubsection.4.20.2}%
+\contentsline {subsubsection}{\numberline {4.20.3}Simulación de la fuga}{23}{subsubsection.4.20.3}%
+\contentsline {subsection}{\numberline {4.21}Cadena de custodia}{24}{subsection.4.21}%
+\contentsline {subsection}{\numberline {4.22}Adquisición de la evidencia}{25}{subsection.4.22}%
+\contentsline {subsubsection}{\numberline {4.22.1}Protección contra escritura}{25}{subsubsection.4.22.1}%
+\contentsline {subsubsection}{\numberline {4.22.2}Imagen forense en formato RAW}{26}{subsubsection.4.22.2}%
+\contentsline {subsubsection}{\numberline {4.22.3}Verificación de integridad}{27}{subsubsection.4.22.3}%
+\contentsline {subsection}{\numberline {4.23}Análisis de la imagen}{28}{subsection.4.23}%
+\contentsline {subsubsection}{\numberline {4.23.1}Estructura del soporte}{28}{subsubsection.4.23.1}%
+\contentsline {subsubsection}{\numberline {4.23.2}Localización del fichero borrado}{28}{subsubsection.4.23.2}%
+\contentsline {subsubsection}{\numberline {4.23.3}Recuperación y comparación con el original}{30}{subsubsection.4.23.3}%
+\contentsline {subsubsection}{\numberline {4.23.4}Línea temporal}{31}{subsubsection.4.23.4}%
+\contentsline {subsection}{\numberline {4.24}Conclusiones}{31}{subsection.4.24}%
+\contentsline {section}{\numberline {5}CONCLUSIONES}{32}{section.5}%
+\contentsline {section}{\numberline {6}Sobre la metodología empleada en la elaboración del presente informe pericial}{33}{section.6}%
+\contentsline {section}{\numberline {7}BIBLIOGRAFÍA Y REFERENCIAS A CONSULTAR}{34}{section.7}%
+\contentsline {section}{EVIDENCIAS}{35}{section.7}%
