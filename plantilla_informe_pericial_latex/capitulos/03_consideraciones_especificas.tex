@@ -1,12 +1,18 @@
 \section{Consideraciones específicas}
+En el presente apartado se expone el análisis técnico efectuado por el \textbf{\GrupoPracticas} con el objetivo de verificar y reconstruir las posibles vías de transferencia, extracción o compartición del fichero objeto de pericia (\texttt{Confidencial.pdf}), evaluando de forma objetiva cada uno de los vectores tecnológicos susceptibles de haber intervenido.
 
-\subsection{Sobre el servidor de correo eléctronico}
-	\input{capitulos/03_1_server_conf}
-\subsubsection{Sobre la fuga de información mediante el correo electrónico}
-	\input{capitulos/03_1_1_desarrollo_correo}
+\subsection{Sobre el servidor de correo electrónico}
+En este subapartado se procede al examen técnico de la infraestructura de mensajería electrónica empleada por la empresa, analizando su arquitectura, parámetros de configuración y mecanismos de registro y auditoría disponibles.
+\input{capitulos/03_1_server_conf}
+
+\subsubsection{Sobre la posible exfiltración de información mediante correo electrónico}
+En el presente epígrafe este equipo pericial evalúa la hipótesis de transmisión externa del fichero \texttt{Confidencial.pdf} a través del servicio de correo electrónico, examinando las cabeceras de tránsito, los registros del servidor y los metadatos asociados a los envíos detectados,los conocidos técnicamente como \textit{logs}.
+\input{capitulos/03_1_1_desarrollo_correo}
 
 \subsection{Sobre Dropbox}
-	\input{capitulos/03_2_desarrollo_dropbox}
+En el presente subapartado se analizan los artefactos locales, bases de datos de sincronización y registros de actividad vinculados a la plataforma de almacenamiento en la nube Dropbox, con el fin de determinar si dicha herramienta fue empleada como vía de transferencia o alojamiento externo del fichero \texttt{Confidencial.pdf} en el dispositivo del empleado sujeto de estudio..
+\input{capitulos/03_2_desarrollo_dropbox}
 
-\subsection{Sobre USB }
-	\input{capitulos/03_3_desarrollo_usb}
+\subsection{Sobre los dispositivos de almacenamiento USB}
+En el presente epígrafe este equipo pericial examina los registros del sistema operativo, claves del Registro de Windows y trazas de conexión de dispositivos de almacenamiento masivo USB, al objeto de verificar la posible copia o extracción física del fichero \texttt{Confidencial.pdf} hacia soportes externos.
+\input{capitulos/03_3_desarrollo_usb}

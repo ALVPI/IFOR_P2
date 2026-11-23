@@ -28,6 +28,7 @@ Para analizar la eliminación de información en \textbf{Windows Server 2008 R2}
 	\item \textbf{Eliminación permanente (\texttt{Shift + Supr}, vaciado de papelera o borrado mediante consola):} El sistema operativo marca el registro correspondiente de la \texttt{\$MFT} como disponible y libera los clústeres asignados en el mapa de bits del volumen (\texttt{\$Bitmap}), dejando el espacio como no asignado (\textit{unallocated space}) sin sobrescribir de inmediato el contenido binario en el soporte físico.
 \end{itemize}
 
+\newpage
 \subsection{Sobre el borrado de ficheros en Windows y la papelera de reciclaje.}
 Para analizar la eliminación de información en \textbf{Windows 11}, es preciso atender al funcionamiento del sistema de archivos \textbf{NTFS} (\textit{New Technology File System}), el cual indexa cada fichero y directorio mediante registros en la Tabla Maestra de Archivos (\texttt{\$MFT}). Cuando un usuario realiza un borrado lógico en Windows 11, pueden producirse dos escenarios técnicamente diferenciados:
 
@@ -40,7 +41,7 @@ Para analizar la eliminación de información en \textbf{Windows 11}, es preciso
 Para proceder a la recuperación forense de archivos eliminados en sistemas \textbf{Windows 11}, debe evaluarse tanto la persistencia lógica en el sistema de archivos NTFS como la naturaleza física del soporte de almacenamiento (HDD frente a SSD con soporte \textit{TRIM}), no es lo mismo un disco magnético, como es el HDD a uno que hace la lectura por láser como el SSD y el estado del cifrado de dispositivo (\textbf{BitLocker}, habitualmente activo por defecto en equipos modernos con Windows 11) puesto que es un herramienta de Microsoft que cifra el disco en caso de detectar una actividad sospechosa sobre el mismo.
 
 Cuando los bloques de datos no han sido sobrescritos ni purgados mediante \textit{TRIM}, la recuperación se lleva a cabo mediante técnicas de análisis de registros residuales de la \texttt{\$MFT} y del diario \texttt{\$UsnJrnl}, búsqueda por firmas de cabecera y pie de archivo en el espacio no asignado (\textit{file carving}), extracción desde instantáneas de volumen (\textit{Volume Shadow Copies} o puntos de restauración del sistema, siempre que la Protección del Sistema se encuentre habilitada en el volumen) o recuperación desde el historial de versiones y papelera remota de OneDrive. Con el fin de preservar la cadena de custodia y garantizar la validez legal de los hallazgos, toda operación de adquisición, descifrado y recuperación debe ejecutarse exclusivamente sobre una copia o imagen forense previamente verificada mediante funciones resumen criptográficas, manteniendo el soporte original inalterado.
-
+\newpage
 \subsection{Sobre los registros de log}
 Todo sistema de información dispone de una serie de registros en los cuales quedan registradas todas las actividades y actuaciones que realiza el sistema, así como todos los errores que se producen al intentar realizar las diferentes tareas que tiene programadas. Estos registros se pueden almacenar en base de datos o en un fichero en el servidor.
 
