@@ -1,18 +1,64 @@
 \section*{EVIDENCIAS}
 \addcontentsline{toc}{section}{EVIDENCIAS}
+\subsection*{1. Evidencias utilizadas en la realización del informe}
 
-Para la realización de este informe se han utilizado como evidencias\ldots\ldots\ldots
+Para la realización del presente dictamen pericial se han utilizado las siguientes fuentes de prueba y ficheros de referencia puestos a disposición del \textbf{Equipo Pericial \GrupoPracticas}:
 
-Se adjuntan como evidencias los ficheros implicados en el caso, extraídos en un disco USB con número de serie: \texttt{5\&1D45E55A\&0\&6}, referenciados a continuación con su correspondiente código de autentificación hash de tipo SHA-1:
-
-\begin{itemize}[leftmargin=1.5em]
-    \item Fichero en formato PDF que contiene todos los SMS con el número 99999999: \\
-    \texttt{< D:\textbackslash xxxxxxxxxxx.pdf >} \\
-    \textbf{SHA-1:} \texttt{7F281355ECD8F9D6834B9484B5B18362E758D66B}
-
-    \item Fichero en formato RAR con la copia completa del iPhone: \\
-    \texttt{< D:\textbackslash jhgjhgjhgjkhgd.rar >} \\
-    \textbf{SHA-1:} \texttt{EBF0011BDEE1B0D5D40ACDFD3379AF1318489323}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.55em]
+	\item \textbf{Fichero original de referencia (\texttt{Confidencial.pdf}):} Documento alojado en el servidor corporativo Windows Server (\texttt{C:\textbackslash ConfidencialInfo\textbackslash Confidencial.pdf})[cite: 58], con un tamaño de 103 bytes[cite: 66, 76].
+	\begin{itemize}[leftmargin=1.2em]
+		\item \textbf{MD5:} \texttt{4c9283480e5692410e177df58323e732}[cite: 67]
+		\item \textbf{SHA-256:} \texttt{f3ff86db9d526b85bab2afaf03722c321392f8b8dcae558d583704d713ef3fa7}[cite: 58, 76]
+	\end{itemize}
+	
+	\item \textbf{Imagen de disco virtual del equipo cliente (\texttt{Maquina\_Corrreo.vdi}):} Contenedor VirtualBox correspondiente a la estación de trabajo Windows 11 vinculada al escenario de correo electrónico (39.403.388.928 bytes)[cite: 60, 61].
+	\begin{itemize}[leftmargin=1.2em]
+		\item \textbf{SHA-256:} \texttt{85EBDF723060F36E7E8EF4A6B848D85BFC2DB6B4B1597A51E13F676A193898A6}[cite: 61, 62]
+	\end{itemize}
+	
+	\item \textbf{Imagen forense de disco (\texttt{W11.dd}):} Imagen en formato RAW (\texttt{.dd}) correspondiente al volumen NTFS \texttt{vol\_vol6}, analizada en relación con la aplicación de sincronización Dropbox.
+	\begin{itemize}[leftmargin=1.2em]
+		\item \textbf{SHA-256:} \texttt{[Añadir huella SHA-256 del fichero W11.dd si se dispone de ella]}
+	\end{itemize}
+	
+	\item \textbf{Dispositivo de almacenamiento masivo USB (\texttt{General UDisk}):} Soporte físico extraíble de 3,75 GB (4.026.531.840 bytes) con número de serie \texttt{2504021555480511776507} y sistema de archivos NTFS[cite: 76, 79, 80].
+	\begin{itemize}[leftmargin=1.2em]
+		\item \textbf{MD5 (soporte físico):} \texttt{ee9f6f7faf0d5ae5402568719aad75f4}[cite: 80, 81]
+		\item \textbf{SHA-1 (soporte físico):} \texttt{5f63c82cfb609bfdd28ca9cec5e8369d65b3061b}[cite: 80, 81]
+	\end{itemize}
 \end{itemize}
 
-Durante la realización de este informe se han generado como evidencias\ldots\ldots\ldots
+\subsection*{2. Evidencias generadas y recuperadas durante el análisis pericial}
+
+Durante las fases de adquisición en modo de solo lectura, extracción de artefactos y recuperación forense se han generado y preservado las siguientes evidencias digitales:
+
+\begin{itemize}[leftmargin=1.5em, itemsep=0.55em]
+	\item \textbf{Imagen forense RAW del soporte USB (\texttt{usb\_evidencia.001}):} Copia bit a bit sin comprimir ni cifrar de la unidad física \texttt{General UDisk} (7.864.320 sectores / 4.026.531.840 bytes), adquirida mediante \textit{Exterro FTK Imager}[cite: 80, 81].
+	\begin{itemize}[leftmargin=1.2em]
+		\item \textbf{MD5:} \texttt{ee9f6f7faf0d5ae5402568719aad75f4}[cite: 80, 81]
+		\item \textbf{SHA-1:} \texttt{5f63c82cfb609bfdd28ca9cec5e8369d65b3061b}[cite: 80, 81]
+		\item \textbf{SHA-256:} \texttt{53FC0DA61D1A733F8D4F1BDAB0A404CC5306E040ABF46D5EEA8431F51FEAAC06}[cite: 81]
+	\end{itemize}
+	
+	\item \textbf{Mensaje de correo electrónico extraído (\texttt{20261110182634-b2e38393.eml}):} Fichero MIME completo extraído de la entrada MFT \texttt{226668} del buzón \texttt{ana@empresa.local} (920 bytes)[cite: 65, 66].
+	\begin{itemize}[leftmargin=1.2em]
+		\item \textbf{SHA-256:} \texttt{1446aec75726e0bc745898a4055316e665cf52840236b520b16c3c315c8b2fd9}[cite: 66, 67]
+	\end{itemize}
+	
+	\item \textbf{Registro de auditoría de envíos (\texttt{envios.log}):} Fichero de registro del servidor de correo extraído de la entrada MFT \texttt{226672} (158 bytes)[cite: 67].
+	\begin{itemize}[leftmargin=1.2em]
+		\item \textbf{SHA-256:} \texttt{56daeb2adccbfd92bd10d78a3f81a41af7c4a40bbb6b0f6c995783604120235d}[cite: 67]
+	\end{itemize}
+	
+	\item \textbf{Artefacto de la Papelera de Reciclaje en el escenario Dropbox (\texttt{\$R42G9OJ.pdf}):} Fichero localizado en la entrada MFT \texttt{188015} (secuencia 5) bajo el \texttt{SID} \texttt{S-1-5-21-2563069166-3269371873-831124165-1001} de la imagen \texttt{W11.dd} (103 bytes)[cite: 70, 71].
+	\begin{itemize}[leftmargin=1.2em]
+		\item \textbf{MD5:} \texttt{4c9283480e5692410e177df58323e732}[cite: 70, 74]
+		\item \textbf{SHA-256:} \texttt{f3ff86db9d526b85bab2afaf03722c321392f8b8dcae558d583704d713ef3fa7}[cite: 70, 74]
+	\end{itemize}
+	
+	\item \textbf{Ejemplares extraídos y recuperados de \texttt{Confidencial.pdf}:} Fichero adjunto extraído del buzón de correo (entrada MFT \texttt{226671}, 103 bytes)[cite: 66, 67] y fichero recuperado desde el atributo \texttt{\$DATA} residente de la entrada MFT no asignada \texttt{35} de la imagen del soporte USB (103 bytes)[cite: 83, 84].
+	\begin{itemize}[leftmargin=1.2em]
+		\item \textbf{MD5:} \texttt{4c9283480e5692410e177df58323e732}[cite: 67, 83]
+		\item \textbf{SHA-256:} \texttt{f3ff86db9d526b85bab2afaf03722c321392f8b8dcae558d583704d713ef3fa7}[cite: 67, 83, 84]
+	\end{itemize}
+\end{itemize}

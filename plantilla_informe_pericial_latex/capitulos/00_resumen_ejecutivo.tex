@@ -1,9 +1,14 @@
 \section{Resumen ejecutivo}
 
-Tal y como se expondrá en el presente informe, en opinión de este perito, el análisis \ldots\ldots\ldots\ldots\ldots
+A requerimiento de \textbf{\Cliente}, el \textbf{Equipo Pericial \GrupoPracticas} ha llevado a cabo el análisis forense de diversas evidencias digitales con el objetivo de determinar la posible extracción, transferencia o compartición no autorizada del documento confidencial denominado \texttt{Confidencial.pdf}, alojado originalmente en el servidor corporativo de la entidad.
 
-A juicio de este perito \ldots\ldots\ldots\ldots\ldots
+Para ello, este equipo pericial ha examinado bajo estricto protocolo de preservación y cadena de custodia tres fuentes de prueba independientes: la imagen del disco virtual de una estación de trabajo con Windows 11 (\texttt{Maquina\_Corrreo.vdi}) junto con los registros de un servidor de correo electrónico; una imagen forense de disco (\texttt{W11.dd}) vinculada a la aplicación de almacenamiento en la nube Dropbox; y una memoria USB extraíble (\texttt{General UDisk}) adquirida en modo de solo lectura (\texttt{usb\_evidencia.001}).
 
-A juicio de este perito \ldots\ldots\ldots\ldots cuyo detalle se indica en el presente informe\ldots\ldots
+A juicio de este equipo pericial, los resultados obtenidos permiten acreditar técnicamente que el documento \texttt{Confidencial.pdf} salió del repositorio del servidor y transitó por las tres vías evaluadas:
+\begin{itemize}[leftmargin=1.5em, itemsep=0.35em]
+	\item \textbf{Vía correo electrónico:} Se constata que el archivo fue copiado desde una carpeta compartida del servidor al equipo cliente y remitido como fichero adjunto el 10 de noviembre de 2026 a las 18:26 horas desde la cuenta \texttt{pepe@empresa.local} hacia \texttt{ana@empresa.local}, quedando constancia íntegra del mensaje y de su registro de envío.
+	\item \textbf{Vía Dropbox:} Se verifica que una copia del documento estuvo alojada y gestionada por el cliente de sincronización Dropbox dentro del perfil del usuario \texttt{Pepe}, siendo posteriormente eliminada y enviada a la Papelera de Reciclaje del sistema el 19 de noviembre de 2026.
+	\item \textbf{Vía dispositivo USB:} Se demuestra que el fichero fue copiado a la memoria USB analizada el 12 de noviembre de 2026 a las 16:19 horas y borrado minutos después; pese a su eliminación, el contenido completo del archivo pudo ser recuperado de forma íntegra.
+\end{itemize}
 
-Una vez analizado \ldots\ldots\ldots\ldots\ldots este perito estima que \ldots\ldots\ldots
+En conclusión, una vez verificada mediante huellas criptográficas (SHA-256) la identidad exacta entre el documento original del servidor y los ejemplares hallados o recuperados en los tres escenarios, este equipo pericial estima acreditada la materialización técnica de las transferencias descritas, haciendo constar en el apartado de conclusiones las cautelas probatorias relativas a la atribución de autoría personal y a las marcas temporales propias de cada sistema de archivos.

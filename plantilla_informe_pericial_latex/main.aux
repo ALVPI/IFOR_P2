@@ -33,125 +33,177 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Almacenamiento de Logs y evidencias (cadena de custodia)}{11}{subsection.4.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Ejemplo de registro (\textit  {log}) de un envío de correo}{11}{subsubsection.4.2.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Por qué esto se adapta al escenario de la fuga por correo}{12}{subsection.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Sobre la posible exfiltración de información mediante correo electrónico}{12}{section.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Servidor de correo para el Escenario 1 (fuga por correo)}{12}{subsection.5.1}\protected@file@percent }
-\newlabel{cap:montaje_escenario}{{5.1}{12}{Servidor de correo para el Escenario 1 (fuga por correo)}{subsection.5.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Arquitectura de Red y Sistemas Implicados}{13}{subsection.5.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Configuración de red del servidor Windows Server (\texttt  {192.168.255.6}).}}{13}{figure.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Configuración de red del equipo cliente Windows 11 (\texttt  {192.168.255.5}).}}{13}{figure.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Extracción del Documento desde Windows Server hacia Windows 11}{13}{subsection.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1}Configuración del acceso a los recursos compartidos}{13}{subsubsection.5.3.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Listado de recursos compartidos en Windows Server mostrando la carpeta \texttt  {ConfidencialInfo}.}}{14}{figure.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Cálculo del hash SHA-256 del documento \texttt  {Confidencial.pdf} en Windows Server.}}{14}{figure.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2}Uso del comando \texttt  {explorer} para rutas de red UNC}{14}{subsubsection.5.3.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Verificación de integridad mediante \texttt  {Get-FileHash} en Windows 11 tras la extracción.}}{15}{figure.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Simulación del Traspaso en Windows 11 mediante Servicio de Correo Propio}{15}{subsection.5.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Fase Pericial}{15}{subsection.5.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Verificación de integridad mediante \texttt  {Get-FileHash} en Windows 11 tras la extracción.}}{16}{figure.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Obtención del hash de la imagen del disco.}}{16}{figure.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6}Sobre Dropbox}{16}{section.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Escenario 2: fuga mediante DropBox}{16}{subsection.6.1}\protected@file@percent }
-\newlabel{cap:dropbox}{{6.1}{16}{Escenario 2: fuga mediante DropBox}{subsection.6.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1}Planteamiento y alcance}{16}{subsubsection.6.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Preparación y adquisición de la evidencia}{17}{subsection.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.1}Imagen forense analizada}{17}{subsubsection.6.2.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Identificación de la fuente forense examinada.}}{17}{table.2}\protected@file@percent }
-\newlabel{tab:dropbox-fuente}{{2}{17}{Identificación de la fuente forense examinada}{table.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Localización del fichero en Autopsy}{17}{subsection.6.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Metadatos del fichero mostrados por Autopsy.}}{18}{table.3}\protected@file@percent }
-\newlabel{tab:dropbox-autopsy}{{3}{18}{Metadatos del fichero mostrados por Autopsy}{table.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Metadatos del fichero \texttt  {Confidencial.pdf} en Autopsy.}}{18}{figure.8}\protected@file@percent }
-\newlabel{fig:dropbox-autopsy}{{8}{18}{Metadatos del fichero \cod {Confidencial.pdf} en Autopsy}{figure.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Examen de la entrada MFT mediante The Sleuth Kit}{18}{subsection.6.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.4.1}Identificación del registro}{19}{subsubsection.6.4.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Datos de identificación de la entrada MFT.}}{19}{table.4}\protected@file@percent }
-\newlabel{tab:dropbox-mft-identificacion}{{4}{19}{Datos de identificación de la entrada MFT}{table.4}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.4.2}Atributo \texttt  {\$STANDARD\_INFORMATION}}{19}{subsubsection.6.4.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Valores del atributo \texttt  {\$STANDARD\_INFORMATION}.}}{19}{table.5}\protected@file@percent }
-\newlabel{tab:dropbox-standard-information}{{5}{19}{Valores del atributo \cod {\$STANDARD\_INFORMATION}}{table.5}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.4.3}Atributo \texttt  {\$FILE\_NAME}}{20}{subsubsection.6.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.4.4}Atributo \texttt  {\$OBJECT\_ID}}{20}{subsubsection.6.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.4.5}Atributos de datos}{20}{subsubsection.6.4.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Examen de la entrada MFT mediante The Sleuth Kit.}}{21}{figure.9}\protected@file@percent }
-\newlabel{fig:dropbox-istat}{{9}{21}{Examen de la entrada MFT mediante The Sleuth Kit}{figure.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Interpretación de los resultados y comprobaciones pendientes}{21}{subsection.6.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.6}Conclusiones del análisis}{21}{subsection.6.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.7}Evidencias}{22}{subsection.6.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7}Sobre los dispositivos de almacenamiento USB}{22}{section.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Escenario 3: fuga de información mediante dispositivo USB}{22}{subsection.7.1}\protected@file@percent }
-\newlabel{cap:usb}{{7.1}{22}{Escenario 3: fuga de información mediante dispositivo USB}{subsection.7.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Planteamiento y alcance}{22}{subsection.7.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Preparación del escenario}{23}{subsection.7.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.3.1}Entorno de trabajo}{23}{subsubsection.7.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.3.2}Dispositivo USB utilizado}{23}{subsubsection.7.3.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Ficha del dispositivo USB.}}{23}{table.6}\protected@file@percent }
-\newlabel{tab:usb-ficha}{{6}{23}{Ficha del dispositivo USB}{table.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Estado inicial del dispositivo: unidad \texttt  {E:} extraíble en FAT32.}}{24}{figure.10}\protected@file@percent }
-\newlabel{fig:usb-inicial}{{10}{24}{Estado inicial del dispositivo: unidad \cod {E:} extraíble en FAT32}{figure.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Formato rápido de la unidad \texttt  {E:} en NTFS.}}{24}{figure.11}\protected@file@percent }
-\newlabel{fig:usb-formato}{{11}{24}{Formato rápido de la unidad \cod {E:} en NTFS}{figure.11}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Estado final del dispositivo: unidad \texttt  {E:} en NTFS.}}{24}{figure.12}\protected@file@percent }
-\newlabel{fig:usb-final}{{12}{24}{Estado final del dispositivo: unidad \cod {E:} en NTFS}{figure.12}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.3.3}Simulación de la fuga}{24}{subsubsection.7.3.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Copia de \texttt  {Confidencial.pdf} al USB (16:19:56).}}{25}{figure.13}\protected@file@percent }
-\newlabel{fig:usb-copia}{{13}{25}{Copia de \cod {Confidencial.pdf} al USB (16:19:56)}{figure.13}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Verificación de la huella SHA-256 de la copia en el USB.}}{25}{figure.14}\protected@file@percent }
-\newlabel{fig:usb-hash-copia}{{14}{25}{Verificación de la huella SHA-256 de la copia en el USB}{figure.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Borrado del fichero del USB (16:21:25).}}{25}{figure.15}\protected@file@percent }
-\newlabel{fig:usb-borrado}{{15}{25}{Borrado del fichero del USB (16:21:25)}{figure.15}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Cadena de custodia}{25}{subsection.7.4}\protected@file@percent }
-\newlabel{sec:usb-custodia}{{7.4}{25}{Cadena de custodia}{subsection.7.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Registro de custodia del dispositivo USB.}}{26}{table.7}\protected@file@percent }
-\newlabel{tab:usb-custodia}{{7}{26}{Registro de custodia del dispositivo USB}{table.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.5}Adquisición de la evidencia}{26}{subsection.7.5}\protected@file@percent }
-\newlabel{sec:usb-adquisicion}{{7.5}{26}{Adquisición de la evidencia}{subsection.7.5}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.5.1}Protección contra escritura}{26}{subsubsection.7.5.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Valor \texttt  {WriteProtect = 1} en el registro del equipo de análisis.}}{26}{figure.16}\protected@file@percent }
-\newlabel{fig:usb-writeprotect}{{16}{26}{Valor \cod {WriteProtect = 1} en el registro del equipo de análisis}{figure.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Comprobación con \texttt  {Get-Disk}: el dispositivo figura como solo lectura.}}{27}{figure.17}\protected@file@percent }
-\newlabel{fig:usb-getdisk}{{17}{27}{Comprobación con \cod {Get-Disk}: el dispositivo figura como solo lectura}{figure.17}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.5.2}Imagen forense en formato RAW}{27}{subsubsection.7.5.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Versión de la herramienta de adquisición.}}{27}{figure.18}\protected@file@percent }
-\newlabel{fig:usb-ftk-version}{{18}{27}{Versión de la herramienta de adquisición}{figure.18}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Destino de la imagen: \texttt  {C:\Evidencias \USB \usb _evidencia}, sin fragmentar.}}{27}{figure.19}\protected@file@percent }
-\newlabel{fig:usb-ftk-destino}{{19}{27}{Destino de la imagen: \cod {C:\Evidencias \USB \usb _evidencia}, sin fragmentar}{figure.19}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Parámetros de la adquisición.}}{28}{table.8}\protected@file@percent }
-\newlabel{tab:usb-adquisicion}{{8}{28}{Parámetros de la adquisición}{table.8}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.5.3}Verificación de integridad}{28}{subsubsection.7.5.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Resultado de la verificación de la imagen: los \textit  {hash} coinciden.}}{28}{figure.20}\protected@file@percent }
-\newlabel{fig:usb-ftk-verif}{{20}{28}{Resultado de la verificación de la imagen: los \textit {hash} coinciden}{figure.20}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Verificación de integridad de la adquisición.}}{28}{table.9}\protected@file@percent }
-\newlabel{tab:usb-hashes}{{9}{28}{Verificación de integridad de la adquisición}{table.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.6}Análisis de la imagen}{29}{subsection.7.6}\protected@file@percent }
-\newlabel{sec:usb-analisis}{{7.6}{29}{Análisis de la imagen}{subsection.7.6}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.6.1}Estructura del soporte}{29}{subsubsection.7.6.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Estructura del soporte en \textit  {Autopsy}: espacio sin asignar y partición NTFS.}}{29}{figure.21}\protected@file@percent }
-\newlabel{fig:usb-autopsy-estructura}{{21}{29}{Estructura del soporte en \textit {Autopsy}: espacio sin asignar y partición NTFS}{figure.21}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Contenido del volumen: ficheros de sistema NTFS y \texttt  {Confidencial.pdf} sin asignar.}}{29}{figure.22}\protected@file@percent }
-\newlabel{fig:usb-autopsy-volumen}{{22}{29}{Contenido del volumen: ficheros de sistema NTFS y \cod {Confidencial.pdf} sin asignar}{figure.22}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.6.2}Localización del fichero borrado}{29}{subsubsection.7.6.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Fichero borrado localizado en \textit  {Deleted Files}.}}{30}{figure.23}\protected@file@percent }
-\newlabel{fig:usb-autopsy-borrado}{{23}{30}{Fichero borrado localizado en \textit {Deleted Files}}{figure.23}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces Metadatos del fichero en \textit  {Autopsy}.}}{30}{figure.24}\protected@file@percent }
-\newlabel{fig:usb-autopsy-meta1}{{24}{30}{Metadatos del fichero en \textit {Autopsy}}{figure.24}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces Atributos \texttt  {$STANDARD_INFORMATION} y \texttt  {$FILE_NAME} de la entrada de la MFT.}}{31}{figure.25}\protected@file@percent }
-\newlabel{fig:usb-autopsy-meta2}{{25}{31}{Atributos \cod {$STANDARD_INFORMATION} y \cod {$FILE_NAME} de la entrada de la MFT}{figure.25}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.6.3}Recuperación y comparación con el original}{31}{subsubsection.7.6.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces Atributo \texttt  {$DATA} residente, de 103 bytes.}}{31}{figure.26}\protected@file@percent }
-\newlabel{fig:usb-autopsy-data}{{26}{31}{Atributo \cod {$DATA} residente, de 103 bytes}{figure.26}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces Contenido del fichero recuperado.}}{31}{figure.27}\protected@file@percent }
-\newlabel{fig:usb-autopsy-hex}{{27}{31}{Contenido del fichero recuperado}{figure.27}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Comparación del fichero recuperado con el original. Coinciden.}}{32}{table.10}\protected@file@percent }
-\newlabel{tab:usb-comparacion}{{10}{32}{Comparación del fichero recuperado con el original. Coinciden}{table.10}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.6.4}Línea temporal}{32}{subsubsection.7.6.4}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Línea temporal de la fuga.}}{32}{table.11}\protected@file@percent }
-\newlabel{tab:usb-linea}{{11}{32}{Línea temporal de la fuga}{table.11}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.7}Conclusiones}{32}{subsection.7.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {8}CONCLUSIONES}{33}{section.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {9}Sobre la metodología empleada en la elaboración del presente informe pericial}{35}{section.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {10}BIBLIOGRAFÍA Y REFERENCIAS A CONSULTAR}{37}{section.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{EVIDENCIAS}{39}{section.10}\protected@file@percent }
-\newlabel{LastPage}{{10}{39}{}{page.39}{}}
-\gdef\lastpage@lastpage{39}
-\gdef\lastpage@lastpageHy{39}
-\gdef \@abspage@last{40}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Sobre la posible exfiltración de información mediante correo electrónico}{13}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Escenario 1: fuga de información mediante correo electrónico}{13}{subsection.5.1}\protected@file@percent }
+\newlabel{cap:correo}{{5.1}{13}{Escenario 1: fuga de información mediante correo electrónico}{subsection.5.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Planteamiento y alcance}{13}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Preparación del escenario}{13}{subsection.5.3}\protected@file@percent }
+\newlabel{sec:correo-preparacion}{{5.3}{13}{Preparación del escenario}{subsection.5.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1}Arquitectura de red y sistemas implicados}{13}{subsubsection.5.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Configuración de red del servidor (\texttt  {192.168.255.6}).}}{14}{figure.1}\protected@file@percent }
+\newlabel{fig:ip-ws}{{1}{14}{Configuración de red del servidor (\cod {192.168.255.6})}{figure.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Configuración de red del equipo cliente (\texttt  {192.168.255.5}).}}{14}{figure.2}\protected@file@percent }
+\newlabel{fig:ip-w11}{{2}{14}{Configuración de red del equipo cliente (\cod {192.168.255.5})}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2}Recurso compartido y extracción del documento}{14}{subsubsection.5.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Recursos compartidos del servidor, con \texttt  {ConfidencialInfo}.}}{14}{figure.3}\protected@file@percent }
+\newlabel{fig:carpeta-compartida}{{3}{14}{Recursos compartidos del servidor, con \cod {ConfidencialInfo}}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Huella SHA-256 de \texttt  {Confidencial.pdf} en el servidor.}}{14}{figure.4}\protected@file@percent }
+\newlabel{fig:hash-ws}{{4}{14}{Huella SHA-256 de \cod {Confidencial.pdf} en el servidor}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Verificación con \texttt  {Get-FileHash} en \textit  {Windows} 11 tras la extracción.}}{15}{figure.5}\protected@file@percent }
+\newlabel{fig:hash-w11}{{5}{15}{Verificación con \cod {Get-FileHash} en \textit {Windows} 11 tras la extracción}{figure.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.3}Envío por correo electrónico}{15}{subsubsection.5.3.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Mensaje recibido en el buzón de \texttt  {ana@empresa.local}.}}{15}{figure.6}\protected@file@percent }
+\newlabel{fig:correo-registrado}{{6}{15}{Mensaje recibido en el buzón de \cod {ana@empresa.local}}{figure.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Cadena de custodia}{15}{subsection.5.4}\protected@file@percent }
+\newlabel{sec:correo-custodia}{{5.4}{15}{Cadena de custodia}{subsection.5.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Registro de custodia de la imagen del equipo cliente.}}{16}{table.2}\protected@file@percent }
+\newlabel{tab:correo-custodia}{{2}{16}{Registro de custodia de la imagen del equipo cliente}{table.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Adquisición de la evidencia}{16}{subsection.5.5}\protected@file@percent }
+\newlabel{sec:correo-adquisicion}{{5.5}{16}{Adquisición de la evidencia}{subsection.5.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.5.1}Imagen utilizada}{16}{subsubsection.5.5.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Parámetros de la imagen del equipo cliente.}}{17}{table.3}\protected@file@percent }
+\newlabel{tab:correo-imagen}{{3}{17}{Parámetros de la imagen del equipo cliente}{table.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.5.2}Verificación de integridad}{17}{subsubsection.5.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Huella SHA-256 de la imagen del disco del equipo cliente.}}{17}{figure.7}\protected@file@percent }
+\newlabel{fig:correo-hash-imagen}{{7}{17}{Huella SHA-256 de la imagen del disco del equipo cliente}{figure.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Verificación de integridad de la imagen y de la copia de trabajo.}}{18}{table.4}\protected@file@percent }
+\newlabel{tab:correo-hashes}{{4}{18}{Verificación de integridad de la imagen y de la copia de trabajo}{table.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.5.3}Entorno y herramientas de análisis}{18}{subsubsection.5.5.3}\protected@file@percent }
+\newlabel{sec:correo-herramientas}{{5.5.3}{18}{Entorno y herramientas de análisis}{subsubsection.5.5.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Herramientas utilizadas en \textit  {Kali Linux}.}}{18}{table.5}\protected@file@percent }
+\newlabel{tab:correo-herramientas}{{5}{18}{Herramientas utilizadas en \textit {Kali Linux}}{table.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.5.4}Estructura del disco y cifrado BitLocker}{18}{subsubsection.5.5.4}\protected@file@percent }
+\newlabel{sec:correo-bitlocker}{{5.5.4}{18}{Estructura del disco y cifrado BitLocker}{subsubsection.5.5.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Particiones del disco del equipo cliente (sectores de 512 bytes).}}{19}{table.6}\protected@file@percent }
+\newlabel{tab:correo-particiones}{{6}{19}{Particiones del disco del equipo cliente (sectores de 512 bytes)}{table.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Metadatos de BitLocker del volumen \texttt  {C:} (\texttt  {cryptsetup bitlkDump}).}}{19}{figure.8}\protected@file@percent }
+\newlabel{fig:correo-kali-bitlocker}{{8}{19}{Metadatos de BitLocker del volumen \cod {C:} (\cod {cryptsetup bitlkDump})}{figure.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Volumen descifrado y reconocido como NTFS (\texttt  {fsstat}).}}{20}{figure.9}\protected@file@percent }
+\newlabel{fig:correo-kali-dislocker}{{9}{20}{Volumen descifrado y reconocido como NTFS (\cod {fsstat})}{figure.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Informe de pruebas}{20}{subsection.5.6}\protected@file@percent }
+\newlabel{sec:correo-analisis}{{5.6}{20}{Informe de pruebas}{subsection.5.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.6.1}Prueba 1: mensaje \texttt  {.eml}}{20}{subsubsection.5.6.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Cabeceras y huella del mensaje recuperado.}}{21}{table.7}\protected@file@percent }
+\newlabel{tab:correo-cabeceras}{{7}{21}{Cabeceras y huella del mensaje recuperado}{table.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Mensaje, registro de envíos y fichero \texttt  {envio.txt} extraídos.}}{21}{figure.10}\protected@file@percent }
+\newlabel{fig:correo-kali-eml}{{10}{21}{Mensaje, registro de envíos y fichero \cod {envio.txt} extraídos}{figure.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.6.2}Prueba 2: adjunto y comparación con el original}{21}{subsubsection.5.6.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Comparación del adjunto con el original. Coinciden todos.}}{22}{table.8}\protected@file@percent }
+\newlabel{tab:correo-adjuntos}{{8}{22}{Comparación del adjunto con el original. Coinciden todos}{table.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Huellas calculadas en \textit  {Kali} de los ficheros extraídos.}}{22}{figure.11}\protected@file@percent }
+\newlabel{fig:correo-kali-hashes}{{11}{22}{Huellas calculadas en \textit {Kali} de los ficheros extraídos}{figure.11}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.6.3}Prueba 3: registro de envíos}{22}{subsubsection.5.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.6.4}Prueba 4: ficheros complementarios}{22}{subsubsection.5.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.6.5}Prueba 5: marcas temporales del sistema de ficheros}{23}{subsubsection.5.6.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Marcas temporales de los ficheros del envío (hora UTC).}}{23}{table.9}\protected@file@percent }
+\newlabel{tab:correo-fechas}{{9}{23}{Marcas temporales de los ficheros del envío (hora UTC)}{table.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.6.6}Línea temporal reconstruida}{23}{subsubsection.5.6.6}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Línea temporal del escenario de correo.}}{23}{table.10}\protected@file@percent }
+\newlabel{tab:correo-linea}{{10}{23}{Línea temporal del escenario de correo}{table.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}Conclusiones del escenario.}{24}{subsection.5.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Sobre Dropbox}{25}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Escenario 2: fuga mediante DropBox}{25}{subsection.6.1}\protected@file@percent }
+\newlabel{cap:dropbox}{{6.1}{25}{Escenario 2: fuga mediante DropBox}{subsection.6.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1}Planteamiento y alcance}{25}{subsubsection.6.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Preparación y adquisición de la evidencia}{25}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.1}Imagen forense analizada}{25}{subsubsection.6.2.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Identificación de la fuente forense examinada.}}{25}{table.11}\protected@file@percent }
+\newlabel{tab:dropbox-fuente}{{11}{25}{Identificación de la fuente forense examinada}{table.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Localización del fichero en Autopsy}{26}{subsection.6.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Metadatos del fichero mostrados por Autopsy.}}{26}{table.12}\protected@file@percent }
+\newlabel{tab:dropbox-autopsy}{{12}{26}{Metadatos del fichero mostrados por Autopsy}{table.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Metadatos del fichero \texttt  {Confidencial.pdf} en Autopsy.}}{26}{figure.12}\protected@file@percent }
+\newlabel{fig:dropbox-autopsy}{{12}{26}{Metadatos del fichero \cod {Confidencial.pdf} en Autopsy}{figure.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Examen de la entrada MFT mediante The Sleuth Kit}{26}{subsection.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.4.1}Identificación del registro}{27}{subsubsection.6.4.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Datos de identificación de la entrada MFT.}}{27}{table.13}\protected@file@percent }
+\newlabel{tab:dropbox-mft-identificacion}{{13}{27}{Datos de identificación de la entrada MFT}{table.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.4.2}Atributo \texttt  {\$STANDARD\_INFORMATION}}{27}{subsubsection.6.4.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Valores del atributo \texttt  {\$STANDARD\_INFORMATION}.}}{27}{table.14}\protected@file@percent }
+\newlabel{tab:dropbox-standard-information}{{14}{27}{Valores del atributo \cod {\$STANDARD\_INFORMATION}}{table.14}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.4.3}Atributo \texttt  {\$FILE\_NAME}}{28}{subsubsection.6.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.4.4}Atributo \texttt  {\$OBJECT\_ID}}{28}{subsubsection.6.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.4.5}Atributos de datos}{28}{subsubsection.6.4.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Examen de la entrada MFT mediante The Sleuth Kit.}}{29}{figure.13}\protected@file@percent }
+\newlabel{fig:dropbox-istat}{{13}{29}{Examen de la entrada MFT mediante The Sleuth Kit}{figure.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Interpretación de los resultados y comprobaciones pendientes}{29}{subsection.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6}Conclusiones del análisis}{29}{subsection.6.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.7}Evidencias}{30}{subsection.6.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Sobre los dispositivos de almacenamiento USB}{31}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Escenario 3: fuga de información mediante dispositivo USB}{31}{subsection.7.1}\protected@file@percent }
+\newlabel{cap:usb}{{7.1}{31}{Escenario 3: fuga de información mediante dispositivo USB}{subsection.7.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Planteamiento y alcance}{31}{subsection.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Preparación del escenario}{31}{subsection.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.3.1}Entorno de trabajo}{31}{subsubsection.7.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.3.2}Dispositivo USB utilizado}{32}{subsubsection.7.3.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces Ficha del dispositivo USB.}}{32}{table.15}\protected@file@percent }
+\newlabel{tab:usb-ficha}{{15}{32}{Ficha del dispositivo USB}{table.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Estado inicial del dispositivo: unidad \texttt  {E:} extraíble en FAT32.}}{32}{figure.14}\protected@file@percent }
+\newlabel{fig:usb-inicial}{{14}{32}{Estado inicial del dispositivo: unidad \cod {E:} extraíble en FAT32}{figure.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Formato rápido de la unidad \texttt  {E:} en NTFS.}}{32}{figure.15}\protected@file@percent }
+\newlabel{fig:usb-formato}{{15}{32}{Formato rápido de la unidad \cod {E:} en NTFS}{figure.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Estado final del dispositivo: unidad \texttt  {E:} en NTFS.}}{33}{figure.16}\protected@file@percent }
+\newlabel{fig:usb-final}{{16}{33}{Estado final del dispositivo: unidad \cod {E:} en NTFS}{figure.16}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.3.3}Simulación de la fuga}{33}{subsubsection.7.3.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Copia de \texttt  {Confidencial.pdf} al USB (16:19:56).}}{33}{figure.17}\protected@file@percent }
+\newlabel{fig:usb-copia}{{17}{33}{Copia de \cod {Confidencial.pdf} al USB (16:19:56)}{figure.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Verificación de la huella SHA-256 de la copia en el USB.}}{33}{figure.18}\protected@file@percent }
+\newlabel{fig:usb-hash-copia}{{18}{33}{Verificación de la huella SHA-256 de la copia en el USB}{figure.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Borrado del fichero del USB (16:21:25).}}{33}{figure.19}\protected@file@percent }
+\newlabel{fig:usb-borrado}{{19}{33}{Borrado del fichero del USB (16:21:25)}{figure.19}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Cadena de custodia}{34}{subsection.7.4}\protected@file@percent }
+\newlabel{sec:usb-custodia}{{7.4}{34}{Cadena de custodia}{subsection.7.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces Registro de custodia del dispositivo USB.}}{34}{table.16}\protected@file@percent }
+\newlabel{tab:usb-custodia}{{16}{34}{Registro de custodia del dispositivo USB}{table.16}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.5}Adquisición de la evidencia}{34}{subsection.7.5}\protected@file@percent }
+\newlabel{sec:usb-adquisicion}{{7.5}{34}{Adquisición de la evidencia}{subsection.7.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.5.1}Protección contra escritura}{34}{subsubsection.7.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Valor \texttt  {WriteProtect = 1} en el registro del equipo de análisis.}}{35}{figure.20}\protected@file@percent }
+\newlabel{fig:usb-writeprotect}{{20}{35}{Valor \cod {WriteProtect = 1} en el registro del equipo de análisis}{figure.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Comprobación con \texttt  {Get-Disk}: el dispositivo figura como solo lectura.}}{35}{figure.21}\protected@file@percent }
+\newlabel{fig:usb-getdisk}{{21}{35}{Comprobación con \cod {Get-Disk}: el dispositivo figura como solo lectura}{figure.21}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.5.2}Imagen forense en formato RAW}{35}{subsubsection.7.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Versión de la herramienta de adquisición.}}{35}{figure.22}\protected@file@percent }
+\newlabel{fig:usb-ftk-version}{{22}{35}{Versión de la herramienta de adquisición}{figure.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Destino de la imagen: \texttt  {C:\Evidencias \USB \usb _evidencia}, sin fragmentar.}}{36}{figure.23}\protected@file@percent }
+\newlabel{fig:usb-ftk-destino}{{23}{36}{Destino de la imagen: \cod {C:\Evidencias \USB \usb _evidencia}, sin fragmentar}{figure.23}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {17}{\ignorespaces Parámetros de la adquisición.}}{36}{table.17}\protected@file@percent }
+\newlabel{tab:usb-adquisicion}{{17}{36}{Parámetros de la adquisición}{table.17}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.5.3}Verificación de integridad}{36}{subsubsection.7.5.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces Resultado de la verificación de la imagen: los \textit  {hash} coinciden.}}{37}{figure.24}\protected@file@percent }
+\newlabel{fig:usb-ftk-verif}{{24}{37}{Resultado de la verificación de la imagen: los \textit {hash} coinciden}{figure.24}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {18}{\ignorespaces Verificación de integridad de la adquisición.}}{37}{table.18}\protected@file@percent }
+\newlabel{tab:usb-hashes}{{18}{37}{Verificación de integridad de la adquisición}{table.18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.6}Análisis de la imagen}{37}{subsection.7.6}\protected@file@percent }
+\newlabel{sec:usb-analisis}{{7.6}{37}{Análisis de la imagen}{subsection.7.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.6.1}Estructura del soporte}{37}{subsubsection.7.6.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces Estructura del soporte en \textit  {Autopsy}: espacio sin asignar y partición NTFS.}}{38}{figure.25}\protected@file@percent }
+\newlabel{fig:usb-autopsy-estructura}{{25}{38}{Estructura del soporte en \textit {Autopsy}: espacio sin asignar y partición NTFS}{figure.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces Contenido del volumen: ficheros de sistema NTFS y \texttt  {Confidencial.pdf} sin asignar.}}{38}{figure.26}\protected@file@percent }
+\newlabel{fig:usb-autopsy-volumen}{{26}{38}{Contenido del volumen: ficheros de sistema NTFS y \cod {Confidencial.pdf} sin asignar}{figure.26}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.6.2}Localización del fichero borrado}{38}{subsubsection.7.6.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces Fichero borrado localizado en \textit  {Deleted Files}.}}{38}{figure.27}\protected@file@percent }
+\newlabel{fig:usb-autopsy-borrado}{{27}{38}{Fichero borrado localizado en \textit {Deleted Files}}{figure.27}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces Metadatos del fichero en \textit  {Autopsy}.}}{39}{figure.28}\protected@file@percent }
+\newlabel{fig:usb-autopsy-meta1}{{28}{39}{Metadatos del fichero en \textit {Autopsy}}{figure.28}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces Atributos \texttt  {$STANDARD_INFORMATION} y \texttt  {$FILE_NAME} de la entrada de la MFT.}}{39}{figure.29}\protected@file@percent }
+\newlabel{fig:usb-autopsy-meta2}{{29}{39}{Atributos \cod {$STANDARD_INFORMATION} y \cod {$FILE_NAME} de la entrada de la MFT}{figure.29}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.6.3}Recuperación y comparación con el original}{40}{subsubsection.7.6.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {30}{\ignorespaces Atributo \texttt  {$DATA} residente, de 103 bytes.}}{40}{figure.30}\protected@file@percent }
+\newlabel{fig:usb-autopsy-data}{{30}{40}{Atributo \cod {$DATA} residente, de 103 bytes}{figure.30}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces Contenido del fichero recuperado.}}{40}{figure.31}\protected@file@percent }
+\newlabel{fig:usb-autopsy-hex}{{31}{40}{Contenido del fichero recuperado}{figure.31}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {19}{\ignorespaces Comparación del fichero recuperado con el original. Coinciden.}}{40}{table.19}\protected@file@percent }
+\newlabel{tab:usb-comparacion}{{19}{40}{Comparación del fichero recuperado con el original. Coinciden}{table.19}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.6.4}Línea temporal}{40}{subsubsection.7.6.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {20}{\ignorespaces Línea temporal de la fuga.}}{40}{table.20}\protected@file@percent }
+\newlabel{tab:usb-linea}{{20}{40}{Línea temporal de la fuga}{table.20}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.7}Conclusiones}{41}{subsection.7.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}CONCLUSIONES}{42}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9}Sobre la metodología empleada en la elaboración del presente informe pericial}{44}{section.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10}BIBLIOGRAFÍA Y REFERENCIAS A CONSULTAR}{46}{section.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{EVIDENCIAS}{48}{section.10}\protected@file@percent }
+\newlabel{LastPage}{{10}{49}{}{page.49}{}}
+\gdef\lastpage@lastpage{49}
+\gdef\lastpage@lastpageHy{49}
+\gdef \@abspage@last{50}
