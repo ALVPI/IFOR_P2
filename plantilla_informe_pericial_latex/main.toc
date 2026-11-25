@@ -53,29 +53,32 @@
 \contentsline {subsubsection}{\numberline {6.4.3}Atributo \texttt {\$FILE\_NAME}}{28}{subsubsection.6.4.3}%
 \contentsline {subsubsection}{\numberline {6.4.4}Atributo \texttt {\$OBJECT\_ID}}{28}{subsubsection.6.4.4}%
 \contentsline {subsubsection}{\numberline {6.4.5}Atributos de datos}{28}{subsubsection.6.4.5}%
-\contentsline {subsection}{\numberline {6.5}Interpretación de los resultados y comprobaciones pendientes}{29}{subsection.6.5}%
-\contentsline {subsection}{\numberline {6.6}Conclusiones del análisis}{29}{subsection.6.6}%
-\contentsline {subsection}{\numberline {6.7}Evidencias}{30}{subsection.6.7}%
-\contentsline {section}{\numberline {7}Sobre los dispositivos de almacenamiento USB}{31}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Escenario 3: fuga de información mediante dispositivo USB}{31}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Planteamiento y alcance}{31}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Preparación del escenario}{31}{subsection.7.3}%
-\contentsline {subsubsection}{\numberline {7.3.1}Entorno de trabajo}{31}{subsubsection.7.3.1}%
-\contentsline {subsubsection}{\numberline {7.3.2}Dispositivo USB utilizado}{32}{subsubsection.7.3.2}%
-\contentsline {subsubsection}{\numberline {7.3.3}Simulación de la fuga}{33}{subsubsection.7.3.3}%
-\contentsline {subsection}{\numberline {7.4}Cadena de custodia}{34}{subsection.7.4}%
-\contentsline {subsection}{\numberline {7.5}Adquisición de la evidencia}{34}{subsection.7.5}%
-\contentsline {subsubsection}{\numberline {7.5.1}Protección contra escritura}{34}{subsubsection.7.5.1}%
-\contentsline {subsubsection}{\numberline {7.5.2}Imagen forense en formato RAW}{35}{subsubsection.7.5.2}%
-\contentsline {subsubsection}{\numberline {7.5.3}Verificación de integridad}{36}{subsubsection.7.5.3}%
-\contentsline {subsection}{\numberline {7.6}Análisis de la imagen}{37}{subsection.7.6}%
-\contentsline {subsubsection}{\numberline {7.6.1}Estructura del soporte}{37}{subsubsection.7.6.1}%
-\contentsline {subsubsection}{\numberline {7.6.2}Localización del fichero borrado}{38}{subsubsection.7.6.2}%
-\contentsline {subsubsection}{\numberline {7.6.3}Recuperación y comparación con el original}{40}{subsubsection.7.6.3}%
-\contentsline {subsubsection}{\numberline {7.6.4}Línea temporal}{40}{subsubsection.7.6.4}%
-\contentsline {subsection}{\numberline {7.7}Conclusiones}{41}{subsection.7.7}%
-\contentsline {section}{\numberline {8}CONCLUSIONES}{42}{section.8}%
-\contentsline {section}{\numberline {9}Sobre la metodología empleada en la elaboración del presente informe pericial}{44}{section.9}%
-\contentsline {section}{\numberline {10}BIBLIOGRAFÍA Y REFERENCIAS A CONSULTAR}{46}{section.10}%
-\contentsline {section}{EVIDENCIAS}{48}{section.10}%
+\contentsline {subsubsection}{\numberline {6.4.6}Correlación con los archivos de la papelera}{29}{subsubsection.6.4.6}%
+\contentsline {subsection}{\numberline {6.5}Examen de artefactos locales de Dropbox}{30}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Análisis del historial de sincronización}{30}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Correlación temporal de los artefactos}{31}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}Conclusiones del análisis}{32}{subsection.6.8}%
+\contentsline {subsection}{\numberline {6.9}Evidencias}{32}{subsection.6.9}%
+\contentsline {section}{\numberline {7}Sobre los dispositivos de almacenamiento USB}{33}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Escenario 3: fuga de información mediante dispositivo USB}{33}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Planteamiento y alcance}{33}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Preparación del escenario}{33}{subsection.7.3}%
+\contentsline {subsubsection}{\numberline {7.3.1}Entorno de trabajo}{33}{subsubsection.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.2}Dispositivo USB utilizado}{34}{subsubsection.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.3}Simulación de la fuga}{35}{subsubsection.7.3.3}%
+\contentsline {subsection}{\numberline {7.4}Cadena de custodia}{36}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Adquisición de la evidencia}{36}{subsection.7.5}%
+\contentsline {subsubsection}{\numberline {7.5.1}Protección contra escritura}{36}{subsubsection.7.5.1}%
+\contentsline {subsubsection}{\numberline {7.5.2}Imagen forense en formato RAW}{37}{subsubsection.7.5.2}%
+\contentsline {subsubsection}{\numberline {7.5.3}Verificación de integridad}{38}{subsubsection.7.5.3}%
+\contentsline {subsection}{\numberline {7.6}Análisis de la imagen}{39}{subsection.7.6}%
+\contentsline {subsubsection}{\numberline {7.6.1}Estructura del soporte}{39}{subsubsection.7.6.1}%
+\contentsline {subsubsection}{\numberline {7.6.2}Localización del fichero borrado}{40}{subsubsection.7.6.2}%
+\contentsline {subsubsection}{\numberline {7.6.3}Recuperación y comparación con el original}{42}{subsubsection.7.6.3}%
+\contentsline {subsubsection}{\numberline {7.6.4}Línea temporal}{42}{subsubsection.7.6.4}%
+\contentsline {subsection}{\numberline {7.7}Conclusiones}{43}{subsection.7.7}%
+\contentsline {section}{\numberline {8}CONCLUSIONES}{44}{section.8}%
+\contentsline {section}{\numberline {9}Sobre la metodología empleada en la elaboración del presente informe pericial}{46}{section.9}%
+\contentsline {section}{\numberline {10}BIBLIOGRAFÍA Y REFERENCIAS A CONSULTAR}{48}{section.10}%
 \contentsline {section}{EVIDENCIAS}{50}{section.10}%
+\contentsline {section}{EVIDENCIAS}{52}{section.10}%

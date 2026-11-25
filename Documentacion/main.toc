@@ -1,0 +1,11 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{Resumen}{\es@scroman {i}}{chapter*.1}%
+\contentsline {chapter}{\numberline {A}Configuración del servidor de correo electrónico para el escenario de fuga de información por correo}{1}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Funcionalidades}{1}{appendix.A.1}%
+\contentsline {section}{\numberline {A.2}Decisiones técnicas y por qué}{1}{appendix.A.2}%
+\contentsline {section}{\numberline {A.3}Almacenamiento de Logs y evidencias (cadena de custodia)}{2}{appendix.A.3}%
+\contentsline {subsection}{\numberline {A.3.1}Ejemplo de registro (\textit {log}) de un envío de correo}{2}{subsection.A.3.1}%
+\contentsline {section}{\numberline {A.4}Por qué esto se adapta al escenario de la fuga por correo}{3}{appendix.A.4}%
+\contentsline {chapter}{\numberline {B}Servidor de correo para el Escenario 1 (fuga por correo)}{4}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Servidor de correo para el Escenario 2 fuga mediante DropBox}{5}{appendix.C}%
+\contentsline {chapter}{\numberline {D}Servidor de correo para el Escenario 3 extracción por usb}{6}{appendix.D}%
