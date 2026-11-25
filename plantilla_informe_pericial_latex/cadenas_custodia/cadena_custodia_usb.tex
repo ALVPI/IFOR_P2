@@ -17,16 +17,12 @@
 \renewcommand{\headrulewidth}{0pt}
 \fancyfoot[C]{\thepage\ de \pageref{LastPage}}
 
-% Campo con puntos; si el texto está vacío queda un campo en blanco
-% \dato{ancho}{texto}
-\newcommand{\dato}[2]{\makebox[#1]{\dotfill\,#2\,\dotfill}}
-
-% Bloque de entrega o recogida
-% \registro{Entrega|Recoge}{nombre}{DNI}{nº serie/IMEI}{en calidad de}{fecha}{hora}
+% Bloque de entrega o recogida (solo se muestran los datos conocidos)
+% \registro{Entrega|Recoge}{nombre}{--}{--}{en calidad de}{fecha}{hora}
 \newcommand{\registro}[7]{%
-  \noindent #1 el dispositivo: \dato{6.2cm}{#2} con DNI: \dato{3cm}{#3}\par
-  Número de serie/IMEI: \dato{4.5cm}{#4} En calidad de: \dato{5cm}{#5}\par
-  Fecha: \dato{5cm}{#6} Hora: \dato{2.5cm}{#7} \hfill Firma: \hspace{3.5cm}\par
+  \noindent #1 el dispositivo: \textbf{#2}\par
+  En calidad de: #5\par
+  Fecha: #6 \quad Hora: #7 \hfill Firma: \hspace{3.5cm}\par
   \vspace{0.6em}
 }
 
@@ -43,8 +39,8 @@
 
 El cliente Jaime Diez Zurro, director de la empresa (según el supuesto del
 enunciado), me hace entrega en calidad de perito informático de un dispositivo
-USB \textit{General UDisk} de 3,75~GB con número de serie \dato{4cm}{} para la
-realización de su correspondiente informe de peritaje.
+USB \textit{General UDisk} de 3,75~GB para la realización de su
+correspondiente informe de peritaje.
 
 El dispositivo fue adquirido por el grupo con anterioridad a la simulación y no
 había sido utilizado. Tras la simulación de la fuga (12 de noviembre de 2026)
@@ -59,30 +55,30 @@ el \textit{hash} obtenido en el momento de la adquisición forense.
 
 % 1. Compra
 \registro{Entrega}{Comercio}{}{}{Vendedor}{Anterior al 12/11/2026}{}
-\registro{Recoge}{Pablo}{}{}{Comprador}{Anterior al 12/11/2026}{}
+\registro{Recoge}{Pablo Pastor}{}{}{Comprador}{Anterior al 12/11/2026}{}
 \obs{Compra del pendrive \textit{General UDisk} de 3,75~GB (sin fecha exacta).
 Sin uso previo; formateado de fábrica en FAT32 con MBR.}
 
 % 2. Entrega al grupo para el peritaje
 \registro{Entrega}{Jaime Diez Zurro (supuesto)}{}{}{Director de la empresa}{20/11/2026}{16:30}
-\registro{Recoge}{Pablo}{}{}{Grupo}{20/11/2026}{16:30}
+\registro{Recoge}{Pablo Pastor}{}{}{Grupo}{20/11/2026}{16:30}
 \obs{Entrega del soporte al grupo para el peritaje, según el supuesto del
-enunciado. Entrega simulada: el soporte ya obraba en poder de Pablo.}
+enunciado. Entrega simulada: el soporte ya obraba en poder de Pablo Pastor.}
 
 % 3. Conexión al equipo de análisis
-\registro{Entrega}{Pablo}{}{}{Grupo}{20/11/2026}{19:52}
-\registro{Recoge}{Pablo}{}{}{Perito}{20/11/2026}{19:52}
+\registro{Entrega}{Pablo Pastor}{}{}{Grupo}{20/11/2026}{19:52}
+\registro{Recoge}{Pablo Pastor}{}{}{Perito}{20/11/2026}{19:52}
 \obs{Conexión al equipo de análisis con protección contra escritura y cálculo del
 primer \textit{hash}.}
 
 % 4. Devolución tras la adquisición
-\registro{Entrega}{Pablo}{}{}{Perito}{20/11/2026}{20:10}
-\registro{Recoge}{Pablo}{}{}{Grupo}{20/11/2026}{20:10}
+\registro{Entrega}{Pablo Pastor}{}{}{Perito}{20/11/2026}{20:10}
+\registro{Recoge}{Pablo Pastor}{}{}{Grupo}{20/11/2026}{20:10}
 \obs{Soporte expulsado del equipo de análisis tras la adquisición y la
-verificación. Queda en custodia de Pablo; el análisis se realiza sobre la copia
+verificación. Queda en custodia de Pablo Pastor; el análisis se realiza sobre la copia
 de trabajo.}
 
-\subsection*{Eventos sin cambio de custodia (en poder de Pablo)}
+\subsection*{Eventos sin cambio de custodia (en poder de Pablo Pastor)}
 
 \begin{itemize}[leftmargin=1.5em,itemsep=0.4em]
   \item \textbf{12/11/2026, 16:09:56.} Formato rápido a NTFS en la máquina
@@ -92,7 +88,7 @@ de trabajo.}
         \texttt{Confidencial.pdf}. Las horas de borrado y expulsión proceden del
         registro de la simulación.
   \item \textbf{12/11/2026, 16:22:43 a 20/11/2026.} Guardado en una caja, en el
-        domicilio de Pablo, sin precinto ni \textit{hash} previo.
+        domicilio de Pablo Pastor, sin precinto ni \textit{hash} previo.
 \end{itemize}
 
 \end{document}
