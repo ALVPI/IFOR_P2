@@ -1,0 +1,98 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+
+% Pie de página: "1 de 1"
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage\ de \pageref{LastPage}}
+
+% Campo con puntos; si el texto está vacío queda un campo en blanco
+% \dato{ancho}{texto}
+\newcommand{\dato}[2]{\makebox[#1]{\dotfill\,#2\,\dotfill}}
+
+% Bloque de entrega o recogida
+% \registro{Entrega|Recoge}{nombre}{DNI}{nº serie/IMEI}{en calidad de}{fecha}{hora}
+\newcommand{\registro}[7]{%
+  \noindent #1 el dispositivo: \dato{6.2cm}{#2} con DNI: \dato{3cm}{#3}\par
+  Número de serie/IMEI: \dato{4.5cm}{#4} En calidad de: \dato{5cm}{#5}\par
+  Fecha: \dato{5cm}{#6} Hora: \dato{2.5cm}{#7} \hfill Firma: \hspace{3.5cm}\par
+  \vspace{0.6em}
+}
+
+% Observaciones de un traspaso
+\newcommand{\obs}[1]{\noindent{\small\textit{Motivo y observaciones:} #1}\par\vspace{1.2em}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries CADENA DE CUSTODIA}
+\end{center}
+
+\vspace{0.5em}
+
+El cliente Jaime Diez Zurro, director de la empresa (según el supuesto del
+enunciado), me hace entrega en calidad de perito informático de un dispositivo
+USB \textit{General UDisk} de 3,75~GB con número de serie \dato{4cm}{} para la
+realización de su correspondiente informe de peritaje.
+
+El dispositivo fue adquirido por el grupo con anterioridad a la simulación y no
+había sido utilizado. Tras la simulación de la fuga (12 de noviembre de 2026)
+permaneció guardado en una caja en el domicilio de uno de los integrantes hasta
+el día de la adquisición. Durante ese periodo no se calculó ningún \textit{hash}
+ni se precintó el soporte, por lo que el estado del dispositivo queda fijado por
+el \textit{hash} obtenido en el momento de la adquisición forense.
+
+\vspace{0.5em}
+
+\subsection*{Traspasos del dispositivo}
+
+% 1. Compra
+\registro{Entrega}{Comercio}{}{}{Vendedor}{Anterior al 12/11/2026}{}
+\registro{Recoge}{Pablo}{}{}{Comprador}{Anterior al 12/11/2026}{}
+\obs{Compra del pendrive \textit{General UDisk} de 3,75~GB (sin fecha exacta).
+Sin uso previo; formateado de fábrica en FAT32 con MBR.}
+
+% 2. Entrega al grupo para el peritaje
+\registro{Entrega}{Jaime Diez Zurro (supuesto)}{}{}{Director de la empresa}{20/11/2026}{16:30}
+\registro{Recoge}{Pablo}{}{}{Grupo}{20/11/2026}{16:30}
+\obs{Entrega del soporte al grupo para el peritaje, según el supuesto del
+enunciado. Entrega simulada: el soporte ya obraba en poder de Pablo.}
+
+% 3. Conexión al equipo de análisis
+\registro{Entrega}{Pablo}{}{}{Grupo}{20/11/2026}{19:52}
+\registro{Recoge}{Pablo}{}{}{Perito}{20/11/2026}{19:52}
+\obs{Conexión al equipo de análisis con protección contra escritura y cálculo del
+primer \textit{hash}.}
+
+% 4. Devolución tras la adquisición
+\registro{Entrega}{Pablo}{}{}{Perito}{20/11/2026}{20:10}
+\registro{Recoge}{Pablo}{}{}{Grupo}{20/11/2026}{20:10}
+\obs{Soporte expulsado del equipo de análisis tras la adquisición y la
+verificación. Queda en custodia de Pablo; el análisis se realiza sobre la copia
+de trabajo.}
+
+\subsection*{Eventos sin cambio de custodia (en poder de Pablo)}
+
+\begin{itemize}[leftmargin=1.5em,itemsep=0.4em]
+  \item \textbf{12/11/2026, 16:09:56.} Formato rápido a NTFS en la máquina
+        virtual (hora tomada de los metadatos NTFS del volumen).
+  \item \textbf{12/11/2026, 16:19:56 a 16:22:43.} Conectado a la máquina virtual:
+        copia (16:19:56), borrado (16:21:25) y expulsión (16:22:43) de
+        \texttt{Confidencial.pdf}. Las horas de borrado y expulsión proceden del
+        registro de la simulación.
+  \item \textbf{12/11/2026, 16:22:43 a 20/11/2026.} Guardado en una caja, en el
+        domicilio de Pablo, sin precinto ni \textit{hash} previo.
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,51 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+
+% Pie de página: "1 de 1"
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage\ de \pageref{LastPage}}
+
+% Campo rellenable con puntos: \campo{ancho}
+\newcommand{\campo}[1]{\makebox[#1]{\dotfill}}
+
+% Bloque de entrega/recogida: \registro{Entrega|Recoge}
+\newcommand{\registro}[1]{%
+  \noindent #1 el dispositivo: \campo{6.5cm} con DNI: \campo{3cm}\par
+  Número de serie/IMEI: \campo{5cm} En calidad de: \campo{5cm}\par
+  Fecha: \campo{2.5cm} Hora: \campo{2.5cm} \hfill Firma: \hspace{4cm}\par
+  \vspace{1em}
+}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries CADENA DE CUSTODIA}
+\end{center}
+
+\vspace{1em}
+
+El cliente \campo{6cm} me hace entrega en calidad de perito informático de un
+dispositivo \campo{4cm} con número de serie \campo{4cm} para la realización de
+su correspondiente informe de peritaje.
+
+\vspace{1em}
+
+\registro{Entrega}
+\registro{Recoge}
+\registro{Entrega}
+\registro{Recoge}
+\registro{Entrega}
+\registro{Recoge}
+
+\end{document}
