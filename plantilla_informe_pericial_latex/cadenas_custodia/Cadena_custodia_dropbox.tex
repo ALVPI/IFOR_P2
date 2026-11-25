@@ -42,14 +42,13 @@
 \vspace{0.5em}
 
 El cliente Jaime Diez Zurro, director de la empresa (según el supuesto del
-enunciado), me hace entrega en calidad de perito informático de la copia de la imagen del
-equipo cliente (disco virtual \texttt{W11.dd}) con número de serie
-\dato{4cm}{} para la realización de su correspondiente informe de peritaje.
+enunciado), me hace entrega en calidad de perito informático de la imagen del
+equipo cliente (disco virtual \texttt{W11.vdi}) para la realización de su correspondiente informe de peritaje.
 
 El peritaje de este escenario lo realiza Santiago González Rodríguez, que es quien
 custodia el soporte.
 
-Las fechas y horas proceden de los metadatos del propio fichero \texttt{.dd} en
+Las fechas y horas proceden de los metadatos del propio fichero \texttt{.vdi} en
 el equipo de análisis (última modificación, creación de la copia y último
 acceso), de la creación de la captura con el \textit{hash} y de los registros de
 la fase de análisis. No se precintó el soporte ni se calculó ningún \textit{hash}
@@ -61,47 +60,47 @@ fijado por ese cálculo. Todas las horas están en hora local (CET, UTC+1).
 \subsection*{Traspasos del dispositivo}
 
 % 1. Entrega de la imagen al grupo
-\registro{Entrega}{Jaime Diez Zurro (supuesto)}{}{}{Director de la empresa}{12/11/2026}{20:52}
-\registro{Recoge}{Hugo Adán de la Fuente}{}{}{Grupo}{12/11/2026}{20:52}
-\obs{Entrega de la imagen y de la clave de recuperación de BitLocker (protector
-\texttt{\{04D7EFA5-4921-4EFD-8F65-7D2AAF4DF62A\}}) al grupo para el peritaje,
+\registro{Entrega}{Jaime Diez Zurro (supuesto)}{}{VBa9e2cb58-00392291}{Director de la empresa}{20/11/2026}{13:03}
+\registro{Recoge}{Santiago González Rodríguez}{}{VBa9e2cb58-00392291}{Grupo}{20/11/2026}{13:03}
+\obs{Entrega de la copia de la imagen al grupo para el peritaje,
 según el supuesto del enunciado. Entrega simulada: el disco ya obraba en poder
-del perito. La copia en la carpeta \texttt{IFOR\_CASO\_CORREO} se creó a las
-20:52:06.}
+del perito. La copia en la carpeta \texttt{W11} se creó a las
+13:03:33.}
 
 % 2. Primer hash
-\registro{Entrega}{Hugo Adán de la Fuente}{}{}{Grupo}{12/11/2026}{20:59}
-\registro{Recoge}{Hugo Adán de la Fuente}{}{}{Perito}{12/11/2026}{20:59}
+\registro{Entrega}{Santiago González Rodríguez}{}{VBa9e2cb58-00392291}{Grupo}{20/11/2026}{14:12}
+\registro{Recoge}{Santiago González Rodríguez}{}{VBa9e2cb58-00392291}{Perito}{20/11/2026}{14:12}
 \obs{Cálculo del primer \textit{hash} (SHA-256) de la imagen.}
 
 % 3. Copia de trabajo
-\registro{Entrega}{Hugo Adán de la Fuente}{}{}{Perito}{24/11/2026}{Hasta las 00:02}
-\registro{Recoge}{Hugo Adán de la Fuente}{}{}{Grupo}{24/11/2026}{Hasta las 00:02}
+\registro{Entrega}{Santiago González Rodríguez}{}{VBa9e2cb58-00392291}{Perito}{24/11/2026}{Hasta las 00:02}
+\registro{Recoge}{Santiago González Rodríguez}{}{VBa9e2cb58-00392291}{Grupo}{24/11/2026}{Hasta las 00:02}
 \obs{Se crea una copia de trabajo de la imagen y se comprueba que su
 \textit{hash} es idéntico al del original. Después se cambia el identificador
 (UUID) de la copia, para poder registrarla en \textit{VirtualBox}.}
 
-% 4. Análisis en Kali Linux
-\registro{Entrega}{Hugo Adán de la Fuente}{}{}{Perito}{24/11/2026}{De 00:05 a 00:48}
-\registro{Recoge}{Hugo Adán de la Fuente}{}{}{Grupo}{24/11/2026}{De 00:05 a 00:48}
-\obs{Análisis en la máquina virtual \textit{Kali Linux}, con la copia de trabajo
+% 4. Análisis con herramienta Autopsy
+\registro{Entrega}{Santiago González Rodríguez}{}{VBa9e2cb58-00392291}{Perito}{24/11/2026}{De 00:05 a 00:48}
+\registro{Recoge}{Santiago González Rodríguez}{}{VBa9e2cb58-00392291}{Grupo}{24/11/2026}{De 00:05 a 00:48}
+\obs{Análisis con la herramienta \textit{Autopsy}, con la copia de trabajo
 conectada como disco inmutable. Cálculo del \textit{hash} del disco completo al
 empezar y al terminar.}
 
 % 5. Recálculo final
-\registro{Entrega}{Hugo Adán de la Fuente}{}{}{Perito}{24/11/2026}{00:49}
-\registro{Recoge}{Hugo Adán de la Fuente}{}{}{Grupo}{24/11/2026}{00:49}
+\registro{Entrega}{Santiago González Rodríguez}{}{VBa9e2cb58-00392291}{Perito}{24/11/2026}{00:49}
+\registro{Recoge}{Santiago González Rodríguez}{}{VBa9e2cb58-00392291}{Grupo}{24/11/2026}{00:49}
 \obs{Recálculo de los \textit{hash} del original y de la copia. Custodia en el
-equipo del perito, en la carpeta \texttt{IFOR\_CASO\_CORREO}, sin modificar.}
+equipo del perito, en la carpeta \texttt{W11}, sin modificar.}
 
-\subsection*{Eventos sin cambio de custodia (en poder de Hugo Adán de la Fuente)}
+\subsection*{Eventos sin cambio de custodia (en poder de Santiago González Rodríguez)}
 
 \begin{itemize}[leftmargin=1.5em,itemsep=0.4em]
-  \item \textbf{10/11/2026, de 17:07 a 18:35.} Simulación de la fuga en las
+  \item \textbf{15/11/2026, de 17:07 a 18:35.} Simulación de la fuga en las
         máquinas virtuales: configuración de red, extracción desde el servidor y
         comprobación de huellas. El mensaje se envía a las 18:26:34.
-  \item \textbf{12/11/2026, 20:46:41.} Última modificación del disco virtual
-        \texttt{Maquina\_Correo.vdi}: es la última vez que la máquina virtual
+   \item \textbf{15/11/2026, 18:35 a 19:56:41.} Instalación de Dropbox y subida de archivo y sincronización a la cuenta y posterior eliminación desde la carpeta sincronizada de Dropbox.
+  \item \textbf{21/11/2026, 19:56:41.} Última modificación del disco virtual
+        \texttt{W11.vdi}: es la última vez que la máquina virtual
         escribió en él.
 \end{itemize}
 
