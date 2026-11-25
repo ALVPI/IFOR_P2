@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.7)  25 NOV 2026 11:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.7)  25 NOV 2026 12:40
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -709,7 +709,7 @@ Package pdftex.def Info: Recursos/logPerito.png  used on input line 7.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
  [12{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
 (./capitulos/03_1_1_desarrollo_correo.tex
-<Recursos/ip_WS.png, id=527, 532.99126pt x 79.04532pt>
+<Recursos/ip_WS.png, id=531, 532.99126pt x 79.04532pt>
 File: Recursos/ip_WS.png Graphic file (type png)
 <use Recursos/ip_WS.png>
 Package pdftex.def Info: Recursos/ip_WS.png  used on input line 69.
@@ -719,24 +719,24 @@ File: Recursos/logPerito.png Graphic file (type png)
 Package pdftex.def Info: Recursos/logPerito.png  used on input line 73.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
  [13]
-<Recursos/ip_pc_ladron.png, id=535, 520.94624pt x 100.87688pt>
+<Recursos/ip_pc_ladron.png, id=539, 520.94624pt x 100.87688pt>
 File: Recursos/ip_pc_ladron.png Graphic file (type png)
 <use Recursos/ip_pc_ladron.png>
 Package pdftex.def Info: Recursos/ip_pc_ladron.png  used on input line 76.
 (pdftex.def)             Requested size: 386.96027pt x 74.93246pt.
-<Recursos/carpeta_compartida_WS.png, id=537, 529.98pt x 127.22531pt>
+<Recursos/carpeta_compartida_WS.png, id=541, 529.98pt x 127.22531pt>
 File: Recursos/carpeta_compartida_WS.png Graphic file (type png)
 <use Recursos/carpeta_compartida_WS.png>
 Package pdftex.def Info: Recursos/carpeta_compartida_WS.png  used on input line
  93.
 (pdftex.def)             Requested size: 386.96027pt x 92.89311pt.
-<Recursos/confidencial_en_WS_hash.png, id=539, 579.66562pt x 61.73062pt>
+<Recursos/confidencial_en_WS_hash.png, id=543, 579.66562pt x 61.73062pt>
 File: Recursos/confidencial_en_WS_hash.png Graphic file (type png)
 <use Recursos/confidencial_en_WS_hash.png>
 Package pdftex.def Info: Recursos/confidencial_en_WS_hash.png  used on input li
 ne 104.
 (pdftex.def)             Requested size: 386.96027pt x 41.20857pt.
-<Recursos/confidencial_en_Windows11_hash.png, id=541, 600.74437pt x 94.85437pt>
+<Recursos/confidencial_en_Windows11_hash.png, id=545, 600.74437pt x 94.85437pt>
 
 File: Recursos/confidencial_en_Windows11_hash.png Graphic file (type png)
 <use Recursos/confidencial_en_Windows11_hash.png>
@@ -749,7 +749,7 @@ Package pdftex.def Info: Recursos/logPerito.png  used on input line 126.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
  [14 <./Recursos/ip_WS.png> <./Recursos/ip_pc_ladron.png> <./Recursos/carpeta_c
 ompartida_WS.png> <./Recursos/confidencial_en_WS_hash.png>]
-<Recursos/correo_registrado.png, id=556, 612.78937pt x 319.94531pt>
+<Recursos/correo_registrado.png, id=560, 612.78937pt x 319.94531pt>
 File: Recursos/correo_registrado.png Graphic file (type png)
 <use Recursos/correo_registrado.png>
 Package pdftex.def Info: Recursos/correo_registrado.png  used on input line 141
@@ -865,7 +865,7 @@ File: Recursos/logPerito.png Graphic file (type png)
 Package pdftex.def Info: Recursos/logPerito.png  used on input line 238.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
 [16]
-<Recursos/imagen_disco_correo.png, id=574, 879.285pt x 94.85437pt>
+<Recursos/imagen_disco_correo.png, id=578, 879.285pt x 94.85437pt>
 File: Recursos/imagen_disco_correo.png Graphic file (type png)
 <use Recursos/imagen_disco_correo.png>
 Package pdftex.def Info: Recursos/imagen_disco_correo.png  used on input line 2
@@ -894,13 +894,13 @@ File: Recursos/logPerito.png Graphic file (type png)
 Package pdftex.def Info: Recursos/logPerito.png  used on input line 357.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
 [18]
-<Recursos/correo_kali_bitlocker.png, id=604, 948.54375pt x 615.29875pt>
+<Recursos/correo_kali_bitlocker.png, id=608, 948.54375pt x 615.29875pt>
 File: Recursos/correo_kali_bitlocker.png Graphic file (type png)
 <use Recursos/correo_kali_bitlocker.png>
 Package pdftex.def Info: Recursos/correo_kali_bitlocker.png  used on input line
  369.
 (pdftex.def)             Requested size: 386.96027pt x 251.00664pt.
-<Recursos/correo_kali_dislocker.png, id=607, 530.98375pt x 358.33875pt>
+<Recursos/correo_kali_dislocker.png, id=611, 530.98375pt x 358.33875pt>
 File: Recursos/correo_kali_dislocker.png Graphic file (type png)
 <use Recursos/correo_kali_dislocker.png>
 Package pdftex.def Info: Recursos/correo_kali_dislocker.png  used on input line
@@ -916,7 +916,7 @@ File: Recursos/logPerito.png Graphic file (type png)
 Package pdftex.def Info: Recursos/logPerito.png  used on input line 457.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
  [20 <./Recursos/correo_kali_dislocker.png (PNG copy)>]
-<Recursos/correo_kali_eml_logs.png, id=638, 1277.77374pt x 390.45876pt>
+<Recursos/correo_kali_eml_logs.png, id=642, 1277.77374pt x 390.45876pt>
 File: Recursos/correo_kali_eml_logs.png Graphic file (type png)
 <use Recursos/correo_kali_eml_logs.png>
 Package pdftex.def Info: Recursos/correo_kali_eml_logs.png  used on input line 
@@ -939,7 +939,7 @@ File: Recursos/logPerito.png Graphic file (type png)
 Package pdftex.def Info: Recursos/logPerito.png  used on input line 503.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
 [21 <./Recursos/correo_kali_eml_logs.png (PNG copy)>]
-<Recursos/correo_kali_hashes.png, id=648, 836.12375pt x 261.97874pt>
+<Recursos/correo_kali_hashes.png, id=652, 836.12375pt x 261.97874pt>
 File: Recursos/correo_kali_hashes.png Graphic file (type png)
 <use Recursos/correo_kali_hashes.png>
 Package pdftex.def Info: Recursos/correo_kali_hashes.png  used on input line 51
@@ -1016,7 +1016,7 @@ Overfull \hbox (32.75635pt too wide) in paragraph at lines 101--102
 713ef3fa7| 
  []
 
-<Recursos/dropbox_autopsy_metadatos.jpg, id=677, 686.17645pt x 301.51355pt>
+<Recursos/dropbox_autopsy_metadatos.jpg, id=681, 686.17645pt x 301.51355pt>
 File: Recursos/dropbox_autopsy_metadatos.jpg Graphic file (type jpg)
 <use Recursos/dropbox_autopsy_metadatos.jpg>
 Package pdftex.def Info: Recursos/dropbox_autopsy_metadatos.jpg  used on input 
@@ -1037,7 +1037,7 @@ File: Recursos/logPerito.png Graphic file (type png)
 Package pdftex.def Info: Recursos/logPerito.png  used on input line 260.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
  [28]
-<Recursos/dropbox_istat.jpg, id=702, 696.27872pt x 428.18033pt>
+<Recursos/dropbox_istat.jpg, id=706, 696.27872pt x 428.18033pt>
 File: Recursos/dropbox_istat.jpg Graphic file (type jpg)
 <use Recursos/dropbox_istat.jpg>
 Package pdftex.def Info: Recursos/dropbox_istat.jpg  used on input line 297.
@@ -1080,19 +1080,19 @@ File: Recursos/logPerito.png Graphic file (type png)
 Package pdftex.def Info: Recursos/logPerito.png  used on input line 64.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
  [33]
-<Recursos/usb_estado_inicial.png, id=743, 136.25906pt x 216.05719pt>
+<Recursos/usb_estado_inicial.png, id=747, 136.25906pt x 216.05719pt>
 File: Recursos/usb_estado_inicial.png Graphic file (type png)
 <use Recursos/usb_estado_inicial.png>
 Package pdftex.def Info: Recursos/usb_estado_inicial.png  used on input line 97
 .
 (pdftex.def)             Requested size: 136.57462pt x 216.57092pt.
-<Recursos/usb_formato_ntfs.png, id=744, 423.83344pt x 103.88812pt>
+<Recursos/usb_formato_ntfs.png, id=748, 423.83344pt x 103.88812pt>
 File: Recursos/usb_formato_ntfs.png Graphic file (type png)
 <use Recursos/usb_formato_ntfs.png>
 Package pdftex.def Info: Recursos/usb_formato_ntfs.png  used on input line 104.
 
 (pdftex.def)             Requested size: 364.19667pt x 89.27386pt.
-<Recursos/usb_estado_final.png, id=745, 135.50626pt x 170.13562pt>
+<Recursos/usb_estado_final.png, id=749, 135.50626pt x 170.13562pt>
 File: Recursos/usb_estado_final.png Graphic file (type png)
 <use Recursos/usb_estado_final.png>
 Package pdftex.def Info: Recursos/usb_estado_final.png  used on input line 111.
@@ -1103,17 +1103,17 @@ File: Recursos/logPerito.png Graphic file (type png)
 Package pdftex.def Info: Recursos/logPerito.png  used on input line 115.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
  [34 <./Recursos/usb_estado_inicial.png> <./Recursos/usb_formato_ntfs.png>]
-<Recursos/usb_copia.png, id=762, 603.75563pt x 38.39343pt>
+<Recursos/usb_copia.png, id=766, 603.75563pt x 38.39343pt>
 File: Recursos/usb_copia.png Graphic file (type png)
 <use Recursos/usb_copia.png>
 Package pdftex.def Info: Recursos/usb_copia.png  used on input line 136.
 (pdftex.def)             Requested size: 364.19667pt x 23.15924pt.
-<Recursos/usb_hash_copia.png, id=763, 580.41844pt x 40.65187pt>
+<Recursos/usb_hash_copia.png, id=767, 580.41844pt x 40.65187pt>
 File: Recursos/usb_hash_copia.png Graphic file (type png)
 <use Recursos/usb_hash_copia.png>
 Package pdftex.def Info: Recursos/usb_hash_copia.png  used on input line 143.
 (pdftex.def)             Requested size: 364.19667pt x 25.50783pt.
-<Recursos/usb_borrado.png, id=764, 430.60875pt x 39.89906pt>
+<Recursos/usb_borrado.png, id=768, 430.60875pt x 39.89906pt>
 File: Recursos/usb_borrado.png Graphic file (type png)
 <use Recursos/usb_borrado.png>
 Package pdftex.def Info: Recursos/usb_borrado.png  used on input line 150.
@@ -1143,7 +1143,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 191--191
 []|\T1/lmr/m/n/10 (+20) Pablo (pe-ri-
  []
 
-<Recursos/usb_writeprotect_registro.png, id=782, 721.19438pt x 150.5625pt>
+<Recursos/usb_writeprotect_registro.png, id=786, 721.19438pt x 150.5625pt>
 File: Recursos/usb_writeprotect_registro.png Graphic file (type png)
 <use Recursos/usb_writeprotect_registro.png>
 Package pdftex.def Info: Recursos/usb_writeprotect_registro.png  used on input 
@@ -1154,17 +1154,17 @@ File: Recursos/logPerito.png Graphic file (type png)
 Package pdftex.def Info: Recursos/logPerito.png  used on input line 222.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
 [36]
-<Recursos/usb_get_disk.png, id=792, 721.94719pt x 265.74281pt>
+<Recursos/usb_get_disk.png, id=796, 721.94719pt x 265.74281pt>
 File: Recursos/usb_get_disk.png Graphic file (type png)
 <use Recursos/usb_get_disk.png>
 Package pdftex.def Info: Recursos/usb_get_disk.png  used on input line 231.
 (pdftex.def)             Requested size: 364.19667pt x 134.05916pt.
-<Recursos/usb_ftk_version.png, id=795, 314.67563pt x 258.9675pt>
+<Recursos/usb_ftk_version.png, id=799, 314.67563pt x 258.9675pt>
 File: Recursos/usb_ftk_version.png Graphic file (type png)
 <use Recursos/usb_ftk_version.png>
 Package pdftex.def Info: Recursos/usb_ftk_version.png  used on input line 247.
 (pdftex.def)             Requested size: 136.57462pt x 112.39703pt.
-<Recursos/usb_ftk_destino.png, id=796, 389.20406pt x 298.11375pt>
+<Recursos/usb_ftk_destino.png, id=800, 389.20406pt x 298.11375pt>
 File: Recursos/usb_ftk_destino.png Graphic file (type png)
 <use Recursos/usb_ftk_destino.png>
 Package pdftex.def Info: Recursos/usb_ftk_destino.png  used on input line 254.
@@ -1175,7 +1175,7 @@ Package pdftex.def Info: Recursos/logPerito.png  used on input line 259.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
  [37 <./Recursos/usb_writeprotect_registro.png> <./Recursos/usb_get_disk.png> <
 ./Recursos/usb_ftk_version.png>]
-<Recursos/usb_ftk_verificacion.png, id=810, 528.47438pt x 329.73187pt>
+<Recursos/usb_ftk_verificacion.png, id=814, 528.47438pt x 329.73187pt>
 File: Recursos/usb_ftk_verificacion.png Graphic file (type png)
 <use Recursos/usb_ftk_verificacion.png>
 Package pdftex.def Info: Recursos/usb_ftk_verificacion.png  used on input line 
@@ -1186,7 +1186,7 @@ File: Recursos/logPerito.png Graphic file (type png)
 Package pdftex.def Info: Recursos/logPerito.png  used on input line 294.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
  [38 <./Recursos/usb_ftk_destino.png>]
-<Recursos/usb_autopsy_estructura.png, id=821, 330.48468pt x 141.52875pt>
+<Recursos/usb_autopsy_estructura.png, id=825, 330.48468pt x 141.52875pt>
 File: Recursos/usb_autopsy_estructura.png Graphic file (type png)
 <use Recursos/usb_autopsy_estructura.png>
 Package pdftex.def Info: Recursos/usb_autopsy_estructura.png  used on input lin
@@ -1198,19 +1198,19 @@ Package pdftex.def Info: Recursos/logPerito.png  used on input line 347.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
 
 [39 <./Recursos/usb_ftk_verificacion.png>]
-<Recursos/usb_autopsy_volumen.png, id=831, 1443.89438pt x 463.7325pt>
+<Recursos/usb_autopsy_volumen.png, id=835, 1443.89438pt x 463.7325pt>
 File: Recursos/usb_autopsy_volumen.png Graphic file (type png)
 <use Recursos/usb_autopsy_volumen.png>
 Package pdftex.def Info: Recursos/usb_autopsy_volumen.png  used on input line 3
 50.
 (pdftex.def)             Requested size: 455.24411pt x 146.21094pt.
-<Recursos/usb_autopsy_borrado.png, id=833, 1434.86063pt x 279.29344pt>
+<Recursos/usb_autopsy_borrado.png, id=837, 1434.86063pt x 279.29344pt>
 File: Recursos/usb_autopsy_borrado.png Graphic file (type png)
 <use Recursos/usb_autopsy_borrado.png>
 Package pdftex.def Info: Recursos/usb_autopsy_borrado.png  used on input line 3
 65.
 (pdftex.def)             Requested size: 455.24411pt x 88.61288pt.
-<Recursos/usb_autopsy_metadatos1.png, id=836, 513.41812pt x 521.69907pt>
+<Recursos/usb_autopsy_metadatos1.png, id=840, 513.41812pt x 521.69907pt>
 File: Recursos/usb_autopsy_metadatos1.png Graphic file (type png)
 <use Recursos/usb_autopsy_metadatos1.png>
 Package pdftex.def Info: Recursos/usb_autopsy_metadatos1.png  used on input lin
@@ -1222,7 +1222,7 @@ Package pdftex.def Info: Recursos/logPerito.png  used on input line 381.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
  [40 <./Recursos/usb_autopsy_estructura.png> <./Recursos/usb_autopsy_volumen.pn
 g> <./Recursos/usb_autopsy_borrado.png>]
-<Recursos/usb_autopsy_metadatos2.png, id=848, 469.755pt x 496.85625pt>
+<Recursos/usb_autopsy_metadatos2.png, id=852, 469.755pt x 496.85625pt>
 File: Recursos/usb_autopsy_metadatos2.png Graphic file (type png)
 <use Recursos/usb_autopsy_metadatos2.png>
 Package pdftex.def Info: Recursos/usb_autopsy_metadatos2.png  used on input lin
@@ -1234,13 +1234,13 @@ Package pdftex.def Info: Recursos/logPerito.png  used on input line 400.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
  [41 <./Recursos/usb_autopsy_metadatos1.png> <./Recursos/usb_autopsy_metadatos2
 .png>]
-<Recursos/usb_autopsy_data_residente.png, id=859, 445.665pt x 46.67438pt>
+<Recursos/usb_autopsy_data_residente.png, id=863, 445.665pt x 46.67438pt>
 File: Recursos/usb_autopsy_data_residente.png Graphic file (type png)
 <use Recursos/usb_autopsy_data_residente.png>
 Package pdftex.def Info: Recursos/usb_autopsy_data_residente.png  used on input
  line 403.
 (pdftex.def)             Requested size: 273.14923pt x 28.60663pt.
-<Recursos/usb_autopsy_hex.png, id=860, 518.6878pt x 116.68594pt>
+<Recursos/usb_autopsy_hex.png, id=864, 518.6878pt x 116.68594pt>
 File: Recursos/usb_autopsy_hex.png Graphic file (type png)
 <use Recursos/usb_autopsy_hex.png>
 Package pdftex.def Info: Recursos/usb_autopsy_hex.png  used on input line 410.
@@ -1308,12 +1308,13 @@ File: Recursos/logPerito.png Graphic file (type png)
 Package pdftex.def Info: Recursos/logPerito.png  used on input line 50.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
 
-[50])
+[50]) (./anexos/anexo_02_capturas_y_logs.tex)
 File: Recursos/logPerito.png Graphic file (type png)
 <use Recursos/logPerito.png>
-Package pdftex.def Info: Recursos/logPerito.png  used on input line 84.
+Package pdftex.def Info: Recursos/logPerito.png  used on input line 85.
 (pdftex.def)             Requested size: 63.40723pt x 18.49411pt.
- [51] 
+ [51]
+
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux
 LaTeX Info: Redefining \. on input line 11.
@@ -1324,14 +1325,14 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5D692F821ACF629FC9203319A5D1F776;19540.
+(rerunfilecheck)             Checksum: BDDF06EF71D37206287334625F1C814F;19894.
  ) 
 Here is how much of TeX's memory you used:
- 17121 strings out of 474116
- 275973 string characters out of 5743683
+ 17133 strings out of 474116
+ 276334 string characters out of 5743683
  2023187 words of memory out of 5000000
- 38617 multiletter control sequences out of 15000+600000
- 668919 words of font info for 260 fonts, out of 8000000 for 9000
+ 38622 multiletter control sequences out of 15000+600000
+ 669158 words of font info for 262 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  85i,16n,93p,1136b,1151s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/lo
@@ -1348,10 +1349,10 @@ onts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1
 /public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm
 /lmtt9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtti10.pf
 b>
-Output written on main.pdf (52 pages, 1374873 bytes).
+Output written on main.pdf (52 pages, 1377968 bytes).
 PDF statistics:
- 1062 PDF objects out of 1200 (max. 8388607)
- 906 compressed objects within 10 object streams
+ 1067 PDF objects out of 1200 (max. 8388607)
+ 911 compressed objects within 10 object streams
  251 named destinations out of 1000 (max. 500000)
- 63798 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 63806 words of extra memory for PDF output out of 74296 (max. 10000000)
 

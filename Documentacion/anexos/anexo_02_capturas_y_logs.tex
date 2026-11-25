@@ -1,29 +1,4 @@
 \section*{Anexo II. Distribución de actuaciones del Equipo Pericial}
-\addcontentsline{toc}{section}{EVIDENCIAS}
-A efectos de trazabilidad interna y transparencia metodológica, se detalla a continuación la distribución de responsabilidades técnicas, custodia de soportes y análisis forenses ejecutados de forma colegiada por cada uno de los integrantes del \textbf{Equipo Pericial \GrupoPracticas} en la elaboración del presente dictamen:
+\addcontentsline{toc}{section}{\protect\numberline{}Anexo II. Distribución de actuaciones del Equipo Pericial}
 
-\vspace{0.3cm}
-\renewcommand{\arraystretch}{1.35}
-\begin{tabularx}{\textwidth}{@{} >{\raggedright\arraybackslash}p{3.9cm} >{\raggedright\arraybackslash}p{3.5cm} X @{}}
-	\toprule
-	\textbf{\textcolor{AzulPericial}{Perito / Colegiado}} & 
-	\textbf{\textcolor{AzulPericial}{Área de especialidad}} & 
-	\textbf{\textcolor{AzulPericial}{Actuaciones y evidencias asignadas}} \\
-	\midrule
-	\textbf{\PeritoUno} \newline {\small Col. n.\textsuperscript{o} \NumColegiadoUno} & 
-	Arquitectura de sistemas y soportes extraíbles & 
-	\textbf{Escenario 3 (Dispositivo USB):} Custodia del soporte físico \texttt{General UDisk}, habilitación de bloqueo contra escritura (\texttt{WriteProtect = 1}), adquisición bit a bit en formato RAW (\texttt{usb\_evidencia.001}) con \textit{FTK Imager} y recuperación de \texttt{Confidencial.pdf} desde la \texttt{\$MFT} mediante \textit{Autopsy} (Sección 7). \\
-	\midrule
-	\textbf{\PeritoDos} \newline {\small Col. n.\textsuperscript{o} \NumColegiadoDos} & 
-	Redes, protocolos SMTP y correo electrónico & 
-	\textbf{Escenario 1 (Correo electrónico):} Custodia del disco virtual \texttt{Maquina\_Corrreo.vdi}, descifrado de volumen BitLocker en solo lectura (\textit{dislocker} en Kali Linux), extracción del mensaje MIME (\texttt{.eml}), análisis de \texttt{envios.log} y reconstrucción cronológica (Sección 5). \\
-	\midrule
-	\textbf{\PeritoTres} \newline {\small Col. n.\textsuperscript{o} \NumColegiadoTres} & 
-	Sistemas de archivos NTFS y entornos en la nube & 
-	\textbf{Escenario 2 (Dropbox):} Examen forense de la imagen \texttt{W11.dd}, inspección de la entrada MFT \texttt{188015} mediante \textit{Autopsy} y \textit{The Sleuth Kit} (\texttt{istat}), verificación del flujo alternativo \texttt{com.dropbox.attrs} y trazabilidad en \texttt{\$Recycle.Bin} (Sección 6). \\
-	\midrule
-	\textbf{\PeritoCuatro} \newline {\small Col. n.\textsuperscript{o} \NumColegiadoCuatro} & 
-	Seguridad de la información y cadena de custodia & 
-	\textbf{Infraestructura, metodología y consolidación:} Implementación y auditoría del servidor SMTP/Webmail de pruebas (\texttt{IFOR\_P2}), control de verificación criptográfica (SHA-256), adecuación normativa (ISO/IEC 27037 y UNE 71506) y síntesis de conclusiones (Secciones 3, 4, 8 y 9). \\
-	\bottomrule
-\end{tabularx}
+A los efectos de la puesta a disposición de las fuentes de prueba, la garantía del principio de contradicción y la plena trazabilidad y verificabilidad de las actuaciones periciales practicadas conforme a las directrices de la norma UNE-EN ISO/IEC 27037 y a lo dispuesto en la Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil, este \textbf{Equipo Pericial \GrupoPracticas} hace constar que las imágenes forenses de disco, copias de trabajo y demás soportes o evidencias digitales examinados en el presente dictamen permanecen custodiados y accesibles para su consulta y eventual cotejo o contradicción pericial por parte de quien legítimamente corresponda a través del siguiente enlace: \href{https://uvaes-my.sharepoint.com/:f:/g/personal/alvaro_lopez_primo_estudiantes_uva_es/IgB5ujIrpTuxTJiIfg38X4QCAaf31MI4uyjjtGKrtgsyuvA?e=aJjbFz}{\textbf{\textit{repositorio de imágenes de disco del equpo del empleado}}}.

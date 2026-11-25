@@ -1,0 +1,85 @@
+\documentclass[11pt,a4paper]{article}
+
+% ==============================================================================
+% HOJA DE ESTILOS DEL PROYECTO (estilos, paquetes, márgenes y encabezados)
+% ==============================================================================
+\usepackage{estilo_pericial}
+
+% ==============================================================================
+% METADATOS Y VARIABLES CONFIGURABLES DEL INFORME
+% (Modifica estos valores una única vez para actualizar todo el documento)
+% ==============================================================================
+\renewcommand{\TituloInforme}{Informe Técnico Pericial}
+\renewcommand{\SubtituloDocumento}{DICTAMEN PERICIAL}
+\renewcommand{\Cliente}{EMPRESA SL}
+\renewcommand{\Referencia}{ITP26-GP08}
+\renewcommand{\FechaInforme}{19 de Novimebre de 2026}
+\renewcommand{\CiudadFirma}{Valladolid}
+\renewcommand{\FechaFirma}{24 de Noviembre de 2026}
+
+
+
+% ==============================================================================
+% INICIO DEL DOCUMENTO
+% ==============================================================================
+\begin{document}
+
+% ------------------------------------------------------------------------------
+% PORTADA
+% ------------------------------------------------------------------------------
+%\GenerarPortadaPericial
+\GenerarPortadaPericial
+% ------------------------------------------------------------------------------
+% TABLA DE CONTENIDOS
+% ------------------------------------------------------------------------------
+\newpage
+\tableofcontents
+\newpage
+
+% ------------------------------------------------------------------------------
+% CUERPO DEL DICTAMEN PERICIAL (CARPETA: capitulos/)
+% ------------------------------------------------------------------------------
+\begin{center}
+    {\LARGE\bfseries\textcolor{AzulPericial}{\SubtituloDocumento}}
+\end{center}
+\vspace{0.5cm}
+
+% Ajuste para que la numeración comience en 0 (0. Resumen ejecutivo)
+\setcounter{section}{-1}
+
+\input{capitulos/00_resumen_ejecutivo}
+\newpage
+
+\input{capitulos/01_introduccion}
+\newpage
+
+\input{capitulos/02_consideraciones_generales}
+\newpage
+
+\input{capitulos/03_consideraciones_especificas}
+\newpage
+
+\input{capitulos/04_conclusiones}
+\newpage
+
+\input{capitulos/05_metodologia}
+\newpage
+
+\input{capitulos/06_bibliografia}
+\newpage
+
+% ------------------------------------------------------------------------------
+% BLOQUE DE ANEXOS Y EVIDENCIAS (CARPETA: anexos/)
+% ------------------------------------------------------------------------------
+\appendix
+\renewcommand{\thesection}{\Alph{section}}
+
+\input{anexos/anexo_01_evidencias}
+\input{anexos/anexo_02_capturas_y_logs}
+
+
+% Descomenta las siguientes líneas si deseas incluir un segundo anexo con capturas y trazas:
+% \newpage
+% \input{anexos/anexo_02_capturas_y_logs}
+
+\end{document}
