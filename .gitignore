@@ -1,0 +1,67 @@
+# ==============================================================================
+# macOS (Finder y sistema)
+# ==============================================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# ==============================================================================
+# TeXstudio (sesiones, perfiles y copias de seguridad)
+# ==============================================================================
+*.txss
+*.txss2
+*.txsprofile
+*.backup
+*~
+
+# ==============================================================================
+# LaTeX (ficheros auxiliares y temporales de compilación)
+# ==============================================================================
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.lol
+*.fls
+*.fdb_latexmk
+*.dvi
+*.ps
+*.xdv
+
+# SyncTeX (sincronización entre editor y visor PDF)
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+# Bibliografía, índices y glosarios (BibTeX / Biber / MakeIndex)
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+*.idx
+*.ilg
+*.ind
+*.ist
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.glsdefs
+
+# ==============================================================================
+# PDF generado (opcional)
+# ==============================================================================
+# Si no quieres subir el PDF final al repositorio, descomenta la siguiente línea.
+# Se especifica "/main.pdf" para no ignorar los gráficos vectoriales de Recursos/.
+# /main.pdf
