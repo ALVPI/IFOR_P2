@@ -17,16 +17,12 @@
 \renewcommand{\headrulewidth}{0pt}
 \fancyfoot[C]{\thepage\ de \pageref{LastPage}}
 
-% Campo con puntos; si el texto está vacío queda un campo en blanco
-% \dato{ancho}{texto}
-\newcommand{\dato}[2]{\makebox[#1]{\dotfill\,#2\,\dotfill}}
-
-% Bloque de entrega o recogida
-% \registro{Entrega|Recoge}{nombre}{DNI}{nº serie/IMEI}{en calidad de}{fecha}{hora}
+% Bloque de entrega o recogida (solo se muestran los datos conocidos)
+% \registro{Entrega|Recoge}{nombre}{--}{--}{en calidad de}{fecha}{hora}
 \newcommand{\registro}[7]{%
-  \noindent #1 el dispositivo: \dato{6.2cm}{#2} con DNI: \dato{3cm}{#3}\par
-  Número de serie/IMEI: \dato{4.5cm}{#4} En calidad de: \dato{5cm}{#5}\par
-  Fecha: \dato{3cm}{#6} Hora: \dato{4cm}{#7} \hfill Firma: \hspace{3.5cm}\par
+  \noindent #1 el dispositivo: \textbf{#2}\par
+  En calidad de: #5\par
+  Fecha: #6 \quad Hora: #7 \hfill Firma: \hspace{3.5cm}\par
   \vspace{0.6em}
 }
 
@@ -43,8 +39,8 @@
 
 El cliente Jaime Diez Zurro, director de la empresa (según el supuesto del
 enunciado), me hace entrega en calidad de perito informático de la imagen del
-equipo cliente (disco virtual \texttt{Maquina\_Correo.vdi}) con número de serie
-\dato{4cm}{} para la realización de su correspondiente informe de peritaje.
+equipo cliente (disco virtual \texttt{Maquina\_Correo.vdi}) para la realización
+de su correspondiente informe de peritaje.
 
 El peritaje de este escenario lo realiza Hugo Adán de la Fuente, que es quien
 custodia el soporte.
